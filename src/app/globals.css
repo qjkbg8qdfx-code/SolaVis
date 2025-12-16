@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-ios-bg text-ios-text antialiased selection:bg-ios-blue selection:text-white;
+  }
+}
+
+@layer components {
+
+  /* iOS Button Style */
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-ios-text text-white font-medium text-[15px] hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full bg-white text-ios-blue border border-ios-divider font-medium text-[15px] hover:bg-gray-50 active:scale-95 transition-all duration-300;
+  }
+
+  /* iOS Card Style */
+  .card-ios {
+    @apply bg-white rounded-3xl p-8 shadow-ios border border-white/50 hover:shadow-ios-hover transition-all duration-500 ease-out;
+  }
+
+  /* Glassmorphism Utility */
+  .glass-panel {
+    @apply bg-surface-glass backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-surface-glass;
+  }
+
+  /* Text Styles */
+  .text-hero {
+    @apply text-5xl md:text-7xl font-semibold tracking-tight text-ios-text;
+  }
+
+  .text-sub {
+    @apply text-xl md:text-2xl font-normal text-ios-subtext leading-relaxed;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
