@@ -31,3 +31,16 @@ ts-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore Next.js build output
+.next/
+out/
+
+# Ignore Mac system files
+.DS_Store
+.DS_Store?
+
+# Ignore build logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
