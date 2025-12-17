@@ -93,6 +93,44 @@ export default function AboutPage() {
                 </div>
 
             </div>
+
+            {/* The Architects Section */}
+            <section className="mt-24 pt-20 border-t border-gray-100">
+                <div className="text-center mb-12">
+                    <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-4 block">System Creators</span>
+                    <h2 className="text-3xl font-bold tracking-tight">The Architects.</h2>
+                </div>
+
+                <div className="max-w-md mx-auto">
+                    {/* Grayscale Team Placeholder with Noise Filter */}
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
+                        {/* Noise Overlay */}
+                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-overlay z-10"></div>
+
+                        {/* Placeholder with Grayscale Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-400 to-gray-500 flex items-center justify-center">
+                            <div className="text-center text-gray-600/50">
+                                <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gray-400/50 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <span className="text-xs font-mono uppercase tracking-wider">Team Archive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Caption */}
+                    <p className="text-center text-ios-subtext mt-6 text-lg font-medium">
+                        System designed by humans. <br />
+                        <span className="text-ios-text">Operated by AI.</span>
+                    </p>
+                </div>
+            </section>
+
         </div>
     )
 }

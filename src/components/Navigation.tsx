@@ -32,14 +32,14 @@ export default function Navigation() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-8 text-[15px] font-medium">
-                    <Link href="/methodology" className={`hover:text-ios-text transition-colors ${isActive('/methodology')}`}>Methodology</Link>
-                    <Link href="/services" className={`hover:text-ios-text transition-colors ${isActive('/services')}`}>Services</Link>
-                    <Link href="/about" className={`hover:text-ios-text transition-colors ${isActive('/about')}`}>Manifesto</Link>
-                    <Link href="/contact" className={`hover:text-ios-text transition-colors ${isActive('/contact')}`}>Contact</Link>
+                    <Link href="/methodology" className={`hover:text-ios-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 rounded-lg px-1 ${isActive('/methodology')}`}>Methodology</Link>
+                    <Link href="/services" className={`hover:text-ios-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 rounded-lg px-1 ${isActive('/services')}`}>Services</Link>
+                    <Link href="/about" className={`hover:text-ios-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 rounded-lg px-1 ${isActive('/about')}`}>Manifesto</Link>
+                    <Link href="/contact" className={`hover:text-ios-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 rounded-lg px-1 ${isActive('/contact')}`}>Contact</Link>
                 </div>
 
-                <Link href="/contact" className="hidden md:block btn-primary py-2 px-4 shadow-none text-sm">
-                    Initialize Audit
+                <Link href="/contact" className="hidden md:block btn-primary py-2 px-4 shadow-none text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2">
+                    Start Logic Audit
                 </Link>
 
                 {/* Mobile Menu Trigger */}
@@ -65,19 +65,19 @@ export default function Navigation() {
                         <X className="w-6 h-6" />
                     </button>
                     <div className="flex flex-col gap-8 text-center">
-                        <Link href="/" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/' ? 'text-ios-blue' : 'text-gray-900'}`}>
+                        <Link href="/" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue rounded-lg ${pathname === '/' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             System
                         </Link>
-                        <Link href="/services" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/services' ? 'text-ios-blue' : 'text-gray-900'}`}>
+                        <Link href="/services" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue rounded-lg ${pathname === '/services' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Modules
                         </Link>
-                        <Link href="/methodology" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/methodology' ? 'text-ios-blue' : 'text-gray-900'}`}>
+                        <Link href="/methodology" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue rounded-lg ${pathname === '/methodology' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Methodology
                         </Link>
-                        <Link href="/about" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/about' ? 'text-ios-blue' : 'text-gray-900'}`}>
+                        <Link href="/about" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue rounded-lg ${pathname === '/about' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Manifesto
                         </Link>
-                        <Link href="/contact" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/contact' ? 'text-ios-blue' : 'text-gray-900'}`}>
+                        <Link href="/contact" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue rounded-lg ${pathname === '/contact' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Connect
                         </Link>
                     </div>

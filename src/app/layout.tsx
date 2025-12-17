@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import Navigation from '@/components/Navigation'
+import CookieBanner from '@/components/CookieBanner'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -77,8 +78,26 @@ export default function RootLayout({
                             '@type': 'Organization',
                             name: 'SolvoVis',
                             url: 'https://solvovis.com',
-                            logo: 'https://solvovis.com/logo.png', // Placeholder
+                            logo: 'https://solvovis.com/logo.png',
                             description: 'Autonomous AI Infrastructure for Global SMEs.',
+                            knowsAbout: [
+                                'AI Automation',
+                                'Business Process Optimization',
+                                'Revenue Operations',
+                                'Workflow Automation',
+                                'Data Processing'
+                            ],
+                            contactPoint: {
+                                '@type': 'ContactPoint',
+                                contactType: 'customer service',
+                                email: 'hello@solvovis.com',
+                                availableLanguage: ['English']
+                            },
+                            address: {
+                                '@type': 'PostalAddress',
+                                addressCountry: 'SG',
+                                addressLocality: 'Singapore'
+                            },
                             sameAs: [
                                 'https://twitter.com/solvovis',
                                 'https://linkedin.com/company/solvovis'
@@ -86,6 +105,9 @@ export default function RootLayout({
                         })
                     }}
                 />
+
+                {/* Cookie Consent Banner */}
+                <CookieBanner />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
                 <nav aria-label="Mobile navigation" className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">

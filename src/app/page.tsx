@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, PlayCircle } from 'lucide-react'
+import { ArrowRight, PlayCircle, ExternalLink } from 'lucide-react'
 import Counter from '@/components/Counter'
 
 export default function Home() {
@@ -28,10 +28,10 @@ export default function Home() {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <Link href="/contact" className="btn-primary flex items-center justify-center gap-2">
-                            Initialize Audit <ArrowRight className="w-4 h-4" />
+                            Start Logic Audit <ArrowRight className="w-4 h-4" />
                         </Link>
                         <Link href="/methodology" className="btn-secondary flex items-center justify-center gap-2">
-                            <PlayCircle className="w-4 h-4" /> How it Works
+                            <PlayCircle className="w-4 h-4" /> View The Protocol
                         </Link>
                     </div>
 
@@ -187,13 +187,18 @@ export default function Home() {
             <section className="py-20 border-t border-gray-100">
                 <div className="mb-12">
                     <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-2 block">System Logs</span>
-                    <h2 className="text-3xl font-bold tracking-tight">Deployment Records.</h2>
+                    <h2 className="text-3xl font-bold tracking-tight">Verified System Deployments.</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Log 1 */}
                     <div className="bg-gray-50 p-8 border-l-4 border-l-ios-blue rounded-r-2xl">
-                        <div className="font-mono text-xs text-ios-blue mb-4">LOG_ID: 8821 // SUCCESS</div>
+                        <div className="font-mono text-xs text-ios-blue mb-4 flex items-center justify-between">
+                            <span>LOG_ID: 8821 // SUCCESS</span>
+                            <a href="#case-study-1" className="text-gray-400 hover:text-ios-blue transition-colors" aria-label="View case study">
+                                <ExternalLink className="w-4 h-4" />
+                            </a>
+                        </div>
                         <p className="text-lg font-medium text-gray-900 mb-6">
                             &quot;We replaced our entire manual data entry team with SolvoVis bots. Zero errors since launch.&quot;
                         </p>
@@ -208,7 +213,12 @@ export default function Home() {
 
                     {/* Log 2 */}
                     <div className="bg-gray-50 p-8 border-l-4 border-l-ios-blue rounded-r-2xl">
-                        <div className="font-mono text-xs text-ios-blue mb-4">LOG_ID: 4102 // SUCCESS</div>
+                        <div className="font-mono text-xs text-ios-blue mb-4 flex items-center justify-between">
+                            <span>LOG_ID: 4102 // SUCCESS</span>
+                            <a href="#case-study-2" className="text-gray-400 hover:text-ios-blue transition-colors" aria-label="View case study">
+                                <ExternalLink className="w-4 h-4" />
+                            </a>
+                        </div>
                         <p className="text-lg font-medium text-gray-900 mb-6">
                             &quot;The data cleaning module recovered $2M in lost inventory assets in the first 48 hours.&quot;
                         </p>
@@ -223,7 +233,12 @@ export default function Home() {
 
                     {/* Log 3 */}
                     <div className="bg-gray-50 p-8 border-l-4 border-l-ios-blue rounded-r-2xl">
-                        <div className="font-mono text-xs text-ios-blue mb-4">LOG_ID: 9943 // SUCCESS</div>
+                        <div className="font-mono text-xs text-ios-blue mb-4 flex items-center justify-between">
+                            <span>LOG_ID: 9943 // SUCCESS</span>
+                            <a href="#case-study-3" className="text-gray-400 hover:text-ios-blue transition-colors" aria-label="View case study">
+                                <ExternalLink className="w-4 h-4" />
+                            </a>
+                        </div>
                         <p className="text-lg font-medium text-gray-900 mb-6">
                             &quot;We scaled content production by 10x without hiring a single new writer. Pure leverage.&quot;
                         </p>
@@ -236,6 +251,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                {/* Privacy Disclaimer */}
+                <p className="text-center text-xs text-gray-400 mt-8 font-mono">
+                    Client identity anonymized for privacy unless explicitly verified.
+                </p>
             </section>
 
             {/* Manifesto Teaser */}
