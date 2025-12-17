@@ -8,93 +8,172 @@ export default function Home() {
             {/* Hero Section */}
             <section className="py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8 animate-fade-in-up">
-                    <div className="inline-block px-3 py-1 bg-white rounded-full border border-gray-200 text-xs font-semibold text-ios-subtext uppercase tracking-wide">
-                        v2.0 System Online
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full border border-green-200/50 text-xs font-semibold text-green-700 uppercase tracking-wide shadow-sm">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        SolvoVis Operational
                     </div>
 
-                    <h1 className="text-hero">
-                        Scale your operations. <br />
-                        <span className="text-ios-subtext">Not your headcount.</span>
+                    <h1 className="text-hero leading-tight">
+                        Scale Revenue. <br />
+                        <span className="text-gray-400">Freeze Headcount.</span>
                     </h1>
 
                     <p className="text-sub max-w-lg">
-                        We deploy autonomous AI systems that help Global SMEs grow revenue without adding complexity.
+                        We don&apos;t just &apos;consult.&apos; We inject autonomous AI infrastructure into your business. Reduce operational friction by 40% in 90 days.
                     </p>
 
-                    <div className="flex flex-row gap-4">
-                        <Link href="/contact" className="btn-primary flex items-center gap-2">
-                            Start Audit <ArrowRight className="w-4 h-4" />
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <Link href="/contact" className="btn-primary flex items-center justify-center gap-2">
+                            Initialize Audit <ArrowRight className="w-4 h-4" />
                         </Link>
-                        <Link href="/methodology" className="btn-secondary flex items-center gap-2">
+                        <Link href="/methodology" className="btn-secondary flex items-center justify-center gap-2">
                             <PlayCircle className="w-4 h-4" /> How it Works
                         </Link>
                     </div>
 
-                    <div className="pt-8 flex items-center gap-4 text-xs font-medium text-gray-400">
-                        <span>TRUSTED BY 50+ SMEs</span>
-                        <div className="h-px bg-gray-200 flex-1"></div>
+                    {/* Social Proof / System Metrics */}
+                    <div className="pt-8 border-t border-gray-100 flex gap-8 md:gap-12">
+                        <div>
+                            <div className="text-2xl font-bold text-gray-900">4.5x</div>
+                            <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg. ROI</div>
+                        </div>
+                        <div>
+                            <div className="text-2xl font-bold text-gray-900">12k+</div>
+                            <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Hours Saved</div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Hero Visual (Apple Style Abstract) */}
-                <div className="card-ios aspect-square flex items-center justify-center bg-gray-50 relative overflow-hidden group">
-                    <div className="w-64 h-64 bg-gradient-to-tr from-blue-100 to-purple-100 rounded-full blur-3xl opacity-70 group-hover:scale-110 transition-transform duration-1000"></div>
-                    <div className="glass-panel absolute p-6 rounded-2xl shadow-xl max-w-xs">
-                        <div className="flex gap-2 mb-4">
-                            <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                            <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                {/* Hero Visual (Logic Gate / System Architecture) */}
+                <div className="relative aspect-square flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 to-indigo-50/50 rounded-full blur-3xl opacity-60"></div>
+
+                    {/* Glass Panel Code Card */}
+                    <div className="relative w-full max-w-sm glass-panel p-6 rounded-2xl shadow-2xl border border-white/40 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                        {/* Header */}
+                        <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                            <div className="flex gap-2">
+                                <div className="w-3 h-3 rounded-full bg-red-400/80"></div>
+                                <div className="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                                <div className="w-3 h-3 rounded-full bg-green-400/80"></div>
+                            </div>
+                            <div className="text-[10px] font-mono text-gray-400">system_core.tsx</div>
                         </div>
-                        <div className="space-y-2">
-                            <div className="h-2 w-full bg-gray-200 rounded-full"></div>
-                            <div className="h-2 w-3/4 bg-gray-200 rounded-full"></div>
-                            <div className="h-2 w-1/2 bg-gray-200 rounded-full"></div>
+
+                        {/* Code Content */}
+                        <div className="space-y-3 font-mono text-xs md:text-sm">
+                            <div className="flex gap-2">
+                                <span className="text-purple-500">const</span>
+                                <span className="text-blue-600">optimize</span>
+                                <span className="text-gray-400">=</span>
+                                <span className="text-yellow-600">async</span>
+                                <span className="text-gray-500">()</span>
+                                <span className="text-gray-400">=&gt;</span>
+                                <span className="text-gray-500">{`{`}</span>
+                            </div>
+                            <div className="pl-4 text-gray-600">
+                                <span className="text-purple-500">await</span> SolvoVis.<span className="text-blue-600">analyze</span>(workflow);
+                            </div>
+                            <div className="pl-4 text-gray-600">
+                                <span className="text-purple-500">return</span> <span className="text-green-600">&quot;Efficiency_Maximized&quot;</span>;
+                            </div>
+                            <div className="text-gray-500">{`}`}</div>
+                        </div>
+
+                        {/* Interactive Element */}
+                        <div className="mt-6 pt-4 border-t border-gray-100/50 flex justify-between items-center">
+                            <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span className="text-[10px] uppercase tracking-wider text-gray-500">Processing</span>
+                            </div>
+                            <div className="h-1 w-16 bg-gray-100 rounded-full overflow-hidden">
+                                <div className="h-full bg-blue-500 w-2/3"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Services Grid (iOS Style) */}
+            {/* Services Grid (Bento) */}
             <section id="services" className="py-20">
                 <div className="flex justify-between items-end mb-12">
                     <h2 className="text-4xl font-semibold tracking-tight">The Modules.</h2>
                     <Link href="/services" className="text-ios-blue font-medium hover:underline">View All</Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
-                    {/* Card 1: Strategy */}
-                    <div className="card-ios col-span-1 md:col-span-2 bg-black text-white p-10 flex flex-col justify-between group">
+                <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
+                    {/* Module 1: Core Strategy (Large Square) */}
+                    <div className="card-ios md:col-span-2 md:row-span-2 bg-black text-white p-10 flex flex-col justify-between group relative overflow-hidden">
+                        {/* Subtle bg grid or gloss */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div className="relative z-10">
+                            <span className="text-sm font-mono text-gray-400 mb-2 block">01. Core Strategy</span>
+                            <h3 className="text-3xl font-semibold mb-4 text-white">Profit & Loss Audit</h3>
+                            <p className="text-gray-400 text-lg max-w-xs leading-relaxed">
+                                We audit your P&L to find inefficiencies. Pinpoint the 40% of friction in your operations.
+                            </p>
+                        </div>
+                        <div className="mt-8 relative z-10">
+                            <div className="inline-flex items-center gap-2 text-sm font-medium text-white/90 border-b border-white/20 pb-1">
+                                Explore Methodology <ArrowRight className="w-4 h-4" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Module 2: Auto-Process (Tall/Vertical) */}
+                    <div className="card-ios md:col-span-1 md:row-span-2 bg-gray-50 flex flex-col relative overflow-hidden group">
+                        <div className="flex-1 p-8 relative z-10">
+                            <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 text-ios-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bot"><rect width="18" height="10" x="3" y="11" rx="2" /><circle cx="12" cy="5" r="2" /><path d="M12 7v4" /><line x1="8" x2="8" y1="16" y2="16" /><line x1="16" x2="16" y1="16" y2="16" /></svg>
+                            </div>
+                            <span className="text-sm font-mono text-gray-400 mb-1 block">02. Auto-Process</span>
+                            <h3 className="text-xl font-semibold text-gray-900">24/7 Worker Bots</h3>
+                            <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+                                Deploy autonomous agents that never sleep.
+                            </p>
+                        </div>
+
+                        {/* Abstract Visual Bottom */}
+                        <div className="h-1/3 bg-gradient-to-b from-transparent to-blue-50/50 w-full relative">
+                            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+                            {/* Animated bar elements */}
+                            <div className="absolute bottom-4 left-6 right-6 space-y-2">
+                                <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                                    <div className="h-full bg-blue-400 w-3/4"></div>
+                                </div>
+                                <div className="h-1.5 w-2/3 bg-gray-200 rounded-full overflow-hidden">
+                                    <div className="h-full bg-blue-300 w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Module 3: Data Kernel (Small Wide) */}
+                    <div className="card-ios md:col-span-1 md:row-span-1 bg-white p-6 flex flex-col justify-between border border-gray-100">
                         <div>
-                            <h3 className="text-3xl font-semibold mb-2">01. Strategy</h3>
-                            <p className="text-gray-400 text-lg">90-Day Roadmap to P&L Impact.</p>
+                            <div className="flex justify-between items-start mb-2">
+                                <span className="text-sm font-mono text-gray-400">03.</span>
+                                <div className="w-1.5 h-1.5 rounded-full bg-orange-400"></div>
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900">Data Kernel</h3>
                         </div>
-                        <div className="mt-8">
-                            <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm backdrop-blur-md border border-white/20">
-                                Avg ROI: 4.5x
-                            </span>
-                        </div>
+                        <p className="text-xs text-gray-500 font-medium">Clean assets for <br /> clean AI output.</p>
                     </div>
 
-                    {/* Card 2: Auto-Process */}
-                    <div className="card-ios bg-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
-                        <div className="w-32 h-32 bg-blue-50 rounded-full blur-2xl absolute top-0 right-0"></div>
-                        <h3 className="text-xl font-semibold z-10">02. Auto-Process</h3>
-                        <p className="text-gray-500 mt-2 z-10">24/7 Worker Bots</p>
-                    </div>
-
-                    {/* Card 3: Data */}
-                    <div className="card-ios bg-gray-50 p-8 flex flex-col justify-between">
-                        <h3 className="text-xl font-semibold">03. Data Kernel</h3>
-                        <p className="text-gray-500">Clean Assets.</p>
-                    </div>
-
-                    {/* Card 4: Training */}
-                    <div className="card-ios col-span-1 md:col-span-2 bg-blue-600 text-white p-8 flex items-center justify-between">
+                    {/* Module 4: Training (Small Wide/CTA) */}
+                    <div className="card-ios md:col-span-1 md:row-span-1 bg-ios-blue text-white p-6 flex flex-col justify-between group cursor-pointer hover:bg-blue-700 transition-colors">
                         <div>
-                            <h3 className="text-2xl font-semibold">04. Corporate Training</h3>
-                            <p className="text-blue-100">Empower your workforce.</p>
+                            <span className="text-sm font-mono text-blue-100/70 mb-1 block">04.</span>
+                            <h3 className="text-lg font-semibold">Training</h3>
                         </div>
-                        <ArrowRight className="w-6 h-6" />
+                        <div className="flex items-center justify-between">
+                            <span className="text-xs font-medium text-blue-100">Empower teams</span>
+                            <ArrowRight className="w-5 h-5 text-white transform group-hover:translate-x-1 transition-transform" />
+                        </div>
                     </div>
                 </div>
             </section>

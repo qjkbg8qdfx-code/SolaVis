@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-    title: 'AI & Tech Consultancy | Trust Engine',
+    title: 'SolvoVis | Autonomous Operations System',
     description: 'Helping Global SMEs achieve operational excellence.',
 }
 
@@ -22,7 +22,7 @@ export default function RootLayout({
                 <nav className="fixed top-0 w-full z-50 glass-panel">
                     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                         <Link href="/" className="font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity">
-                            Trust_Engine
+                            SolvoVis.
                         </Link>
 
                         <div className="hidden md:flex gap-8 text-[15px] font-medium text-ios-subtext">
@@ -33,7 +33,7 @@ export default function RootLayout({
                         </div>
 
                         <Link href="/contact" className="hidden md:block btn-primary py-2 px-4 shadow-none text-sm">
-                            Audit System
+                            Initialize Audit
                         </Link>
 
                         {/* Mobile Menu Icon Placeholder */}
@@ -49,13 +49,13 @@ export default function RootLayout({
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
                 <div className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
                     <Link href="/" className="flex flex-col items-center gap-1 text-ios-blue">
-                        <span>Home</span>
+                        <span>System</span>
                     </Link>
                     <Link href="/services" className="flex flex-col items-center gap-1">
-                        <span>Services</span>
+                        <span>Modules</span>
                     </Link>
                     <Link href="/contact" className="flex flex-col items-center gap-1">
-                        <span>Contact</span>
+                        <span>Connect</span>
                     </Link>
                 </div>
             </body>
