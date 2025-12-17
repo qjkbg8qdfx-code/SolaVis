@@ -2,12 +2,16 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { X, Menu } from 'lucide-react'
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
+    const pathname = usePathname()
 
     const toggleMenu = () => setIsOpen(!isOpen)
+
+    const isActive = (path: string) => pathname === path ? "text-ios-text" : "text-ios-subtext"
 
     return (
         <nav className="fixed top-0 w-full z-50 glass-panel">
@@ -17,11 +21,11 @@ export default function Navigation() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex gap-8 text-[15px] font-medium text-ios-subtext">
-                    <Link href="/methodology" className="hover:text-ios-text transition-colors">Methodology</Link>
-                    <Link href="/services" className="hover:text-ios-text transition-colors">Services</Link>
-                    <Link href="/about" className="hover:text-ios-text transition-colors">Manifesto</Link>
-                    <Link href="/contact" className="hover:text-ios-text transition-colors">Contact</Link>
+                <div className="hidden md:flex gap-8 text-[15px] font-medium">
+                    <Link href="/methodology" className={`hover:text-ios-text transition-colors ${isActive('/methodology')}`}>Methodology</Link>
+                    <Link href="/services" className={`hover:text-ios-text transition-colors ${isActive('/services')}`}>Services</Link>
+                    <Link href="/about" className={`hover:text-ios-text transition-colors ${isActive('/about')}`}>Manifesto</Link>
+                    <Link href="/contact" className={`hover:text-ios-text transition-colors ${isActive('/contact')}`}>Contact</Link>
                 </div>
 
                 <Link href="/contact" className="hidden md:block btn-primary py-2 px-4 shadow-none text-sm">
@@ -40,21 +44,21 @@ export default function Navigation() {
 
             {/* Mobile Full Screen Overlay */}
             {isOpen && (
-                <div className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center md:hidden animate-fade-in">
+                <div className="fixed inset-0 bg-white/95 backdrop-blur-xl z-[60] flex flex-col justify-center items-center md:hidden animate-fade-in">
                     <div className="flex flex-col gap-8 text-center">
-                        <Link href="/" onClick={toggleMenu} className="text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors">
+                        <Link href="/" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             System
                         </Link>
-                        <Link href="/services" onClick={toggleMenu} className="text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors">
+                        <Link href="/services" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/services' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Modules
                         </Link>
-                        <Link href="/methodology" onClick={toggleMenu} className="text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors">
+                        <Link href="/methodology" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/methodology' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Methodology
                         </Link>
-                        <Link href="/about" onClick={toggleMenu} className="text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors">
+                        <Link href="/about" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/about' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Manifesto
                         </Link>
-                        <Link href="/contact" onClick={toggleMenu} className="text-3xl font-semibold tracking-tight text-ios-blue transition-colors">
+                        <Link href="/contact" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/contact' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             Connect
                         </Link>
                     </div>

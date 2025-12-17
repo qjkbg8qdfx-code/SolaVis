@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, PlayCircle } from 'lucide-react'
+import Counter from '@/components/Counter'
 
 export default function Home() {
     return (
@@ -37,11 +38,15 @@ export default function Home() {
                     {/* Social Proof / System Metrics */}
                     <div className="pt-8 border-t border-gray-100 flex gap-8 md:gap-12">
                         <div>
-                            <div className="text-2xl font-bold text-gray-900">4.5x</div>
+                            <div className="text-2xl font-bold text-gray-900">
+                                <Counter value={4.5} suffix="x" decimals={1} />
+                            </div>
                             <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg. ROI</div>
                         </div>
                         <div>
-                            <div className="text-2xl font-bold text-gray-900">12k+</div>
+                            <div className="text-2xl font-bold text-gray-900">
+                                <Counter value={12} suffix="k+" duration={2000} />
+                            </div>
                             <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">Hours Saved</div>
                         </div>
                     </div>
