@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://solvovis.com'),
     title: {
         default: 'SolvoVis | Autonomous Operations System',
         template: '%s | SolvoVis'
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
         siteName: 'SolvoVis',
         images: [
             {
-                url: '/og-preview.png',
+                url: '/og-preview.png', // ⚠️ 記得製作這張圖片並放在 public 資料夾
                 width: 1200,
                 height: 630,
                 alt: 'SolvoVis System Interface',
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'SolvoVis',
         description: 'Scale Revenue. Freeze Headcount.',
-        images: ['/og-preview.png'],
+        // images: ['/og-preview.png'], // 如果有圖片，取消註解
     },
 }
 
