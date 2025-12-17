@@ -8,8 +8,34 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-    title: 'SolvoVis | Autonomous Operations System',
-    description: 'Helping Global SMEs achieve operational excellence.',
+    metadataBase: new URL('https://solvovis.com'),
+    title: {
+        default: 'SolvoVis | Autonomous Operations System',
+        template: '%s | SolvoVis'
+    },
+    description: 'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
+    openGraph: {
+        title: 'SolvoVis | Autonomous Operations System',
+        description: 'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
+        url: 'https://solvovis.com',
+        siteName: 'SolvoVis',
+        images: [
+            {
+                url: '/og-preview.png',
+                width: 1200,
+                height: 630,
+                alt: 'SolvoVis System Interface',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'SolvoVis',
+        description: 'Scale Revenue. Freeze Headcount.',
+        images: ['/og-preview.png'],
+    },
 }
 
 export default function RootLayout({

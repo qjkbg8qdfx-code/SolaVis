@@ -24,8 +24,8 @@ export default function Navigation() {
     const isActive = (path: string) => pathname === path ? "text-ios-text" : "text-ios-subtext"
 
     return (
-        <nav className="fixed top-0 w-full z-50 glass-panel">
-            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative z-50 bg-transparent">
+        <nav className={`fixed top-0 w-full glass-panel ${isOpen ? 'z-[70]' : 'z-50'}`}>
+            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative bg-transparent">
                 <Link href="/" className="font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity flex items-center gap-0.5 relative z-50">
                     SolvoVis<span className="font-mono text-ios-blue text-xl">.</span>
                 </Link>
