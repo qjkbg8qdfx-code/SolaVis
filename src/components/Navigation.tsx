@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { X, Menu } from 'lucide-react'
@@ -10,6 +10,16 @@ export default function Navigation() {
     const pathname = usePathname()
 
     const toggleMenu = () => setIsOpen(!isOpen)
+
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+        return () => { document.body.style.overflow = 'unset' }
+    }, [isOpen])
 
     const isActive = (path: string) => pathname === path ? "text-ios-text" : "text-ios-subtext"
 

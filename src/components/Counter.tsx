@@ -56,7 +56,7 @@ export default function Counter({ value, suffix = "", duration = 1500, decimals 
     }, [isInView, value, duration])
 
     return (
-        <span ref={elementRef} className="tabular-nums">
+        <span ref={elementRef} className="tabular-nums font-mono">
             {count.toFixed(decimals)}{suffix}
         </span>
     )
