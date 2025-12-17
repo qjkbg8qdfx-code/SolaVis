@@ -24,6 +24,7 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                mono: ['var(--font-mono)', 'monospace'],
             },
             borderRadius: {
                 '3xl': '24px',
