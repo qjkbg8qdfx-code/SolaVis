@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react' // Update: Import useEffect
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { X, Menu } from 'lucide-react'
@@ -11,7 +11,7 @@ export default function Navigation() {
 
     const toggleMenu = () => setIsOpen(!isOpen)
 
-    // Lock body scroll when mobile menu is open
+    // Update: Scroll Lock Logic
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden'
