@@ -25,7 +25,6 @@ export default function ContactPage() {
             <div className="mt-12 text-center">
                 <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-6">Compatible With</p>
                 <div className="flex justify-center items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-                    {/* Using text placeholders for logos as per prompt instruction to place logos, but I don't have images. I will use text representation styled as logos. */}
                     <span className="font-bold text-xl text-gray-800">OpenAI</span>
                     <span className="font-bold text-xl text-gray-800">AWS</span>
                     <span className="font-bold text-xl text-gray-800">HubSpot</span>
