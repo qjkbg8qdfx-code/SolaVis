@@ -11,7 +11,6 @@ interface CounterProps {
 
 export default function Counter({ value, suffix = "", duration = 1500, decimals = 0 }: CounterProps) {
     const [count, setCount] = useState(0)
-    const countRef = useRef(0)
     const startTimeRef = useRef<number | null>(null)
     const [isInView, setIsInView] = useState(false)
     const elementRef = useRef<HTMLDivElement>(null)
@@ -36,6 +35,9 @@ export default function Counter({ value, suffix = "", duration = 1500, decimals 
     useEffect(() => {
         if (!isInView) return
 
+        let rafId: number
+        startTimeRef.current = null
+
         const animate = (timestamp: number) => {
             if (!startTimeRef.current) startTimeRef.current = timestamp
             const progress = timestamp - startTimeRef.current
@@ -46,13 +48,15 @@ export default function Counter({ value, suffix = "", duration = 1500, decimals 
                 const ease = 1 - Math.pow(1 - percentage, 3)
 
                 setCount(value * ease)
-                requestAnimationFrame(animate)
+                rafId = requestAnimationFrame(animate)
             } else {
                 setCount(value)
             }
         }
 
-        requestAnimationFrame(animate)
+        rafId = requestAnimationFrame(animate)
+
+        return () => cancelAnimationFrame(rafId)
     }, [isInView, value, duration])
 
     return (

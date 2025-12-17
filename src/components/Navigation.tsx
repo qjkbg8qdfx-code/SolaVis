@@ -46,15 +46,24 @@ export default function Navigation() {
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-lg font-bold text-ios-blue relative z-50 p-2 -mr-2 focus:outline-none focus:ring-2 focus:ring-ios-blue rounded-lg"
-                    aria-label="Toggle Menu"
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
                 >
-                    {isOpen ? <X className="w-6 h-6" /> : "Menu"}
+                    Menu
                 </button>
             </div>
 
             {/* Mobile Full Screen Overlay */}
             {isOpen && (
                 <div className="fixed inset-0 bg-white/95 backdrop-blur-xl z-[60] flex flex-col justify-center items-center md:hidden animate-fade-in">
+                    {/* Close Button */}
+                    <button
+                        onClick={toggleMenu}
+                        className="absolute top-5 right-6 p-2 text-ios-blue focus:outline-none focus:ring-2 focus:ring-ios-blue rounded-lg"
+                        aria-label="Close menu"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
                     <div className="flex flex-col gap-8 text-center">
                         <Link href="/" onClick={toggleMenu} className={`text-3xl font-semibold tracking-tight hover:text-ios-blue transition-colors ${pathname === '/' ? 'text-ios-blue' : 'text-gray-900'}`}>
                             System

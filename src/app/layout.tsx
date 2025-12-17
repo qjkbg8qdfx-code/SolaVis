@@ -31,7 +31,7 @@ export default function RootLayout({
                 <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
                         {/* Update: Dynamic Year */}
-                        <div>&copy; {new Date().getFullYear()} SolvoVis Systems Inc.</div>
+                        <div suppressHydrationWarning>&copy; {new Date().getFullYear()} SolvoVis Systems Inc.</div>
 
                         <div className="flex items-center gap-2">
                             <span className="relative flex h-2 w-2">
@@ -63,7 +63,7 @@ export default function RootLayout({
                 />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
-                <div className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
+                <nav aria-label="Mobile navigation" className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
                     <Link href="/" className="flex flex-col items-center gap-1 text-ios-blue">
                         <span>System</span>
                     </Link>
@@ -73,7 +73,7 @@ export default function RootLayout({
                     <Link href="/contact" className="flex flex-col items-center gap-1">
                         <span>Connect</span>
                     </Link>
-                </div>
+                </nav>
             </body>
         </html>
     )
