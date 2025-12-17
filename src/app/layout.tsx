@@ -21,8 +21,8 @@ export default function RootLayout({
                 {/* iOS Sticky Glass Nav */}
                 <nav className="fixed top-0 w-full z-50 glass-panel">
                     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                        <Link href="/" className="font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity">
-                            SolvoVis.
+                        <Link href="/" className="font-semibold text-lg tracking-tight hover:opacity-70 transition-opacity flex items-center gap-0.5">
+                            SolvoVis<span className="font-mono text-ios-blue text-xl">.</span>
                         </Link>
 
                         <div className="hidden md:flex gap-8 text-[15px] font-medium text-ios-subtext">
@@ -45,6 +45,39 @@ export default function RootLayout({
                 <main className="pt-16 pb-32">
                     {children}
                 </main>
+
+                {/* System Status Footer */}
+                <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
+                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
+                        <div>&copy; 2025 SolvoVis Systems Inc.</div>
+                        <div className="flex items-center gap-2">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span>All Systems Operational</span>
+                        </div>
+                    </div>
+                </footer>
+
+                {/* Schema.org Organization Data */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'Organization',
+                            name: 'SolvoVis',
+                            url: 'https://solvovis.com',
+                            logo: 'https://solvovis.com/logo.png', // Placeholder
+                            description: 'Autonomous AI Infrastructure for Global SMEs.',
+                            sameAs: [
+                                'https://twitter.com/solvovis',
+                                'https://linkedin.com/company/solvovis'
+                            ]
+                        })
+                    }}
+                />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
                 <div className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
