@@ -18,6 +18,7 @@ export const siteConfig = {
     address: {
         country: 'SG',
         locality: 'Singapore',
+        label: 'Global HQ (Singapore)',
     },
 
     // Company

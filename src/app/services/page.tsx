@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, Bot, Database, Target, UploadCloud } from 'lucide-react'
+import { faqContent, faqSection } from '@/config/content'
 
 export const metadata = {
     title: 'Modules | SolvoVis',
@@ -115,6 +116,35 @@ export default function ServicesPage() {
                 </div>
 
             </div>
+
+            {/* FAQ Section (Voice Search Optimized) */}
+            <section className="mt-20 pt-16 border-t border-gray-100">
+                <div className="max-w-2xl mb-12">
+                    <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-4 block">{faqSection.badge}</span>
+                    <h2 className="text-3xl font-bold tracking-tight">{faqSection.title}</h2>
+                </div>
+
+                <div className="max-w-3xl space-y-4">
+                    {faqContent.map((faq, index) => (
+                        <details
+                            key={index}
+                            className="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
+                        >
+                            <summary className="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-gray-900 hover:bg-gray-100 transition-colors list-none">
+                                <span>{faq.question}</span>
+                                <span className="ml-4 text-gray-400 group-open:rotate-180 transition-transform">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                                {faq.answer}
+                            </div>
+                        </details>
+                    ))}
+                </div>
+            </section>
 
             {/* Service Schema with Offers */}
             <script

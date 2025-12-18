@@ -157,3 +157,39 @@ export const manifestoTeaser = {
     ctaLabel: 'Read the Full Story',
     ctaHref: '/about',
 }
+
+// ============================================
+// FAQ CONTENT (Voice Search Optimized)
+// ============================================
+export interface FAQItem {
+    question: string
+    answer: string
+}
+
+export const faqContent: FAQItem[] = [
+    {
+        question: "How fast can SolvoVis show results?",
+        answer: "SolvoVis typically reduces operational friction by 40% within the first 90 days. Many clients see measurable ROI within the first 30 days after deployment."
+    },
+    {
+        question: "What kind of businesses does SolvoVis work with?",
+        answer: "We specialize in Global SMEs generating $1M-$50M in annual revenue. Our infrastructure works best for businesses with repetitive workflows, data processing needs, or scaling challenges."
+    },
+    {
+        question: "How is SolvoVis different from traditional consultants?",
+        answer: "We don't just advise — we install. SolvoVis deploys autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps. You get infrastructure, not slide decks."
+    },
+    {
+        question: "Do I need technical expertise to use SolvoVis?",
+        answer: "No. We handle the technical implementation end-to-end. Your team interacts with simple dashboards and reports. We do the heavy lifting under the hood."
+    },
+    {
+        question: "Where is SolvoVis located?",
+        answer: "Our Global HQ is in Singapore (APAC), with remote operation nodes in New York (AMER) and London (EMEA). We serve clients across all time zones."
+    },
+]
+
+export const faqSection = {
+    badge: 'Common Questions',
+    title: 'Frequently Asked.',
+}
