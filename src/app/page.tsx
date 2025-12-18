@@ -6,8 +6,8 @@ import {
     heroContent,
     bentoModules,
     modulesSection,
-    deploymentLogs,
-    logsSection,
+    caseStudies,
+    caseStudiesSection,
     manifestoTeaser,
 } from '@/config/content'
 
@@ -128,41 +128,43 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Deployment Logs (Social Proof) */}
+            {/* Verified Case Studies (Social Proof) */}
             <section className="py-20 border-t border-gray-100">
                 <div className="mb-12">
-                    <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-2 block">{logsSection.badge}</span>
-                    <h2 className="text-3xl font-bold tracking-tight">{logsSection.title}</h2>
+                    <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-2 block">{caseStudiesSection.badge}</span>
+                    <h2 className="text-3xl font-bold tracking-tight">{caseStudiesSection.title}</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {deploymentLogs.map((log) => (
-                        <div key={log.id} className="bg-gray-50 p-8 border-l-4 border-l-ios-blue rounded-r-2xl">
+                    {caseStudies.map((study) => (
+                        <div key={study.id} className="bg-gray-50 p-8 border-l-4 border-l-ios-blue rounded-r-2xl">
                             <div className="font-mono text-xs text-ios-blue mb-4 flex items-center justify-between">
-                                <span>LOG_ID: {log.logId} // SUCCESS</span>
-                                {log.caseStudyHref && (
-                                    <a href={log.caseStudyHref} className="text-gray-400 hover:text-ios-blue transition-colors" aria-label="View case study">
+                                <span>CASE_ID: {study.logId} // VERIFIED</span>
+                                {study.verifiedResultLink && (
+                                    <a href={study.verifiedResultLink} className="text-gray-400 hover:text-ios-blue transition-colors" aria-label="View verified results" target="_blank" rel="noopener noreferrer">
                                         <ExternalLink className="w-4 h-4" />
                                     </a>
                                 )}
                             </div>
                             <p className="text-lg font-medium text-gray-900 mb-6">
-                                &quot;{log.quote}&quot;
+                                &quot;{study.quote}&quot;
                             </p>
                             <div className="border-t border-gray-200 pt-4 mt-auto">
-                                <div className="font-bold text-sm text-gray-900">{log.company}</div>
+                                <a href={study.clientWebsite !== '[REQUIRED]' ? study.clientWebsite : '#'} className="font-bold text-sm text-gray-900 hover:text-ios-blue transition-colors" target="_blank" rel="noopener noreferrer">
+                                    {study.company}
+                                </a>
                                 <div className="text-xs text-gray-500 font-mono mt-1">
-                                    <span className="text-gray-400">AUTH:</span> {log.auth} <br />
-                                    <span className="text-gray-400">MODULE:</span> {log.module}
+                                    <span className="text-gray-400">VERIFIED BY:</span> {study.personName !== '[REQUIRED]' ? study.personName : 'Pending'}, {study.personRole} <br />
+                                    <span className="text-gray-400">MODULE:</span> {study.module}
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Privacy Disclaimer */}
+                {/* Verification Statement */}
                 <p className="text-center text-xs text-gray-400 mt-8 font-mono">
-                    {logsSection.disclaimer}
+                    {caseStudiesSection.disclaimer}
                 </p>
             </section>
 

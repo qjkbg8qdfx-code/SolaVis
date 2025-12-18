@@ -30,6 +30,12 @@ export default function CookieBanner() {
         // Ensure no non-essential scripts load
     }
 
+    const handleEssential = () => {
+        localStorage.setItem(CONSENT_KEY, 'essential')
+        setIsVisible(false)
+        // Only essential cookies allowed
+    }
+
     if (!isVisible) return null
 
     return (
@@ -66,18 +72,26 @@ export default function CookieBanner() {
                 </p>
 
                 {/* Buttons - No dark patterns, equal visual weight */}
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-2">
+                    <div className="flex gap-3">
+                        <button
+                            onClick={handleReject}
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-gray-100 text-ios-text font-medium text-sm hover:bg-gray-200 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
+                        >
+                            Reject All
+                        </button>
+                        <button
+                            onClick={handleAccept}
+                            className="flex-1 px-4 py-2.5 rounded-xl bg-ios-blue text-white font-medium text-sm hover:bg-blue-600 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
+                        >
+                            Accept All
+                        </button>
+                    </div>
                     <button
-                        onClick={handleReject}
-                        className="flex-1 px-4 py-2.5 rounded-xl bg-gray-100 text-ios-text font-medium text-sm hover:bg-gray-200 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
+                        onClick={handleEssential}
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-ios-subtext font-medium text-sm hover:bg-gray-50 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
                     >
-                        Reject All
-                    </button>
-                    <button
-                        onClick={handleAccept}
-                        className="flex-1 px-4 py-2.5 rounded-xl bg-ios-blue text-white font-medium text-sm hover:bg-blue-600 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
-                    >
-                        Accept All
+                        Essential Cookies Only
                     </button>
                 </div>
 

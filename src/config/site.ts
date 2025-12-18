@@ -31,6 +31,14 @@ export const siteConfig = {
         'Workflow Automation',
         'Data Processing',
     ],
+
+    // Founder (for Person schema)
+    founder: {
+        name: '[FOUNDER_NAME]',       // TODO: Add real name
+        role: 'Founder & System Architect',
+        linkedIn: '[LINKEDIN_URL]',   // TODO: Add LinkedIn URL
+        image: '/founder.jpg',        // TODO: Add real image
+    },
 } as const
 
 export type SiteConfig = typeof siteConfig

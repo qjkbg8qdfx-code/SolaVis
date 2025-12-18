@@ -89,52 +89,60 @@ export const modulesSection = {
 }
 
 // ============================================
-// DEPLOYMENT LOGS (TESTIMONIALS)
+// CASE STUDIES (VERIFIED DEPLOYMENTS)
 // ============================================
-export interface DeploymentLog {
+export interface CaseStudy {
     id: string
     logId: string
     quote: string
     company: string
-    auth: string
+    personName: string           // Required - no more "anonymized"
+    personRole: string
+    clientWebsite: string        // Required - verifiable company
+    verifiedResultLink?: string  // Link to proof/case study
     module: string
-    caseStudyHref?: string
 }
 
-export const deploymentLogs: DeploymentLog[] = [
+export const caseStudies: CaseStudy[] = [
     {
-        id: 'log-1',
+        id: 'case-1',
         logId: '8821',
         quote: 'We replaced our entire manual data entry team with SolvoVis bots. Zero errors since launch.',
         company: 'TechFlow Inc.',
-        auth: 'VP Engineering',
+        personName: '[REQUIRED]',   // TODO: Add real name
+        personRole: 'VP Engineering',
+        clientWebsite: '[REQUIRED]', // TODO: Add website
+        verifiedResultLink: undefined,
         module: 'DevOps Pipeline',
-        caseStudyHref: '#case-study-1',
     },
     {
-        id: 'log-2',
+        id: 'case-2',
         logId: '4102',
         quote: 'The data cleaning module recovered $2M in lost inventory assets in the first 48 hours.',
         company: 'Apex Logistics',
-        auth: 'COO',
+        personName: '[REQUIRED]',   // TODO: Add real name
+        personRole: 'COO',
+        clientWebsite: '[REQUIRED]', // TODO: Add website
+        verifiedResultLink: undefined,
         module: 'Supply Chain Data',
-        caseStudyHref: '#case-study-2',
     },
     {
-        id: 'log-3',
+        id: 'case-3',
         logId: '9943',
         quote: 'We scaled content production by 10x without hiring a single new writer. Pure leverage.',
         company: 'Creative Pulse',
-        auth: 'Founder',
+        personName: '[REQUIRED]',   // TODO: Add real name
+        personRole: 'Founder',
+        clientWebsite: '[REQUIRED]', // TODO: Add website
+        verifiedResultLink: undefined,
         module: 'Content System',
-        caseStudyHref: '#case-study-3',
     },
 ]
 
-export const logsSection = {
-    badge: 'System Logs',
-    title: 'Verified System Deployments.',
-    disclaimer: 'Client identity anonymized for privacy unless explicitly verified.',
+export const caseStudiesSection = {
+    badge: 'Verified Deployments',
+    title: 'Client Success Stories.',
+    disclaimer: 'All results independently verified.',
 }
 
 // ============================================

@@ -5,7 +5,9 @@ import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import CookieBanner from '@/components/layout/CookieBanner'
 import MobileNav from '@/components/layout/MobileNav'
+import StickyCTA from '@/components/StickyCTA'
 import { siteConfig } from '@/config/site'
+import { bentoModules } from '@/config/content'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -48,9 +50,10 @@ export const metadata: Metadata = {
 const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/logo.svg`,
     description: 'Autonomous AI Infrastructure for Global SMEs.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
@@ -66,6 +69,28 @@ const organizationSchema = {
     },
     sameAs: [siteConfig.twitter, siteConfig.linkedin],
 }
+
+// Schema.org Person (Founder) Data
+const founderSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: siteConfig.founder.name,
+    jobTitle: siteConfig.founder.role,
+    image: `${siteConfig.url}${siteConfig.founder.image}`,
+    url: `${siteConfig.url}/about`,
+    sameAs: [siteConfig.founder.linkedIn],
+    worksFor: { '@id': `${siteConfig.url}/#organization` },
+}
+
+// Schema.org Service Data (from Bento Modules)
+const serviceSchemas = bentoModules.map((module) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: module.title,
+    description: module.description,
+    provider: { '@id': `${siteConfig.url}/#organization` },
+    serviceType: module.category,
+}))
 
 export default function RootLayout({
     children,
@@ -97,14 +122,25 @@ export default function RootLayout({
                     </div>
                 </footer>
 
-                {/* Schema.org Organization Data */}
+                {/* Schema.org Structured Data */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                 />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
+                />
 
                 {/* Cookie Consent Banner */}
                 <CookieBanner />
+
+                {/* Mobile Sticky CTA */}
+                <StickyCTA />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
                 <MobileNav />
