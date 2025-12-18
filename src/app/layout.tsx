@@ -4,7 +4,7 @@ import Link from 'next/link'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import CookieBanner from '@/components/layout/CookieBanner'
-import MobileTabBar from '@/components/layout/MobileTabBar'
+import MobileNav from '@/components/layout/MobileNav'
 import { siteConfig } from '@/config/site'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -107,7 +107,7 @@ export default function RootLayout({
                 <CookieBanner />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
-                <MobileTabBar />
+                <MobileNav />
             </body>
         </html>
     )
