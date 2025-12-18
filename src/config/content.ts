@@ -142,7 +142,10 @@ export const logsSection = {
 // ============================================
 export const manifestoTeaser = {
     badge: 'The Manifesto',
-    title: "Old ways won't open new doors.",
+    title: {
+        line1: "Old ways won't",
+        line2: "open new doors."
+    },
     ctaLabel: 'Read the Full Story',
     ctaHref: '/about',
 }

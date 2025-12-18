@@ -170,8 +170,8 @@ export default function Home() {
             <section className="py-32 text-center max-w-3xl mx-auto">
                 <span className="text-ios-blue font-semibold tracking-wider text-sm uppercase">{manifestoTeaser.badge}</span>
                 <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 leading-tight">
-                    {manifestoTeaser.title.split(' ').slice(0, 3).join(' ')} <br />
-                    {manifestoTeaser.title.split(' ').slice(3).join(' ')}
+                    {manifestoTeaser.title.line1} <br />
+                    {manifestoTeaser.title.line2}
                 </h2>
                 <Link href={manifestoTeaser.ctaHref} className="btn-secondary inline-flex">
                     {manifestoTeaser.ctaLabel}
