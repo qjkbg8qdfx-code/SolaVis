@@ -14,6 +14,10 @@ export const metadata: Metadata = {
         template: '%s | SolvoVis'
     },
     description: 'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
+    icons: {
+        icon: '/icon.svg',
+        apple: '/apple-icon.png',
+    },
     openGraph: {
         title: 'SolvoVis | Autonomous Operations System',
         description: 'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
