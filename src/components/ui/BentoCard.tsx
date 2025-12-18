@@ -67,7 +67,7 @@ export default function BentoCard({ module }: BentoCardProps) {
             <div className="card-ios md:col-span-1 md:row-span-1 bg-white p-6 flex flex-col justify-between border border-gray-100">
                 <div>
                     <div className="flex justify-between items-start mb-2">
-                        <span className="text-sm font-mono text-gray-400">{number}.</span>
+                        <span className="text-sm font-mono text-gray-400">{number}. {category}</span>
                         <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
@@ -86,7 +86,7 @@ export default function BentoCard({ module }: BentoCardProps) {
                 className="card-ios md:col-span-1 md:row-span-1 bg-ios-blue text-white p-6 flex flex-col justify-between group cursor-pointer hover:bg-blue-700 transition-colors"
             >
                 <div>
-                    <span className="text-sm font-mono text-blue-100/70 mb-1 block">{number}.</span>
+                    <span className="text-sm font-mono text-blue-100/70 mb-1 block">{number}. {category}</span>
                     <h3 className="text-lg font-semibold">{title}</h3>
                 </div>
                 <div className="flex items-center justify-between">
