@@ -67,7 +67,11 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 to-indigo-50/50 rounded-full blur-3xl opacity-60"></div>
 
                     {/* Glass Panel Code Card */}
-                    <div className="relative w-full max-w-sm glass-panel p-6 rounded-2xl shadow-2xl border border-white/40 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                    <div
+                        className="relative w-full max-w-sm glass-panel p-6 rounded-2xl shadow-2xl border border-white/40 overflow-hidden transform hover:scale-[1.02] transition-transform duration-500"
+                        role="img"
+                        aria-label="Code visualization showing optimization logic: a function that analyzes workflow and returns 'Efficiency_Maximized'"
+                    >
                         {/* Header */}
                         <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
                             <div className="flex gap-2">

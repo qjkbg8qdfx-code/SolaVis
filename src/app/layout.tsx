@@ -6,6 +6,7 @@ import Navigation from '@/components/layout/Navigation'
 import CookieBanner from '@/components/layout/CookieBanner'
 import MobileNav from '@/components/layout/MobileNav'
 import StickyCTA from '@/components/StickyCTA'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { siteConfig } from '@/config/site'
 import { bentoModules } from '@/config/content'
 
@@ -43,6 +44,13 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: siteConfig.name,
         description: 'Scale Revenue. Freeze Headcount.',
+    },
+    alternates: {
+        languages: {
+            'en-US': siteConfig.url,
+            'en-GB': siteConfig.url,
+            'en-SG': siteConfig.url,
+        },
     },
 }
 
@@ -98,52 +106,61 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className="antialiased scroll-smooth">
-            <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-ios-bg`}>
-                <Navigation />
+        <html lang="en" className="antialiased scroll-smooth" suppressHydrationWarning>
+            <head>
+                {/* hreflang tags for global indexing */}
+                <link rel="alternate" hrefLang="en-US" href={siteConfig.url} />
+                <link rel="alternate" hrefLang="en-GB" href={siteConfig.url} />
+                <link rel="alternate" hrefLang="en-SG" href={siteConfig.url} />
+                <link rel="alternate" hrefLang="x-default" href={siteConfig.url} />
+            </head>
+            <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-ios-bg dark:bg-gray-950 text-ios-text dark:text-gray-100 transition-colors`}>
+                <ThemeProvider>
+                    <Navigation />
 
-                {/* Main Content (Pushing down for sticky nav) */}
-                <main className="pt-16 pb-32">
-                    {children}
-                </main>
+                    {/* Main Content (Pushing down for sticky nav) */}
+                    <main className="pt-16 pb-32">
+                        {children}
+                    </main>
 
-                {/* System Status Footer */}
-                <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
-                    <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
-                        <div suppressHydrationWarning>&copy; {new Date().getFullYear()} {siteConfig.companyName}</div>
+                    {/* System Status Footer */}
+                    <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
+                        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
+                            <div suppressHydrationWarning>&copy; {new Date().getFullYear()} {siteConfig.companyName}</div>
 
-                        <div className="flex items-center gap-2">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                            </span>
-                            <span>All Systems Operational</span>
+                            <div className="flex items-center gap-2">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span>All Systems Operational</span>
+                            </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer>
 
-                {/* Schema.org Structured Data */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
-                />
+                    {/* Schema.org Structured Data */}
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
+                    />
 
-                {/* Cookie Consent Banner */}
-                <CookieBanner />
+                    {/* Cookie Consent Banner */}
+                    <CookieBanner />
 
-                {/* Mobile Sticky CTA */}
-                <StickyCTA />
+                    {/* Mobile Sticky CTA */}
+                    <StickyCTA />
 
-                {/* Mobile Bottom Tab Bar (iOS Style) */}
-                <MobileNav />
+                    {/* Mobile Bottom Tab Bar (iOS Style) */}
+                    <MobileNav />
+                </ThemeProvider>
             </body>
         </html>
     )

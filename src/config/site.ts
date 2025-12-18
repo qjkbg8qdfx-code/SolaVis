@@ -34,6 +34,8 @@ export const siteConfig = {
     ],
 
     // Founder (for Person schema)
+    // ⚠️ CI/CD BLOCKER - Replace [FOUNDER_NAME] and [LINKEDIN_URL] before production build
+    // These placeholders will cause trust issues if deployed as-is
     founder: {
         name: '[FOUNDER_NAME]',       // TODO: Add real name
         role: 'Founder & System Architect',

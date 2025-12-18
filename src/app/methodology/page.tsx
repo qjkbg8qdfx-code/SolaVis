@@ -87,6 +87,48 @@ export default function MethodologyPage() {
                     Start Protocol v1 <ArrowRight className="w-4 h-4" />
                 </a>
             </div>
+
+            {/* HowTo Schema (AI-Readable) */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'HowTo',
+                        name: 'The SolvoVis Protocol: How to Scale Revenue with AI Infrastructure',
+                        description: 'A deterministic 3-step pipeline to transform operational chaos into scalable systems.',
+                        totalTime: 'P90D',
+                        estimatedCost: {
+                            '@type': 'MonetaryAmount',
+                            currency: 'USD',
+                            value: 'Custom'
+                        },
+                        step: [
+                            {
+                                '@type': 'HowToStep',
+                                position: 1,
+                                name: 'Audit',
+                                text: 'We map your entire P&L to identify the "Leakage Nodes"—where money is lost to inefficiency. This includes scanning operations and detecting redundancy.',
+                                url: 'https://solvovis.com/methodology#audit'
+                            },
+                            {
+                                '@type': 'HowToStep',
+                                position: 2,
+                                name: 'Deploy',
+                                text: 'The "SolvoVis Patch": We install custom scripts and AI modules to bridge your disconnected software stacks and automate repetitive workflows.',
+                                url: 'https://solvovis.com/methodology#deploy'
+                            },
+                            {
+                                '@type': 'HowToStep',
+                                position: 3,
+                                name: 'Scale',
+                                text: 'The System runs autonomously 24/7. Your team focuses on high-value strategy while the AI handles data entry, processing, and optimization.',
+                                url: 'https://solvovis.com/methodology#scale'
+                            }
+                        ]
+                    })
+                }}
+            />
         </div>
     )
 }
