@@ -2,30 +2,33 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
-import Navigation from '@/components/Navigation'
-import CookieBanner from '@/components/CookieBanner'
+import Navigation from '@/components/layout/Navigation'
+import CookieBanner from '@/components/layout/CookieBanner'
+import { siteConfig } from '@/config/site'
+import { mobileTabBarLinks } from '@/config/navigation'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
+    metadataBase: new URL(siteConfig.url),
     title: {
-        default: 'SolvoVis | Autonomous Operations System',
-        template: '%s | SolvoVis'
+        default: `${siteConfig.name} | ${siteConfig.tagline}`,
+        template: `%s | ${siteConfig.name}`
     },
-    description: 'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
+    description: siteConfig.description,
     icons: {
         icon: '/icon.svg',
         apple: '/apple-icon.png',
     },
     openGraph: {
-        title: 'SolvoVis | Autonomous Operations System',
+        title: `${siteConfig.name} | ${siteConfig.tagline}`,
         description: 'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
-        url: 'https://solvovis.com',
-        siteName: 'SolvoVis',
+        url: siteConfig.url,
+        siteName: siteConfig.name,
         images: [
             {
-                url: '/og-preview.png', // ⚠️ 記得製作這張圖片並放在 public 資料夾
+                url: siteConfig.ogImage,
                 width: 1200,
                 height: 630,
                 alt: 'SolvoVis System Interface',
@@ -36,10 +39,32 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'SolvoVis',
+        title: siteConfig.name,
         description: 'Scale Revenue. Freeze Headcount.',
-        // images: ['/og-preview.png'], // 如果有圖片，取消註解
     },
+}
+
+// Schema.org Organization Data
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.png`,
+    description: 'Autonomous AI Infrastructure for Global SMEs.',
+    knowsAbout: siteConfig.knowsAbout,
+    contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: siteConfig.email,
+        availableLanguage: ['English']
+    },
+    address: {
+        '@type': 'PostalAddress',
+        addressCountry: siteConfig.address.country,
+        addressLocality: siteConfig.address.locality,
+    },
+    sameAs: [siteConfig.twitter, siteConfig.linkedin],
 }
 
 export default function RootLayout({
@@ -60,8 +85,7 @@ export default function RootLayout({
                 {/* System Status Footer */}
                 <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
-                        {/* Update: Dynamic Year */}
-                        <div suppressHydrationWarning>&copy; {new Date().getFullYear()} SolvoVis Systems Inc.</div>
+                        <div suppressHydrationWarning>&copy; {new Date().getFullYear()} {siteConfig.companyName}</div>
 
                         <div className="flex items-center gap-2">
                             <span className="relative flex h-2 w-2">
@@ -76,38 +100,7 @@ export default function RootLayout({
                 {/* Schema.org Organization Data */}
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'Organization',
-                            name: 'SolvoVis',
-                            url: 'https://solvovis.com',
-                            logo: 'https://solvovis.com/logo.png',
-                            description: 'Autonomous AI Infrastructure for Global SMEs.',
-                            knowsAbout: [
-                                'AI Automation',
-                                'Business Process Optimization',
-                                'Revenue Operations',
-                                'Workflow Automation',
-                                'Data Processing'
-                            ],
-                            contactPoint: {
-                                '@type': 'ContactPoint',
-                                contactType: 'customer service',
-                                email: 'hello@solvovis.com',
-                                availableLanguage: ['English']
-                            },
-                            address: {
-                                '@type': 'PostalAddress',
-                                addressCountry: 'SG',
-                                addressLocality: 'Singapore'
-                            },
-                            sameAs: [
-                                'https://twitter.com/solvovis',
-                                'https://linkedin.com/company/solvovis'
-                            ]
-                        })
-                    }}
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                 />
 
                 {/* Cookie Consent Banner */}
@@ -115,15 +108,15 @@ export default function RootLayout({
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
                 <nav aria-label="Mobile navigation" className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
-                    <Link href="/" className="flex flex-col items-center gap-1 text-ios-blue">
-                        <span>System</span>
-                    </Link>
-                    <Link href="/services" className="flex flex-col items-center gap-1">
-                        <span>Modules</span>
-                    </Link>
-                    <Link href="/contact" className="flex flex-col items-center gap-1">
-                        <span>Connect</span>
-                    </Link>
+                    {mobileTabBarLinks.map((link, index) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`flex flex-col items-center gap-1 ${index === 0 ? 'text-ios-blue' : ''}`}
+                        >
+                            <span>{link.label}</span>
+                        </Link>
+                    ))}
                 </nav>
             </body>
         </html>
