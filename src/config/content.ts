@@ -31,6 +31,7 @@ export const heroContent = {
 export interface BentoModule {
     id: string
     number: string
+    category: string
     title: string
     description: string
     variant: 'large' | 'tall' | 'small' | 'cta'
@@ -43,6 +44,7 @@ export const bentoModules: BentoModule[] = [
     {
         id: 'core-strategy',
         number: '01',
+        category: 'Core Strategy',
         title: 'Profit & Loss Audit',
         description: 'We audit your P&L to find inefficiencies. Pinpoint the 40% of friction in your operations.',
         variant: 'large',
@@ -53,6 +55,7 @@ export const bentoModules: BentoModule[] = [
     {
         id: 'auto-process',
         number: '02',
+        category: 'Auto-Process',
         title: '24/7 Worker Bots',
         description: 'Deploy autonomous agents that never sleep.',
         variant: 'tall',
@@ -61,6 +64,7 @@ export const bentoModules: BentoModule[] = [
     {
         id: 'data-kernel',
         number: '03',
+        category: 'Data Kernel',
         title: 'Data Kernel',
         description: 'Clean assets for clean AI output.',
         variant: 'small',
@@ -69,6 +73,7 @@ export const bentoModules: BentoModule[] = [
     {
         id: 'training',
         number: '04',
+        category: 'Training',
         title: 'Training',
         description: 'Empower teams',
         variant: 'cta',

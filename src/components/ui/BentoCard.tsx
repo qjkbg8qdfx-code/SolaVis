@@ -7,7 +7,7 @@ interface BentoCardProps {
 }
 
 export default function BentoCard({ module }: BentoCardProps) {
-    const { number, title, description, variant, icon: Icon, ctaText, ctaHref } = module
+    const { number, category, title, description, variant, icon: Icon, ctaText, ctaHref } = module
 
     // Large card (2x2) - dark theme
     if (variant === 'large') {
@@ -16,7 +16,7 @@ export default function BentoCard({ module }: BentoCardProps) {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
                 <div className="relative z-10">
-                    <span className="text-sm font-mono text-gray-400 mb-2 block">{number}. Core Strategy</span>
+                    <span className="text-sm font-mono text-gray-400 mb-2 block">{number}. {category}</span>
                     <h3 className="text-3xl font-semibold mb-4 text-white">{title}</h3>
                     <p className="text-gray-400 text-lg max-w-xs leading-relaxed">{description}</p>
                 </div>
@@ -40,7 +40,7 @@ export default function BentoCard({ module }: BentoCardProps) {
                             <Icon className="w-6 h-6" />
                         </div>
                     )}
-                    <span className="text-sm font-mono text-gray-400 mb-1 block">{number}. Auto-Process</span>
+                    <span className="text-sm font-mono text-gray-400 mb-1 block">{number}. {category}</span>
                     <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
                     <p className="text-gray-500 text-sm mt-3 leading-relaxed">{description}</p>
                 </div>

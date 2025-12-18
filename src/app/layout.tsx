@@ -4,8 +4,8 @@ import Link from 'next/link'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import CookieBanner from '@/components/layout/CookieBanner'
+import MobileTabBar from '@/components/layout/MobileTabBar'
 import { siteConfig } from '@/config/site'
-import { mobileTabBarLinks } from '@/config/navigation'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -107,17 +107,7 @@ export default function RootLayout({
                 <CookieBanner />
 
                 {/* Mobile Bottom Tab Bar (iOS Style) */}
-                <nav aria-label="Mobile navigation" className="md:hidden fixed bottom-0 w-full glass-panel pb-6 pt-3 px-6 z-50 flex justify-between items-center text-xs font-medium text-ios-subtext">
-                    {mobileTabBarLinks.map((link, index) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={`flex flex-col items-center gap-1 ${index === 0 ? 'text-ios-blue' : ''}`}
-                        >
-                            <span>{link.label}</span>
-                        </Link>
-                    ))}
-                </nav>
+                <MobileTabBar />
             </body>
         </html>
     )
