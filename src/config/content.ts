@@ -7,12 +7,12 @@ import { Bot, Database, Target, UploadCloud, LucideIcon } from 'lucide-react'
 export const heroContent = {
     badge: 'SolvoVis Operational',
     title: {
-        line1: 'Scale Revenue.',
-        line2: 'Freeze Headcount.',
+        line1: 'Automate the Ordinary.',
+        line2: 'Unleash the Extraordinary.',
     },
-    subtitle: "We don't just 'consult.' We inject autonomous AI infrastructure into your business. Reduce operational friction by 40% in 90 days.",
+    subtitle: "We architect autonomous systems to handle the trivial 80%, so you can dedicate 100% of your genius to what truly matters.",
     primaryCta: {
-        label: 'Start Logic Audit',
+        label: 'Reclaim My Focus',
         href: '/contact',
     },
     secondaryCta: {
