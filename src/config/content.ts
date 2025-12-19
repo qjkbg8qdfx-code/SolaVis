@@ -1,5 +1,5 @@
 // Content configuration - all hardcoded text extracted
-import { Bot, Database, Target, UploadCloud, LucideIcon } from 'lucide-react'
+import { Bot, Database, Target, UploadCloud, Layout, Rocket, LucideIcon } from 'lucide-react'
 
 // ============================================
 // HERO SECTION
@@ -42,43 +42,43 @@ export interface BentoModule {
 
 export const bentoModules: BentoModule[] = [
     {
-        id: 'core-strategy',
+        id: 'logic-audit',
         number: '01',
         category: 'Core Strategy',
-        title: 'Profit & Loss Audit',
-        description: 'We audit your P&L to find inefficiencies. Pinpoint the 40% of friction in your operations.',
+        title: 'Logic_Audit',
+        description: 'We audit your business logic before deployment. Identifying friction points to ensure scalability.',
         variant: 'large',
         icon: Target,
         ctaText: 'Explore Methodology',
         ctaHref: '/methodology',
     },
     {
-        id: 'auto-process',
+        id: 'auto-pilot',
         number: '02',
-        category: 'Auto-Process',
-        title: '24/7 Worker Bots',
-        description: 'Deploy autonomous agents that never sleep.',
+        category: 'Automation',
+        title: 'Auto-Pilot',
+        description: '24/7 autonomous workflow execution. Replacing manual bottlenecks with silent, error-free code.',
         variant: 'tall',
         icon: Bot,
     },
     {
-        id: 'data-kernel',
+        id: 'visual-matrix',
         number: '03',
-        category: 'Data Kernel',
-        title: 'Data Kernel',
-        description: 'Clean assets for clean AI output.',
+        category: 'Interface',
+        title: 'Visual_Matrix',
+        description: 'Pixel-perfect conversion infrastructure. We build high-performance web systems and visual authority protocols.',
         variant: 'small',
-        icon: Database,
+        icon: Layout,
     },
     {
-        id: 'training',
+        id: 'deploy',
         number: '04',
-        category: 'Training',
-        title: 'Training',
-        description: 'Empower teams',
+        category: 'Deployment',
+        title: 'Deploy',
+        description: 'Initialize System',
         variant: 'cta',
-        icon: UploadCloud,
-        ctaHref: '/services',
+        icon: Rocket,
+        ctaHref: '/contact',
     },
 ]
 
