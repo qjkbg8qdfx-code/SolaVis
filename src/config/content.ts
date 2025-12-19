@@ -57,16 +57,16 @@ export const bentoModules: BentoModule[] = [
         number: '02',
         category: 'Automation',
         title: 'Auto-Pilot',
-        description: '24/7 autonomous workflow execution. Replacing manual bottlenecks with silent, error-free code.',
+        description: 'Deploying autonomous agents into your ecosystem. 24/7 workflow execution without human latency.',
         variant: 'tall',
         icon: Bot,
     },
     {
-        id: 'visual-matrix',
+        id: 'visual-os',
         number: '03',
-        category: 'Interface',
-        title: 'Visual_Matrix',
-        description: 'Pixel-perfect conversion infrastructure. We build high-performance web systems and visual authority protocols.',
+        category: 'Visual Operating System',
+        title: 'Visual_OS',
+        description: 'Conversion Infrastructure & Authority Systems. We architect pixel-perfect Next.js environments and vector identity protocols.',
         variant: 'small',
         icon: Layout,
     },
@@ -186,6 +186,10 @@ export const faqContent: FAQItem[] = [
     {
         question: "Where is SolvoVis located?",
         answer: "Our Global HQ is in Singapore (APAC), with remote operation nodes in New York (AMER) and London (EMEA). We serve clients across all time zones."
+    },
+    {
+        question: "Are you a branding agency or an AI company?",
+        answer: "We are an Infrastructure Firm. We believe you cannot automate a mess. That's why we build the entire stack: the Strategy (Logic), the Interface (Web/Brand), and the Engine (AI). We don't just design; we engineer your digital headquarters."
     },
 ]
 
