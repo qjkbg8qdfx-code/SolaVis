@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
+# -----------------------------------------------------------
+# Vercel Deployment (Optional)
+# -----------------------------------------------------------
+# If you're using Vercel, deployment is automatic when you:
+# 1. Connect your GitHub repo to Vercel at https://vercel.com/new
+# 2. Push to main branch triggers production deployment
+# 3. Pull requests get preview deployments automatically
+#
+# No additional configuration needed in this workflow.
+# Vercel's GitHub integration handles deployment separately.
+# -----------------------------------------------------------
