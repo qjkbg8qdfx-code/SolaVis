@@ -2,9 +2,9 @@
 module.exports = {
     darkMode: 'class',
     content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
         extend: {
@@ -30,15 +30,15 @@ module.exports = {
             borderRadius: {
                 '3xl': '24px',
                 '4xl': '32px',
-                'btn': '980px', // Pill shape
+                btn: '980px', // Pill shape
             },
             boxShadow: {
-                'ios': '0 4px 24px rgba(0,0,0,0.06)', // Soft ambient shadow
+                ios: '0 4px 24px rgba(0,0,0,0.06)', // Soft ambient shadow
                 'ios-hover': '0 8px 32px rgba(0,0,0,0.12)',
-                'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                glass: '0 4px 30px rgba(0, 0, 0, 0.1)',
             },
             backdropBlur: {
-                'xs': '2px',
+                xs: '2px',
             },
             animation: {
                 'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
@@ -57,4 +57,4 @@ module.exports = {
         },
     },
     plugins: [],
-}
+};

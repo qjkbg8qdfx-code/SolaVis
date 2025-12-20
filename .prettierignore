@@ -1,0 +1,10 @@
+# Ignore everything except source files
+node_modules
+.next
+out
+build
+dist
+public
+*.md
+*.json
+*.lock

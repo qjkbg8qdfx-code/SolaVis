@@ -1,13 +1,13 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 interface StickyCTAProps {
-    href?: string
-    label?: string
-    scrollThreshold?: number
+    href?: string;
+    label?: string;
+    scrollThreshold?: number;
 }
 
 export default function StickyCTA({
@@ -15,28 +15,28 @@ export default function StickyCTA({
     label = 'Start Protocol',
     scrollThreshold = 300,
 }: StickyCTAProps) {
-    const [isVisible, setIsVisible] = useState(false)
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsVisible(window.scrollY > scrollThreshold)
-        }
+            setIsVisible(window.scrollY > scrollThreshold);
+        };
 
-        window.addEventListener('scroll', handleScroll, { passive: true })
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [scrollThreshold])
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [scrollThreshold]);
 
-    if (!isVisible) return null
+    if (!isVisible) return null;
 
     return (
-        <div className="md:hidden fixed bottom-20 left-4 right-4 z-40 animate-fade-in">
+        <div className="fixed bottom-20 left-4 right-4 z-40 animate-fade-in md:hidden">
             <Link
                 href={href}
-                className="flex items-center justify-center gap-2 w-full py-4 px-6 bg-ios-blue text-white font-semibold rounded-2xl shadow-lg active:scale-[0.98] transition-transform"
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-ios-blue px-6 py-4 font-semibold text-white shadow-lg transition-transform active:scale-[0.98]"
             >
                 {label}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="h-4 w-4" />
             </Link>
         </div>
-    )
+    );
 }

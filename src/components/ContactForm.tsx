@@ -1,53 +1,68 @@
-"use client"
+'use client';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function ContactForm() {
-    const [email, setEmail] = useState('')
-    const [error, setError] = useState('')
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         if (!email) {
-            e.preventDefault()
-            setError('> Error: Email_Required')
-            return
+            e.preventDefault();
+            setError('> Error: Email_Required');
+            return;
         }
         // Proceed with submission logic (or default HTML behavior for now)
-        setError('')
-    }
+        setError('');
+    };
 
     return (
-        <div className="bg-gray-900 rounded-3xl p-1 shadow-2xl border border-gray-800">
-            <div className="bg-gray-800/50 rounded-t-[20px] px-4 py-2 flex items-center gap-2 border-b border-white/5">
+        <div className="rounded-3xl border border-gray-800 bg-gray-900 p-1 shadow-2xl">
+            <div className="flex items-center gap-2 rounded-t-[20px] border-b border-white/5 bg-gray-800/50 px-4 py-2">
                 <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-red-400"></div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-yellow-400"></div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-green-400"></div>
                 </div>
-                <div className="ml-2 text-[10px] font-mono text-gray-400">root@solvovis-terminal: ~</div>
+                <div className="ml-2 font-mono text-[10px] text-gray-400">
+                    root@solvovis-terminal: ~
+                </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8">
                 <div>
-                    <label htmlFor="email" className="block text-xs font-mono text-gray-400 mb-1.5 ml-1">$ enter_work_email:</label>
+                    <label
+                        htmlFor="email"
+                        className="mb-1.5 ml-1 block font-mono text-xs text-gray-400"
+                    >
+                        $ enter_work_email:
+                    </label>
                     <input
                         id="email"
                         type="email"
                         value={email}
                         onChange={(e) => {
-                            setEmail(e.target.value)
-                            if (error) setError('')
+                            setEmail(e.target.value);
+                            if (error) setError('');
                         }}
-                        className={`w-full px-4 py-3 rounded-lg bg-black/60 border ${error ? 'border-red-500' : 'border-gray-700'} text-gray-100 font-mono placeholder-gray-600 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 outline-none transition-all`}
+                        className={`w-full rounded-lg border bg-black/60 px-4 py-3 ${error ? 'border-red-500' : 'border-gray-700'} font-mono text-gray-100 placeholder-gray-600 outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900`}
                         placeholder="name@company.com"
                     />
                     {error && (
-                        <p className="text-red-500 font-mono text-xs mt-2 animate-pulse">{error}</p>
+                        <p className="mt-2 animate-pulse font-mono text-xs text-red-500">{error}</p>
                     )}
                 </div>
                 <div>
-                    <label htmlFor="objective" className="block text-xs font-mono text-gray-400 mb-1.5 ml-1">$ define_objective:</label>
-                    <select id="objective" className="w-full px-4 py-3 rounded-lg bg-black/60 border border-gray-700 text-gray-100 font-mono focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 outline-none appearance-none">
+                    <label
+                        htmlFor="objective"
+                        className="mb-1.5 ml-1 block font-mono text-xs text-gray-400"
+                    >
+                        $ define_objective:
+                    </label>
+                    <select
+                        id="objective"
+                        className="w-full appearance-none rounded-lg border border-gray-700 bg-black/60 px-4 py-3 font-mono text-gray-100 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    >
                         <option>Cost_Reduction</option>
                         <option>Process_Automation</option>
                         <option>Data_Cleaning</option>
@@ -55,16 +70,19 @@ export default function ContactForm() {
                     </select>
                 </div>
 
-                <button type="submit" className="w-full py-4 bg-green-500 hover:bg-green-400 text-black font-mono font-bold uppercase tracking-wider rounded-lg transition-colors shadow-lg hover:shadow-green-500/20 active:scale-[0.98] outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                <button
+                    type="submit"
+                    className="w-full rounded-lg bg-green-500 py-4 font-mono font-bold uppercase tracking-wider text-black shadow-lg outline-none transition-colors hover:bg-green-400 hover:shadow-green-500/20 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 active:scale-[0.98]"
+                >
                     &gt; Execute_Audit_Sequence
                 </button>
 
                 <div className="text-center">
-                    <p className="text-[10px] text-gray-600 font-mono">
+                    <p className="font-mono text-[10px] text-gray-600">
                         * Encryption: AES-256 Enabled.
                     </p>
                 </div>
             </form>
         </div>
-    )
+    );
 }

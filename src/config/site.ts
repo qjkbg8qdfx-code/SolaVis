@@ -2,7 +2,8 @@
 export const siteConfig = {
     name: 'SolvoVis',
     tagline: 'Autonomous Operations System',
-    description: 'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
+    description:
+        'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
     url: 'https://solvovis.com',
     ogImage: '/og-preview.png',
 
@@ -37,11 +38,11 @@ export const siteConfig = {
     // ⚠️ CI/CD BLOCKER - Replace [FOUNDER_NAME] and [LINKEDIN_URL] before production build
     // These placeholders will cause trust issues if deployed as-is
     founder: {
-        name: '[FOUNDER_NAME]',       // TODO: Add real name
+        name: '[FOUNDER_NAME]', // TODO: Add real name
         role: 'Founder & System Architect',
-        linkedIn: '[LINKEDIN_URL]',   // TODO: Add LinkedIn URL
-        image: '/founder.jpg',        // TODO: Add real image
+        linkedIn: '[LINKEDIN_URL]', // TODO: Add LinkedIn URL
+        image: '/founder.jpg', // TODO: Add real image
     },
-} as const
+} as const;
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;

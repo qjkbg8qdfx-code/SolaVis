@@ -1,101 +1,112 @@
-import Link from 'next/link'
-import { ArrowRight, LucideIcon } from 'lucide-react'
-import { BentoModule } from '@/config/content'
+import Link from 'next/link';
+import { ArrowRight, LucideIcon } from 'lucide-react';
+import { BentoModule } from '@/config/content';
 
 interface BentoCardProps {
-    module: BentoModule
+    module: BentoModule;
 }
 
 export default function BentoCard({ module }: BentoCardProps) {
-    const { number, category, title, description, variant, icon: Icon, ctaText, ctaHref } = module
+    const { number, category, title, description, variant, icon: Icon, ctaText, ctaHref } = module;
 
     // Large card (2x2) - dark theme
     if (variant === 'large') {
         return (
-            <div className="card-ios md:col-span-2 md:row-span-2 bg-black text-white p-10 flex flex-col justify-between group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="card-ios group relative flex flex-col justify-between overflow-hidden bg-black p-10 text-white md:col-span-2 md:row-span-2">
+                <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
 
                 <div className="relative z-10">
-                    <span className="text-sm font-mono text-gray-400 mb-2 block">{number}. {category}</span>
-                    <h3 className="text-3xl font-semibold mb-4 text-white">{title}</h3>
-                    <p className="text-gray-400 text-lg max-w-xs leading-relaxed">{description}</p>
+                    <span className="mb-2 block font-mono text-sm text-gray-400">
+                        {number}. {category}
+                    </span>
+                    <h3 className="mb-4 text-3xl font-semibold text-white">{title}</h3>
+                    <p className="max-w-xs text-lg leading-relaxed text-gray-400">{description}</p>
                 </div>
 
                 {ctaText && ctaHref && (
-                    <Link href={ctaHref} className="mt-8 relative z-10 inline-flex items-center gap-2 text-sm font-medium text-white/90 border-b border-white/20 pb-1 w-fit">
-                        {ctaText} <ArrowRight className="w-4 h-4" />
+                    <Link
+                        href={ctaHref}
+                        className="relative z-10 mt-8 inline-flex w-fit items-center gap-2 border-b border-white/20 pb-1 text-sm font-medium text-white/90"
+                    >
+                        {ctaText} <ArrowRight className="h-4 w-4" />
                     </Link>
                 )}
             </div>
-        )
+        );
     }
 
     // Tall card (1x2) - light theme with visual
     if (variant === 'tall') {
         return (
-            <div className="card-ios md:col-span-1 md:row-span-2 bg-gray-50 flex flex-col relative overflow-hidden group">
-                <div className="flex-1 p-8 relative z-10">
+            <div className="card-ios group relative flex flex-col overflow-hidden bg-gray-50 md:col-span-1 md:row-span-2">
+                <div className="relative z-10 flex-1 p-8">
                     {Icon && (
-                        <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 text-ios-blue">
-                            <Icon className="w-6 h-6" />
+                        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-gray-100 bg-white text-ios-blue shadow-sm">
+                            <Icon className="h-6 w-6" />
                         </div>
                     )}
-                    <span className="text-sm font-mono text-gray-400 mb-1 block">{number}. {category}</span>
+                    <span className="mb-1 block font-mono text-sm text-gray-400">
+                        {number}. {category}
+                    </span>
                     <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                    <p className="text-gray-500 text-sm mt-3 leading-relaxed">{description}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-500">{description}</p>
                 </div>
 
                 {/* Abstract Visual Bottom */}
-                <div className="h-1/3 bg-gradient-to-b from-transparent to-blue-50/50 w-full relative">
+                <div className="relative h-1/3 w-full bg-gradient-to-b from-transparent to-blue-50/50">
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
                     <div className="absolute bottom-4 left-6 right-6 space-y-2">
-                        <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-blue-400 w-3/4" />
+                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-200">
+                            <div className="h-full w-3/4 bg-blue-400" />
                         </div>
-                        <div className="h-1.5 w-2/3 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-blue-300 w-1/2" />
+                        <div className="h-1.5 w-2/3 overflow-hidden rounded-full bg-gray-200">
+                            <div className="h-full w-1/2 bg-blue-300" />
                         </div>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 
     // Small card (1x1) - white
     if (variant === 'small') {
         return (
-            <div className="card-ios md:col-span-1 md:row-span-1 bg-white p-6 flex flex-col justify-between border border-gray-100">
+            <div className="card-ios flex flex-col justify-between border border-gray-100 bg-white p-6 md:col-span-1 md:row-span-1">
                 <div>
-                    <div className="flex justify-between items-start mb-2">
-                        <span className="text-sm font-mono text-gray-400">{number}. {category}</span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                    <div className="mb-2 flex items-start justify-between">
+                        <span className="font-mono text-sm text-gray-400">
+                            {number}. {category}
+                        </span>
+                        <div className="h-1.5 w-1.5 rounded-full bg-orange-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
                 </div>
-                <p className="text-xs text-gray-500 font-medium">{description}</p>
+                <p className="text-xs font-medium text-gray-500">{description}</p>
             </div>
-        )
+        );
     }
 
     // CTA card (1x1) - blue
     if (variant === 'cta') {
-        const Wrapper = ctaHref ? Link : 'div'
+        const Wrapper = ctaHref ? Link : 'div';
         return (
             <Wrapper
                 href={ctaHref || '#'}
-                className="card-ios md:col-span-1 md:row-span-1 bg-ios-blue text-white p-6 flex flex-col justify-between group cursor-pointer hover:bg-blue-700 transition-colors"
+                className="card-ios group flex cursor-pointer flex-col justify-between bg-ios-blue p-6 text-white transition-colors hover:bg-blue-700 md:col-span-1 md:row-span-1"
             >
                 <div>
-                    <span className="text-sm font-mono text-blue-100/70 mb-1 block">{number}. {category}</span>
+                    <span className="mb-1 block font-mono text-sm text-blue-100/70">
+                        {number}. {category}
+                    </span>
                     <h3 className="text-lg font-semibold">{title}</h3>
                 </div>
                 <div className="flex items-center justify-between">
                     <span className="text-xs font-medium text-blue-100">{description}</span>
-                    <ArrowRight className="w-5 h-5 text-white transform group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 transform text-white transition-transform group-hover:translate-x-1" />
                 </div>
             </Wrapper>
-        )
+        );
     }
 
-    return null
+    return null;
 }

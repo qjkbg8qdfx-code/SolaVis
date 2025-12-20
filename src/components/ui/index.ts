@@ -1,2 +1,2 @@
 // Re-export UI components
-export { default as BentoCard } from './BentoCard'
+export { default as BentoCard } from './BentoCard';

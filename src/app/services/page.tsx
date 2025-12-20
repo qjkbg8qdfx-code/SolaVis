@@ -1,140 +1,171 @@
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { faqContent, faqSection, bentoModules } from '@/config/content'
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { faqContent, faqSection, bentoModules } from '@/config/content';
 
 export const metadata = {
     title: 'Modules | SolvoVis',
     description: 'Autonomous software modules for revenue scaling.',
-}
+};
 
 export default function ServicesPage() {
     return (
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
-
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-32">
             {/* Header */}
-            <div className="max-w-2xl mb-16 animate-fade-in-up">
-                <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-4 block">System Capabilities</span>
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                    Modules.
-                </h1>
-                <p className="text-xl text-gray-500 dark:text-gray-400 leading-relaxed">
-                    Deployable software infrastructure. We replace human bottlenecks with autonomous code.
+            <div className="mb-16 max-w-2xl animate-fade-in-up">
+                <span className="mb-4 block font-mono text-sm uppercase tracking-wider text-ios-blue">
+                    System Capabilities
+                </span>
+                <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">Modules.</h1>
+                <p className="text-xl leading-relaxed text-gray-500 dark:text-gray-400">
+                    Deployable software infrastructure. We replace human bottlenecks with autonomous
+                    code.
                 </p>
             </div>
 
             {/* Bento Grid - Dynamic from bentoModules */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-
+            <div className="grid auto-rows-[300px] grid-cols-1 gap-6 md:grid-cols-3">
                 {bentoModules.map((module) => {
-                    const Icon = module.icon
+                    const Icon = module.icon;
 
                     // Large variant (Card 1)
                     if (module.variant === 'large') {
                         return (
-                            <div key={module.id} className="card-ios md:col-span-2 group relative overflow-hidden bg-gray-900 border-gray-800 p-8 flex flex-col justify-between">
+                            <div
+                                key={module.id}
+                                className="card-ios group relative flex flex-col justify-between overflow-hidden border-gray-800 bg-gray-900 p-8 md:col-span-2"
+                            >
                                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-                                <div className="relative z-10 flex justify-between items-start">
-                                    <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 text-white">
-                                        {Icon && <Icon className="w-6 h-6" />}
+                                <div className="relative z-10 flex items-start justify-between">
+                                    <div className="rounded-xl border border-white/10 bg-white/10 p-3 text-white backdrop-blur-md">
+                                        {Icon && <Icon className="h-6 w-6" />}
                                     </div>
-                                    <span className="font-mono text-xs text-gray-500">INIT_SEQ_{module.number}</span>
+                                    <span className="font-mono text-xs text-gray-500">
+                                        INIT_SEQ_{module.number}
+                                    </span>
                                 </div>
                                 <div className="relative z-10">
-                                    <h3 className="text-2xl font-semibold text-white mb-2">{module.title}</h3>
-                                    <p className="text-gray-400 max-w-sm">{module.description}</p>
+                                    <h3 className="mb-2 text-2xl font-semibold text-white">
+                                        {module.title}
+                                    </h3>
+                                    <p className="max-w-sm text-gray-400">{module.description}</p>
                                 </div>
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                                <div className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-blue-500 to-purple-500 transition-transform duration-500 group-hover:scale-x-100"></div>
                             </div>
-                        )
+                        );
                     }
 
                     // Tall variant (Card 2)
                     if (module.variant === 'tall') {
                         return (
-                            <div key={module.id} className="card-ios md:row-span-2 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 p-8 flex flex-col relative overflow-hidden group">
-                                <div className="flex justify-between items-start mb-8 relative z-10">
-                                    <div className="bg-white dark:bg-gray-800 p-3 rounded-xl shadow-sm text-blue-600">
-                                        {Icon && <Icon className="w-6 h-6" />}
+                            <div
+                                key={module.id}
+                                className="card-ios group relative flex flex-col overflow-hidden border-gray-200 bg-gray-50 p-8 dark:border-gray-800 dark:bg-gray-900 md:row-span-2"
+                            >
+                                <div className="relative z-10 mb-8 flex items-start justify-between">
+                                    <div className="rounded-xl bg-white p-3 text-blue-600 shadow-sm dark:bg-gray-800">
+                                        {Icon && <Icon className="h-6 w-6" />}
                                     </div>
-                                    <span className="font-mono text-xs text-gray-400">{module.title.toUpperCase().replace(' ', '_')}</span>
+                                    <span className="font-mono text-xs text-gray-400">
+                                        {module.title.toUpperCase().replace(' ', '_')}
+                                    </span>
                                 </div>
                                 <div className="relative z-10 flex-1">
-                                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">{module.title}</h3>
-                                    <p className="text-gray-500 dark:text-gray-400 text-sm">{module.description}</p>
+                                    <h3 className="mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                                        {module.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                                        {module.description}
+                                    </p>
                                 </div>
                                 {/* Visual: Progress Bar Animation */}
                                 <div className="absolute bottom-10 left-8 right-8 space-y-4">
                                     <div className="space-y-1">
-                                        <div className="flex justify-between text-[10px] font-mono text-gray-400">
+                                        <div className="flex justify-between font-mono text-[10px] text-gray-400">
                                             <span>PROCESSING_TASKS</span>
                                             <span>98%</span>
                                         </div>
-                                        <div className="h-1.5 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                            <div className="h-full bg-blue-500 w-[98%] animate-pulse"></div>
+                                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+                                            <div className="h-full w-[98%] animate-pulse bg-blue-500"></div>
                                         </div>
                                     </div>
                                     <div className="space-y-1">
-                                        <div className="flex justify-between text-[10px] font-mono text-gray-400">
+                                        <div className="flex justify-between font-mono text-[10px] text-gray-400">
                                             <span>SYNC_COMPLETE</span>
                                             <span>100%</span>
                                         </div>
-                                        <div className="h-1.5 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                            <div className="h-full bg-green-500 w-full"></div>
+                                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+                                            <div className="h-full w-full bg-green-500"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        )
+                        );
                     }
 
                     // Small variant (Card 3 - Visual_Matrix)
                     if (module.variant === 'small') {
                         return (
-                            <div key={module.id} className="card-ios p-8 flex flex-col justify-between group hover:border-ios-blue/50 transition-colors">
-                                <div className="flex justify-between items-start">
-                                    <div className="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-xl text-blue-600">
-                                        {Icon && <Icon className="w-6 h-6" />}
+                            <div
+                                key={module.id}
+                                className="card-ios group flex flex-col justify-between p-8 transition-colors hover:border-ios-blue/50"
+                            >
+                                <div className="flex items-start justify-between">
+                                    <div className="rounded-xl bg-blue-50 p-3 text-blue-600 dark:bg-blue-900/30">
+                                        {Icon && <Icon className="h-6 w-6" />}
                                     </div>
-                                    <span className="font-mono text-xs text-gray-400">{module.title.toUpperCase()}</span>
+                                    <span className="font-mono text-xs text-gray-400">
+                                        {module.title.toUpperCase()}
+                                    </span>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{module.title}</h3>
-                                    <p className="text-gray-500 dark:text-gray-400 text-sm">{module.description}</p>
+                                    <h3 className="mb-1 text-xl font-semibold text-gray-900 dark:text-white">
+                                        {module.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                                        {module.description}
+                                    </p>
                                 </div>
                             </div>
-                        )
+                        );
                     }
 
                     // CTA variant (Card 4 - Deploy)
                     if (module.variant === 'cta') {
                         return (
-                            <Link key={module.id} href={module.ctaHref || '/contact'} className="card-ios p-8 bg-ios-text dark:bg-ios-blue text-white border-none flex flex-col justify-between group cursor-pointer">
-                                <div className="flex justify-between items-start">
-                                    <div className="bg-white/20 p-3 rounded-xl text-white">
-                                        {Icon && <Icon className="w-6 h-6" />}
+                            <Link
+                                key={module.id}
+                                href={module.ctaHref || '/contact'}
+                                className="card-ios group flex cursor-pointer flex-col justify-between border-none bg-ios-text p-8 text-white dark:bg-ios-blue"
+                            >
+                                <div className="flex items-start justify-between">
+                                    <div className="rounded-xl bg-white/20 p-3 text-white">
+                                        {Icon && <Icon className="h-6 w-6" />}
                                     </div>
-                                    <span className="font-mono text-xs text-gray-400">{module.title.toUpperCase()}</span>
+                                    <span className="font-mono text-xs text-gray-400">
+                                        {module.title.toUpperCase()}
+                                    </span>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-semibold mb-1">{module.title}</h3>
-                                    <div className="flex items-center gap-2 text-gray-300 text-sm group-hover:text-white transition-colors">
+                                    <h3 className="mb-1 text-xl font-semibold">{module.title}</h3>
+                                    <div className="flex items-center gap-2 text-sm text-gray-300 transition-colors group-hover:text-white">
                                         <span>{module.description}</span>
-                                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                                        <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </div>
                             </Link>
-                        )
+                        );
                     }
 
-                    return null
+                    return null;
                 })}
-
             </div>
 
             {/* FAQ Section (Voice Search Optimized) */}
-            <section className="mt-20 pt-16 border-t border-gray-100">
-                <div className="max-w-2xl mb-12">
-                    <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-4 block">{faqSection.badge}</span>
+            <section className="mt-20 border-t border-gray-100 pt-16">
+                <div className="mb-12 max-w-2xl">
+                    <span className="mb-4 block font-mono text-sm uppercase tracking-wider text-ios-blue">
+                        {faqSection.badge}
+                    </span>
                     <h2 className="text-3xl font-bold tracking-tight">{faqSection.title}</h2>
                 </div>
 
@@ -142,17 +173,23 @@ export default function ServicesPage() {
                     {faqContent.map((faq, index) => (
                         <details
                             key={index}
-                            className="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
+                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50"
                         >
-                            <summary className="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-gray-900 hover:bg-gray-100 transition-colors list-none">
+                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-100">
                                 <span>{faq.question}</span>
-                                <span className="ml-4 text-gray-400 group-open:rotate-180 transition-transform">
+                                <span className="ml-4 text-gray-400 transition-transform group-open:rotate-180">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path
+                                            d="M5 7.5L10 12.5L15 7.5"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
                                     </svg>
                                 </span>
                             </summary>
-                            <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                            <div className="px-6 pb-6 leading-relaxed text-gray-600">
                                 {faq.answer}
                             </div>
                         </details>
@@ -170,7 +207,7 @@ export default function ServicesPage() {
                         serviceType: 'AI Infrastructure Audit',
                         provider: {
                             '@type': 'Organization',
-                            name: 'SolvoVis'
+                            name: 'SolvoVis',
                         },
                         areaServed: 'Global',
                         hasOfferCatalog: {
@@ -179,36 +216,45 @@ export default function ServicesPage() {
                             itemListElement: [
                                 {
                                     '@type': 'Offer',
-                                    itemOffered: { '@type': 'Service', name: 'Core Strategy Audit' },
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Core Strategy Audit',
+                                    },
                                     priceCurrency: 'USD',
                                     price: 'Contact for quote',
                                     priceSpecification: {
                                         '@type': 'PriceSpecification',
                                         priceCurrency: 'USD',
-                                        price: 'Custom'
-                                    }
+                                        price: 'Custom',
+                                    },
                                 },
                                 {
                                     '@type': 'Offer',
-                                    itemOffered: { '@type': 'Service', name: 'Auto-Pilot Automation' },
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Auto-Pilot Automation',
+                                    },
                                     priceCurrency: 'USD',
-                                    price: 'Contact for quote'
+                                    price: 'Contact for quote',
                                 },
                                 {
                                     '@type': 'Offer',
-                                    itemOffered: { '@type': 'Service', name: 'Data Kernel Cleaning' },
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Data Kernel Cleaning',
+                                    },
                                     priceCurrency: 'USD',
-                                    price: 'Contact for quote'
+                                    price: 'Contact for quote',
                                 },
                                 {
                                     '@type': 'Offer',
                                     itemOffered: { '@type': 'Service', name: 'Corporate Training' },
                                     priceCurrency: 'USD',
-                                    price: 'Contact for quote'
-                                }
-                            ]
-                        }
-                    })
+                                    price: 'Contact for quote',
+                                },
+                            ],
+                        },
+                    }),
                 }}
             />
 
@@ -225,29 +271,29 @@ export default function ServicesPage() {
                                 name: 'What is SolvoVis?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'SolvoVis is an autonomous AI infrastructure company that deploys AI systems to help Global SMEs scale revenue without complexity. We don\'t just consult; we install the machine.'
-                                }
+                                    text: "SolvoVis is an autonomous AI infrastructure company that deploys AI systems to help Global SMEs scale revenue without complexity. We don't just consult; we install the machine.",
+                                },
                             },
                             {
                                 '@type': 'Question',
                                 name: 'How much does AI automation cost?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Pricing is custom based on the scope of automation required. We start with a Logic Audit to identify efficiency opportunities, then provide a tailored quote. ROI typically exceeds 4.5x within the first 90 days.'
-                                }
+                                    text: 'Pricing is custom based on the scope of automation required. We start with a Logic Audit to identify efficiency opportunities, then provide a tailored quote. ROI typically exceeds 4.5x within the first 90 days.',
+                                },
                             },
                             {
                                 '@type': 'Question',
                                 name: 'Is SolvoVis a consultancy or software?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'SolvoVis is infrastructure, not consultancy. We pivoted from advising to installing. We deploy autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps.'
-                                }
-                            }
-                        ]
-                    })
+                                    text: 'SolvoVis is infrastructure, not consultancy. We pivoted from advising to installing. We deploy autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps.',
+                                },
+                            },
+                        ],
+                    }),
                 }}
             />
         </div>
-    )
+    );
 }

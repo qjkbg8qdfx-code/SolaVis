@@ -1,23 +1,23 @@
-import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
-import Link from 'next/link'
-import './globals.css'
-import Navigation from '@/components/layout/Navigation'
-import CookieBanner from '@/components/layout/CookieBanner'
-import MobileNav from '@/components/layout/MobileNav'
-import StickyCTA from '@/components/StickyCTA'
-import { ThemeProvider } from '@/components/ThemeProvider'
-import { siteConfig } from '@/config/site'
-import { bentoModules } from '@/config/content'
+import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import Link from 'next/link';
+import './globals.css';
+import Navigation from '@/components/layout/Navigation';
+import CookieBanner from '@/components/layout/CookieBanner';
+import MobileNav from '@/components/layout/MobileNav';
+import StickyCTA from '@/components/StickyCTA';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { siteConfig } from '@/config/site';
+import { bentoModules } from '@/config/content';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
     title: {
         default: `${siteConfig.name} | ${siteConfig.tagline}`,
-        template: `%s | ${siteConfig.name}`
+        template: `%s | ${siteConfig.name}`,
     },
     description: siteConfig.description,
     icons: {
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: `${siteConfig.name} | ${siteConfig.tagline}`,
-        description: 'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
+        description:
+            'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
         url: siteConfig.url,
         siteName: siteConfig.name,
         images: [
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
             'en-SG': siteConfig.url,
         },
     },
-}
+};
 
 // Schema.org Organization Data
 const organizationSchema = {
@@ -68,7 +69,7 @@ const organizationSchema = {
         '@type': 'ContactPoint',
         contactType: 'customer service',
         email: siteConfig.email,
-        availableLanguage: ['English']
+        availableLanguage: ['English'],
     },
     address: {
         '@type': 'PostalAddress',
@@ -76,7 +77,7 @@ const organizationSchema = {
         addressLocality: siteConfig.address.locality,
     },
     sameAs: [siteConfig.twitter, siteConfig.linkedin],
-}
+};
 
 // Schema.org Person (Founder) Data
 const founderSchema = {
@@ -88,7 +89,7 @@ const founderSchema = {
     url: `${siteConfig.url}/about`,
     sameAs: [siteConfig.founder.linkedIn],
     worksFor: { '@id': `${siteConfig.url}/#organization` },
-}
+};
 
 // Schema.org Service Data (from Bento Modules)
 const serviceSchemas = bentoModules.map((module) => ({
@@ -98,15 +99,11 @@ const serviceSchemas = bentoModules.map((module) => ({
     description: module.description,
     provider: { '@id': `${siteConfig.url}/#organization` },
     serviceType: module.category,
-}))
+}));
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className="antialiased scroll-smooth" suppressHydrationWarning>
+        <html lang="en" className="scroll-smooth antialiased" suppressHydrationWarning>
             <head>
                 {/* hreflang tags for global indexing */}
                 <link rel="alternate" hrefLang="en-US" href={siteConfig.url} />
@@ -114,24 +111,26 @@ export default function RootLayout({
                 <link rel="alternate" hrefLang="en-SG" href={siteConfig.url} />
                 <link rel="alternate" hrefLang="x-default" href={siteConfig.url} />
             </head>
-            <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-ios-bg dark:bg-gray-950 text-ios-text dark:text-gray-100 transition-colors`}>
+            <body
+                className={`${inter.variable} ${jetbrainsMono.variable} bg-ios-bg font-sans text-ios-text transition-colors dark:bg-gray-950 dark:text-gray-100`}
+            >
                 <ThemeProvider>
                     <Navigation />
 
                     {/* Main Content (Pushing down for sticky nav) */}
-                    <main className="pt-16 pb-32">
-                        {children}
-                    </main>
+                    <main className="pb-32 pt-16">{children}</main>
 
                     {/* System Status Footer */}
-                    <footer className="hidden md:block py-6 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
-                        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-mono text-gray-400">
-                            <div suppressHydrationWarning>&copy; {new Date().getFullYear()} {siteConfig.companyName}</div>
+                    <footer className="hidden border-t border-gray-100 bg-white/50 py-6 backdrop-blur-sm md:block">
+                        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 font-mono text-xs text-gray-400">
+                            <div suppressHydrationWarning>
+                                &copy; {new Date().getFullYear()} {siteConfig.companyName}
+                            </div>
 
                             <div className="flex items-center gap-2">
                                 <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                                 </span>
                                 <span>All Systems Operational</span>
                             </div>
@@ -163,5 +162,5 @@ export default function RootLayout({
                 </ThemeProvider>
             </body>
         </html>
-    )
+    );
 }

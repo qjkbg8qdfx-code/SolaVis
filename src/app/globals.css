@@ -3,97 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: 'Inter', sans-serif;
+    --font-inter: 'Inter', sans-serif;
 }
 
 @layer base {
-  body {
-    @apply bg-ios-bg text-ios-text antialiased selection:bg-ios-blue selection:text-white;
-  }
+    body {
+        @apply bg-ios-bg text-ios-text antialiased selection:bg-ios-blue selection:text-white;
+    }
 }
 
 @layer components {
+    /* iOS Button Style */
+    .btn-primary {
+        @apply rounded-full bg-ios-text px-6 py-3 text-[15px] font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95;
+    }
 
-  /* iOS Button Style */
-  .btn-primary {
-    @apply px-6 py-3 rounded-full bg-ios-text text-white font-medium text-[15px] hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl;
-  }
+    .btn-secondary {
+        @apply rounded-full border border-ios-divider bg-white px-6 py-3 text-[15px] font-medium text-ios-blue transition-all duration-300 hover:bg-gray-50 active:scale-95;
+    }
 
-  .btn-secondary {
-    @apply px-6 py-3 rounded-full bg-white text-ios-blue border border-ios-divider font-medium text-[15px] hover:bg-gray-50 active:scale-95 transition-all duration-300;
-  }
+    /* iOS Card Style */
+    .card-ios {
+        @apply rounded-3xl border border-white/50 bg-white p-8 shadow-ios transition-all duration-500 ease-out hover:shadow-ios-hover;
+    }
 
-  /* iOS Card Style */
-  .card-ios {
-    @apply bg-white rounded-3xl p-8 shadow-ios border border-white/50 hover:shadow-ios-hover transition-all duration-500 ease-out;
-  }
+    /* Glassmorphism Utility */
+    .glass-panel {
+        @apply border-b border-white/20 bg-surface-glass shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-surface-glass;
+    }
 
-  /* Glassmorphism Utility */
-  .glass-panel {
-    @apply bg-surface-glass backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-surface-glass;
-  }
+    /* Text Styles */
+    .text-hero {
+        @apply text-5xl font-semibold tracking-tight text-ios-text md:text-7xl;
+    }
 
-  /* Text Styles */
-  .text-hero {
-    @apply text-5xl md:text-7xl font-semibold tracking-tight text-ios-text;
-  }
-
-  .text-sub {
-    @apply text-xl md:text-2xl font-normal text-ios-subtext leading-relaxed;
-  }
+    .text-sub {
+        @apply text-xl font-normal leading-relaxed text-ios-subtext md:text-2xl;
+    }
 }
 
 /* Smooth Scrolling */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Animation Keyframes - Respects reduced motion preference */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-      opacity: 1;
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
     }
-  }
 
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.3s ease-out forwards;
-  }
+    .animate-fade-in {
+        animation: fade-in 0.3s ease-out forwards;
+    }
 }
 
 /* Fallback for reduced motion - show content immediately */
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-in-up,
-  .animate-fade-in {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
+    .animate-fade-in-up,
+    .animate-fade-in {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 
-  /* Disable all other animations */
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+    /* Disable all other animations */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

@@ -1,81 +1,86 @@
-import { ArrowRight, Search, Settings, Zap } from "lucide-react"
+import { ArrowRight, Search, Settings, Zap } from 'lucide-react';
 
 export const metadata = {
     title: 'The Protocol | SolvoVis',
     description: 'Our proprietary 3-step audit and automation protocol.',
-}
+};
 
 export default function MethodologyPage() {
     return (
-        <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
-            <div className="text-center mb-20 animate-fade-in-up">
-                <span className="font-mono text-ios-blue text-sm tracking-wider uppercase mb-4 block">System Architecture</span>
-                <h1 className="text-hero mb-6">
-                    The Protocol.
-                </h1>
-                <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-32">
+            <div className="mb-20 animate-fade-in-up text-center">
+                <span className="mb-4 block font-mono text-sm uppercase tracking-wider text-ios-blue">
+                    System Architecture
+                </span>
+                <h1 className="text-hero mb-6">The Protocol.</h1>
+                <p className="mx-auto max-w-2xl text-xl text-gray-500">
                     A deterministic pipeline. Input Chaos &rarr; Output Scale.
                 </p>
             </div>
 
             {/* Pipeline Visualization */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+            <div className="relative grid grid-cols-1 gap-6 md:grid-cols-3">
                 {/* Step 1: Audit */}
-                <div className="card-ios group hover:-translate-y-1 transition-transform relative z-10">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span className="text-6xl font-bold font-mono">01</span>
+                <div className="card-ios group relative z-10 transition-transform hover:-translate-y-1">
+                    <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
+                        <span className="font-mono text-6xl font-bold">01</span>
                     </div>
-                    <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 mb-6 group-hover:bg-ios-blue group-hover:text-white transition-colors">
-                        <Search className="w-6 h-6" />
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                        <Search className="h-6 w-6" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">Audit</h3>
-                    <p className="text-gray-500 leading-relaxed">
-                        We map your entire P&L. We identify the "Leakage Nodes"—where money is lost to inefficiency.
+                    <h3 className="mb-3 text-2xl font-bold">Audit</h3>
+                    <p className="leading-relaxed text-gray-500">
+                        We map your entire P&L. We identify the &quot;Leakage Nodes&quot;—where money is lost
+                        to inefficiency.
                     </p>
 
                     {/* Pseudo Code Visual */}
-                    <div className="mt-6 pt-4 border-t border-gray-100 font-mono text-xs text-gray-400">
-                        &gt; scan(operations);<br />
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
+                        &gt; scan(operations);
+                        <br />
                         &gt; detect(redundancy);
                     </div>
                 </div>
 
                 {/* Arrow Connector (Desktop Only) */}
-                <div className="hidden md:flex absolute top-1/2 left-[30%] right-[66%] h-px bg-gray-200 z-0"></div>
+                <div className="absolute left-[30%] right-[66%] top-1/2 z-0 hidden h-px bg-gray-200 md:flex"></div>
 
                 {/* Step 2: Deploy */}
-                <div className="card-ios group hover:-translate-y-1 transition-transform relative z-10 border-l-4 border-l-ios-blue md:border-l-white md:border-t-4 md:border-t-ios-blue">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span className="text-6xl font-bold font-mono">02</span>
+                <div className="card-ios group relative z-10 border-l-4 border-l-ios-blue transition-transform hover:-translate-y-1 md:border-t-4 md:border-l-white md:border-t-ios-blue">
+                    <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
+                        <span className="font-mono text-6xl font-bold">02</span>
                     </div>
-                    <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 mb-6 group-hover:bg-ios-blue group-hover:text-white transition-colors">
-                        <Settings className="w-6 h-6" />
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                        <Settings className="h-6 w-6" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">Deploy</h3>
-                    <p className="text-gray-500 leading-relaxed">
-                        The "SolvoVis Patch." We install custom scripts to bridge your disconnected software stacks.
+                    <h3 className="mb-3 text-2xl font-bold">Deploy</h3>
+                    <p className="leading-relaxed text-gray-500">
+                        The &quot;SolvoVis Patch.&quot; We install custom scripts to bridge your disconnected
+                        software stacks.
                     </p>
 
-                    <div className="mt-6 pt-4 border-t border-gray-100 font-mono text-xs text-gray-400">
-                        &gt; install(modules);<br />
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
+                        &gt; install(modules);
+                        <br />
                         &gt; npm run build;
                     </div>
                 </div>
 
                 {/* Step 3: Optimize */}
-                <div className="card-ios group hover:-translate-y-1 transition-transform relative z-10">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span className="text-6xl font-bold font-mono">03</span>
+                <div className="card-ios group relative z-10 transition-transform hover:-translate-y-1">
+                    <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
+                        <span className="font-mono text-6xl font-bold">03</span>
                     </div>
-                    <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 mb-6 group-hover:bg-ios-blue group-hover:text-white transition-colors">
-                        <Zap className="w-6 h-6" />
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                        <Zap className="h-6 w-6" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">Scale</h3>
-                    <p className="text-gray-500 leading-relaxed">
-                        The System runs autonomously. Your team focuses on high-value strategy, not data entry.
+                    <h3 className="mb-3 text-2xl font-bold">Scale</h3>
+                    <p className="leading-relaxed text-gray-500">
+                        The System runs autonomously. Your team focuses on high-value strategy, not
+                        data entry.
                     </p>
 
-                    <div className="mt-6 pt-4 border-t border-gray-100 font-mono text-xs text-gray-400">
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
                         &gt; while(true) optimize();
                     </div>
                 </div>
@@ -84,7 +89,7 @@ export default function MethodologyPage() {
             {/* CTA */}
             <div className="mt-20 text-center">
                 <a href="/contact" className="btn-primary inline-flex items-center gap-2">
-                    Start Protocol v1 <ArrowRight className="w-4 h-4" />
+                    Start Protocol v1 <ArrowRight className="h-4 w-4" />
                 </a>
             </div>
 
@@ -96,12 +101,13 @@ export default function MethodologyPage() {
                         '@context': 'https://schema.org',
                         '@type': 'HowTo',
                         name: 'The SolvoVis Protocol: How to Scale Revenue with AI Infrastructure',
-                        description: 'A deterministic 3-step pipeline to transform operational chaos into scalable systems.',
+                        description:
+                            'A deterministic 3-step pipeline to transform operational chaos into scalable systems.',
                         totalTime: 'P90D',
                         estimatedCost: {
                             '@type': 'MonetaryAmount',
                             currency: 'USD',
-                            value: 'Custom'
+                            value: 'Custom',
                         },
                         step: [
                             {
@@ -109,26 +115,26 @@ export default function MethodologyPage() {
                                 position: 1,
                                 name: 'Audit',
                                 text: 'We map your entire P&L to identify the "Leakage Nodes"—where money is lost to inefficiency. This includes scanning operations and detecting redundancy.',
-                                url: 'https://solvovis.com/methodology#audit'
+                                url: 'https://solvovis.com/methodology#audit',
                             },
                             {
                                 '@type': 'HowToStep',
                                 position: 2,
                                 name: 'Deploy',
                                 text: 'The "SolvoVis Patch": We install custom scripts and AI modules to bridge your disconnected software stacks and automate repetitive workflows.',
-                                url: 'https://solvovis.com/methodology#deploy'
+                                url: 'https://solvovis.com/methodology#deploy',
                             },
                             {
                                 '@type': 'HowToStep',
                                 position: 3,
                                 name: 'Scale',
                                 text: 'The System runs autonomously 24/7. Your team focuses on high-value strategy while the AI handles data entry, processing, and optimization.',
-                                url: 'https://solvovis.com/methodology#scale'
-                            }
-                        ]
-                    })
+                                url: 'https://solvovis.com/methodology#scale',
+                            },
+                        ],
+                    }),
                 }}
             />
         </div>
-    )
+    );
 }
