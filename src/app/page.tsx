@@ -228,7 +228,7 @@ export default function Home() {
                 </div>
 
                 {/* Verification Statement */}
-                < p className="mt-8 text-center font-mono text-xs text-gray-400" >
+                <p className="mt-8 text-center font-mono text-xs text-gray-400">
                     {caseStudiesSection.disclaimer}
                 </p>
             </section>
