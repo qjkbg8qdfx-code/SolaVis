@@ -199,18 +199,21 @@ export default function Home() {
                                 &quot;{study.quote}&quot;
                             </p>
                             <div className="mt-auto border-t border-gray-200 pt-4">
-                                <a
-                                    href={
-                                        study.clientWebsite !== '[REQUIRED]'
-                                            ? study.clientWebsite
-                                            : '#'
-                                    }
-                                    className="text-sm font-bold text-gray-900 transition-colors hover:text-ios-blue"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {study.company}
-                                </a>
+
+                                {study.status === 'VERIFIED' ? (
+                                    <a
+                                        href={study.clientWebsite}
+                                        className="text-sm font-bold text-gray-900 transition-colors hover:text-ios-blue"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {study.company}
+                                    </a>
+                                ) : (
+                                    <span className="text-sm font-bold text-gray-900">
+                                        {study.company}
+                                    </span>
+                                )}
                                 <div className="mt-1 font-mono text-xs text-gray-500">
                                     <span className="text-gray-400">VERIFIED BY:</span>{' '}
                                     {study.personName !== '[REQUIRED]'
@@ -225,7 +228,7 @@ export default function Home() {
                 </div>
 
                 {/* Verification Statement */}
-                <p className="mt-8 text-center font-mono text-xs text-gray-400">
+                < p className="mt-8 text-center font-mono text-xs text-gray-400" >
                     {caseStudiesSection.disclaimer}
                 </p>
             </section>
