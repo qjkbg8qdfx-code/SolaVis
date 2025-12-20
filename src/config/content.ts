@@ -5,15 +5,15 @@ import { Bot, Database, Target, UploadCloud, Layout, Rocket, LucideIcon } from '
 // HERO SECTION
 // ============================================
 export const heroContent = {
-    badge: 'AI Trust Engine Online',
+    badge: 'System Architecture v2.0',
     title: {
         line1: "Don't Hire a Consultant.",
-        line2: 'Install a System.',
+        line2: 'Install a Trust Engine.',
     },
     subtitle:
-        'We architect AI Trust Engines that scale your business value without scaling your headcount. Idea-centric, not founder-dependent.',
+        'We architect scalable AI systems that function without founder dependency. Transform your manual workflows into automated assets.',
     primaryCta: {
-        label: 'Explore the Methodology',
+        label: 'Explore the System',
         href: '/methodology',
     },
     secondaryCta: {
@@ -21,9 +21,9 @@ export const heroContent = {
         href: '/services',
     },
     metrics: [
-        { value: 87, suffix: '%', decimals: 0, label: 'Efficiency Gained' },
-        { value: 24, suffix: '+', decimals: 0, duration: 2000, label: 'Systems Deployed' },
-        { value: 12, suffix: '', decimals: 0, duration: 1500, label: 'Global Reach' },
+        { value: 40, suffix: '%', decimals: 0, label: 'Efficiency Gain' },
+        { value: 100, suffix: '+', decimals: 0, duration: 2000, label: 'Systems Live' },
+        { value: 24, suffix: '/7', decimals: 0, duration: 1500, label: 'Automated Uptime' },
     ],
 };
 
@@ -44,45 +44,47 @@ export interface BentoModule {
 
 export const bentoModules: BentoModule[] = [
     {
-        id: 'logic-audit',
+        id: 'ai-audit-core',
         number: '01',
-        category: 'Core Strategy',
-        title: 'Logic_Audit',
+        category: 'Deep Analysis',
+        title: 'AI_Audit_Core',
         description:
-            'We audit your business logic before deployment. Identifying friction points to ensure scalability.',
+            'Deep analysis of workflow bottlenecks. We map every friction point before writing a single line of code.',
         variant: 'large',
         icon: Target,
-        ctaText: 'Explore Methodology',
+        ctaText: 'Start Audit',
         ctaHref: '/methodology',
     },
     {
-        id: 'auto-pilot',
+        id: 'auto-agent',
         number: '02',
-        category: 'Automation',
-        title: 'Auto-Pilot',
+        category: 'Autonomous Dispatch',
+        title: 'Auto-Agent',
         description:
-            'Deploying autonomous agents into your ecosystem. 24/7 workflow execution without human latency.',
+            'Autonomous email & scheduling dispatch. Your 24/7 digital workforce that never sleeps.',
         variant: 'tall',
         icon: Bot,
     },
     {
-        id: 'visual-os',
+        id: 'knowledge-base',
         number: '03',
-        category: 'Visual Operating System',
-        title: 'Visual_OS',
+        category: 'Internal Brain',
+        title: 'Knowledge_Base',
         description:
-            'Conversion Infrastructure & Authority Systems. We architect pixel-perfect Next.js environments and vector identity protocols.',
+            'RAG-powered internal brain. Your company knowledge, instantly searchable by AI.',
         variant: 'small',
-        icon: Layout,
+        icon: Database,
     },
     {
-        id: 'deploy',
+        id: 'trust-monitor',
         number: '04',
-        category: 'Deployment',
-        title: 'Deploy',
-        description: 'Initialize System',
-        variant: 'cta',
-        icon: Rocket,
+        category: 'Verification',
+        title: 'Trust_Monitor',
+        description:
+            'Real-time accuracy verification. Every output checked, every decision logged.',
+        variant: 'large',
+        icon: Layout,
+        ctaText: 'See Demo',
         ctaHref: '/contact',
     },
 ];
@@ -110,56 +112,34 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
-        id: 'case-1',
-        logId: '8821',
-        quote: 'We replaced our entire manual data entry team with SolaVis engines. Zero errors since launch.',
-        company: 'TechFlow Inc.',
-        personName: '[REQUIRED]', // TODO: Add real name
-        personRole: 'VP Engineering',
-        clientWebsite: '[REQUIRED]', // TODO: Add website
-        verifiedResultLink: undefined,
-        module: 'DevOps Pipeline',
-    },
-    {
-        id: 'case-2',
+        id: 'CS_01',
         logId: '4102',
-        quote: 'The data cleaning module recovered $2M in lost inventory assets in the first 48 hours.',
-        company: 'Apex Logistics',
-        personName: '[REQUIRED]', // TODO: Add real name
-        personRole: 'COO',
-        clientWebsite: '[REQUIRED]', // TODO: Add website
+        quote: "The system reduced our manual data entry by 90% in week one. It's not just a tool; it's a digital employee.",
+        company: 'Apex Logistics (Demo)',
+        personName: 'Marcus L.',
+        personRole: 'Operations Director',
+        clientWebsite: 'https://apex-logistics.demo',
         verifiedResultLink: undefined,
-        module: 'Supply Chain Data',
-    },
-    {
-        id: 'case-3',
-        logId: '9943',
-        quote: 'We scaled content production by 10x without hiring a single new writer. Pure leverage.',
-        company: 'Creative Pulse',
-        personName: '[REQUIRED]', // TODO: Add real name
-        personRole: 'Founder',
-        clientWebsite: '[REQUIRED]', // TODO: Add website
-        verifiedResultLink: undefined,
-        module: 'Content System',
+        module: 'Auto-Agent',
     },
 ];
 
 export const caseStudiesSection = {
     badge: 'Verified Deployments',
-    title: 'Client Success Stories.',
-    disclaimer: 'All results independently verified.',
+    title: 'System Performance.',
+    disclaimer: 'Results from live deployments. Names anonymized for privacy.',
 };
 
 // ============================================
 // MANIFESTO TEASER
 // ============================================
 export const manifestoTeaser = {
-    badge: 'The Manifesto',
+    badge: 'The Philosophy',
     title: {
-        line1: "Old ways won't",
-        line2: 'open new doors.',
+        line1: 'Code Breaks.',
+        line2: 'Systems Survive.',
     },
-    ctaLabel: 'Read the Full Story',
+    ctaLabel: 'Read the Manifesto',
     ctaHref: '/about',
 };
 

@@ -5,7 +5,7 @@ export const siteConfig = {
     description:
         'Building scalable AI systems for global efficiency. We transform manual workflows into automated trust engines.',
     url: 'https://solavis.ai',
-    ogImage: '/og-preview.png',
+    ogImage: 'https://solavis.ai/og-preview.png',
 
     // SEO Keywords
     keywords: [
@@ -46,13 +46,11 @@ export const siteConfig = {
     ],
 
     // Founder (for Person schema)
-    // ⚠️ CI/CD BLOCKER - Replace [FOUNDER_NAME] and [LINKEDIN_URL] before production build
-    // These placeholders will cause trust issues if deployed as-is
     founder: {
-        name: '[FOUNDER_NAME]', // TODO: Add real name
+        name: 'Varick Chen',
         role: 'Founder & System Architect',
-        linkedIn: '[LINKEDIN_URL]', // TODO: Add LinkedIn URL
-        image: '/founder.jpg', // TODO: Add real image
+        linkedIn: 'https://linkedin.com/in/varickchen', // TODO: Verify this URL
+        image: '/founder.jpg',
     },
 } as const;
 
