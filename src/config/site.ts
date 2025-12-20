@@ -1,19 +1,30 @@
 // Site configuration - centralized SEO and metadata
 export const siteConfig = {
-    name: 'SolvoVis',
-    tagline: 'Autonomous Operations System',
+    name: 'SolaVis',
+    tagline: 'AI Trust Engine',
     description:
-        'We deploy autonomous AI systems to help Global SMEs scale revenue without complexity.',
-    url: 'https://solvovis.com',
+        'Building scalable AI systems for global efficiency. We transform manual workflows into automated trust engines.',
+    url: 'https://solavis.ai',
     ogImage: '/og-preview.png',
 
+    // SEO Keywords
+    keywords: [
+        'AI Consultancy',
+        'Process Automation',
+        'Trust Engine',
+        'SME Efficiency',
+        'Next.js',
+        'Workflow Automation',
+        'AI Systems',
+    ],
+
     // Contact
-    email: 'hello@solvovis.com',
-    legalEmail: 'legal@solvovis.com',
+    email: 'hello@solavis.ai',
+    legalEmail: 'legal@solavis.ai',
 
     // Social
-    twitter: 'https://twitter.com/solvovis',
-    linkedin: 'https://linkedin.com/company/solvovis',
+    twitter: 'https://twitter.com/solavis_ai',
+    linkedin: 'https://linkedin.com/company/solavis',
 
     // Location
     address: {
@@ -23,15 +34,15 @@ export const siteConfig = {
     },
 
     // Company
-    companyName: 'SolvoVis Systems Inc.',
+    companyName: 'SolaVis Systems Inc.',
 
     // Expertise
     knowsAbout: [
-        'AI Automation',
-        'Business Process Optimization',
+        'AI Trust Engines',
+        'Process Automation',
         'Revenue Operations',
         'Workflow Automation',
-        'Data Processing',
+        'Efficiency Systems',
     ],
 
     // Founder (for Person schema)

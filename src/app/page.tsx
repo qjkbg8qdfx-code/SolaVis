@@ -101,8 +101,8 @@ export default function Home() {
                                 <span className="text-gray-500">{`{`}</span>
                             </div>
                             <div className="pl-4 text-gray-600">
-                                <span className="text-purple-500">await</span> SolvoVis.
-                                <span className="text-blue-600">analyze</span>(workflow);
+                                <span className="text-purple-500">await</span> SolaVis.
+                                <span className="text-blue-600">execute</span>(workflow);
                             </div>
                             <div className="pl-4 text-gray-600">
                                 <span className="text-purple-500">return</span>{' '}

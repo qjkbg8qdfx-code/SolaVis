@@ -5,24 +5,25 @@ import { Bot, Database, Target, UploadCloud, Layout, Rocket, LucideIcon } from '
 // HERO SECTION
 // ============================================
 export const heroContent = {
-    badge: 'SolvoVis Operational',
+    badge: 'AI Trust Engine Online',
     title: {
-        line1: 'Automate the Ordinary.',
-        line2: 'Unleash the Extraordinary.',
+        line1: "Don't Hire a Consultant.",
+        line2: 'Install a System.',
     },
     subtitle:
-        'We architect autonomous systems to handle the trivial 80%, so you can dedicate 100% of your genius to what truly matters.',
+        'We architect AI Trust Engines that scale your business value without scaling your headcount. Idea-centric, not founder-dependent.',
     primaryCta: {
-        label: 'Reclaim My Focus',
-        href: '/contact',
-    },
-    secondaryCta: {
-        label: 'View The Protocol',
+        label: 'Explore the Methodology',
         href: '/methodology',
     },
+    secondaryCta: {
+        label: 'View Systems',
+        href: '/services',
+    },
     metrics: [
-        { value: 4.5, suffix: 'x', decimals: 1, label: 'Avg. ROI' },
-        { value: 12, suffix: 'k+', decimals: 0, duration: 2000, label: 'Hours Saved' },
+        { value: 87, suffix: '%', decimals: 0, label: 'Efficiency Gained' },
+        { value: 24, suffix: '+', decimals: 0, duration: 2000, label: 'Systems Deployed' },
+        { value: 12, suffix: '', decimals: 0, duration: 1500, label: 'Global Reach' },
     ],
 };
 
@@ -111,7 +112,7 @@ export const caseStudies: CaseStudy[] = [
     {
         id: 'case-1',
         logId: '8821',
-        quote: 'We replaced our entire manual data entry team with SolvoVis bots. Zero errors since launch.',
+        quote: 'We replaced our entire manual data entry team with SolaVis engines. Zero errors since launch.',
         company: 'TechFlow Inc.',
         personName: '[REQUIRED]', // TODO: Add real name
         personRole: 'VP Engineering',
@@ -172,24 +173,24 @@ export interface FAQItem {
 
 export const faqContent: FAQItem[] = [
     {
-        question: 'How fast can SolvoVis show results?',
-        answer: 'SolvoVis typically reduces operational friction by 40% within the first 90 days. Many clients see measurable ROI within the first 30 days after deployment.',
+        question: 'How fast can SolaVis show results?',
+        answer: 'SolaVis typically reduces operational friction by 40% within the first 90 days. Most clients see measurable ROI within the first 30 days after system deployment.',
     },
     {
-        question: 'What kind of businesses does SolvoVis work with?',
-        answer: 'We specialize in Global SMEs generating $1M-$50M in annual revenue. Our infrastructure works best for businesses with repetitive workflows, data processing needs, or scaling challenges.',
+        question: 'What kind of businesses does SolaVis work with?',
+        answer: 'We specialize in Global SMEs generating $1M-$50M in annual revenue. Our Trust Engines work best for businesses with repetitive workflows, data processing needs, or scaling challenges.',
     },
     {
-        question: 'How is SolvoVis different from traditional consultants?',
-        answer: "We don't just advise — we install. SolvoVis deploys autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps. You get infrastructure, not slide decks.",
+        question: 'How is SolaVis different from traditional consultants?',
+        answer: "We don't advise — we install. SolaVis deploys autonomous Trust Engines that operate 24/7, replacing manual workflows with systems that never sleep. You get infrastructure, not slide decks.",
     },
     {
-        question: 'Do I need technical expertise to use SolvoVis?',
-        answer: 'No. We handle the technical implementation end-to-end. Your team interacts with simple dashboards and reports. We do the heavy lifting under the hood.',
+        question: 'Do I need technical expertise to use SolaVis?',
+        answer: 'No. We handle the technical implementation end-to-end. Your team interacts with simple dashboards and reports. The engine runs silently under the hood.',
     },
     {
-        question: 'Where is SolvoVis located?',
-        answer: 'Our Global HQ is in Singapore (APAC), with remote operation nodes in New York (AMER) and London (EMEA). We serve clients across all time zones.',
+        question: 'Where is SolaVis located?',
+        answer: 'Global HQ is in Singapore (APAC), with remote operation nodes in New York (AMER) and London (EMEA). We serve clients across all time zones.',
     },
     {
         question: 'Are you a branding agency or an AI company?',
