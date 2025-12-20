@@ -1,4 +1,5 @@
-// Site configuration - centralized SEO and metadata
+// src/config/site.ts
+
 export const siteConfig = {
     name: 'SolaVis',
     tagline: 'AI Trust Engine',
@@ -19,22 +20,22 @@ export const siteConfig = {
     ],
 
     // Contact
-    email: 'hello@solavis.ai',
-    legalEmail: 'legal@solavis.ai',
+    email: 'varick.chen@icloud.com', // Updated to your real email
+    legalEmail: 'varick.chen@icloud.com', // Consistent contact point
 
-    // Social
-    twitter: 'https://twitter.com/solavis_ai',
-    linkedin: 'https://linkedin.com/company/solavis',
+    // Social - Set to empty string if not available yet
+    twitter: '',
+    linkedin: '', // Intentionally empty as requested
 
     // Location
     address: {
-        country: 'SG',
-        locality: 'Singapore',
-        label: 'Global HQ (Singapore)',
+        country: 'AU',
+        locality: 'Mackay, Queensland',
+        label: 'Global Operation Node (AUS)',
     },
 
     // Company
-    companyName: 'SolaVis Systems Inc.',
+    companyName: 'SolaVis Systems',
 
     // Expertise
     knowsAbout: [
@@ -48,9 +49,9 @@ export const siteConfig = {
     // Founder (for Person schema)
     founder: {
         name: 'Varick Chen',
-        role: 'Founder & System Architect',
-        linkedIn: 'https://linkedin.com/in/varickchen', // TODO: Verify this URL
-        image: '/founder.jpg',
+        role: 'Founder',
+        linkedIn: '', // Empty string triggers hidden mode in UI
+        image: '/founder.jpg', // Ensure this file exists in public/ folder!
     },
 } as const;
 

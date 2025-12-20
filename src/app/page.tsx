@@ -171,7 +171,18 @@ export default function Home() {
                             className="rounded-r-2xl border-l-4 border-l-ios-blue bg-gray-50 p-8"
                         >
                             <div className="mb-4 flex items-center justify-between font-mono text-xs text-ios-blue">
-                                <span>CASE_ID: {study.logId} | VERIFIED</span>
+                                <span>
+                                    CASE: {study.logId} |{' '}
+                                    <span
+                                        className={
+                                            study.status === 'VERIFIED'
+                                                ? 'text-green-600'
+                                                : 'text-amber-500'
+                                        }
+                                    >
+                                        {study.status}
+                                    </span>
+                                </span>
                                 {study.verifiedResultLink && (
                                     <a
                                         href={study.verifiedResultLink}

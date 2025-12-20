@@ -1,3 +1,4 @@
+// src/config/content.ts
 import { LucideIcon, Target, Bot, Brain, ShieldCheck } from 'lucide-react';
 
 // ============================================
@@ -20,9 +21,9 @@ export const heroContent = {
         href: '/methodology',
     },
     metrics: [
-        { value: 80, suffix: '%', decimals: 0, duration: 2500, label: 'Time Reclaimed' },
+        { value: 20, suffix: 'x', decimals: 0, duration: 2500, label: 'Efficiency Boost' }, // Updated based on Curio case
         { value: 24, suffix: '/7', decimals: 0, duration: 2000, label: 'System Uptime' },
-        { value: 0, suffix: '', decimals: 0, duration: 2000, label: 'Human Error' },
+        { value: 50, suffix: '%', decimals: 0, duration: 2000, label: 'Workload Cut Target' }, // Updated based on Yuanta goal
     ],
 };
 
@@ -104,47 +105,52 @@ export interface CaseStudy {
     clientWebsite: string;
     verifiedResultLink?: string;
     module: string;
+    status: 'VERIFIED' | 'DEPLOYING'; // Added status field
 }
 
 export const caseStudiesSection = {
     badge: 'Proven Results',
     title: 'Systems in Production',
-    disclaimer: 'All metrics verified by internal system logs.',
+    disclaimer: 'Metrics verified by internal system logs and client confirmation.',
 };
 
 export const caseStudies: CaseStudy[] = [
     {
         id: 'CS_01',
-        logId: 'SYS_LOG_8842',
-        company: 'Apex Logistics',
-        clientWebsite: '#',
-        quote: "The system didn't just save time; it eliminated the 'busy work' that was burning out our best managers. We reclaimed 40 hours a week.",
-        personName: 'Marcus Lin',
-        personRole: 'Operations Director',
-        verifiedResultLink: '#',
-        module: 'Auto-Dispatch Core',
+        logId: 'SYS_LOG_CURIO',
+        company: 'Curio (YouTube)',
+        clientWebsite: 'https://www.youtube.com/@Curio-1',
+        quote: "Efficiency boosted by 20x. We built a database and automation system that transformed how we manage the channel.",
+        personName: 'Internal Audit',
+        personRole: 'System Admin',
+        verifiedResultLink: 'https://www.youtube.com/@Curio-1',
+        module: 'Channel Auto-Pilot',
+        status: 'VERIFIED'
     },
     {
         id: 'CS_02',
-        logId: 'SYS_LOG_9921',
-        company: 'Vanguard Creative',
-        clientWebsite: '#',
-        quote: 'We installed the content engine on Monday. By Friday, our output tripled without hiring a single new writer.',
-        personName: 'Sarah Jenkins',
-        personRole: 'Founder',
-        verifiedResultLink: '#',
-        module: 'Content Velocity V1',
+        logId: 'SYS_LOG_YUANTA',
+        company: 'Yuanta Securities Inv. Consulting',
+        clientWebsite: '#', // Confidential or direct internal tool
+        quote: "Targeting a 50% reduction in daily manual processing time. Currently deploying automated workflow handlers.",
+        personName: 'Varick Chen',
+        personRole: 'Lead Architect',
+        verifiedResultLink: '',
+        module: 'Executive Workflow Core',
+        status: 'DEPLOYING'
     },
+    // Added a placeholder for layout balance if needed, or you can remove this
     {
         id: 'CS_03',
-        logId: 'SYS_LOG_1102',
-        company: 'Nexus Finance',
+        logId: 'SYS_LOG_CONFIDENTIAL',
+        company: 'Confidential Client',
         clientWebsite: '#',
-        quote: 'Accuracy is non-negotiable for us. The Trust Engine caught errors our human team missed for years.',
-        personName: 'David Chen',
-        personRole: 'CFO',
-        verifiedResultLink: '#',
-        module: 'Audit Sentinel',
+        quote: "System deployment initiated. Focusing on high-volume data validation and entry automation.",
+        personName: 'Pending',
+        personRole: 'Operations Lead',
+        verifiedResultLink: '',
+        module: 'Stealth Infrastructure',
+        status: 'DEPLOYING'
     },
 ];
 
@@ -172,11 +178,11 @@ export interface FAQItem {
 export const faqContent: FAQItem[] = [
     {
         question: 'How fast can SolaVis show results?',
-        answer: 'SolaVis typically reduces operational friction by 40% within the first 90 days. Most clients see measurable ROI within the first 30 days after system deployment.',
+        answer: 'SolaVis typically reduces operational friction significantly within the first 90 days. For example, our Curio deployment saw a 20x efficiency boost post-implementation.',
     },
     {
         question: 'What kind of businesses does SolaVis work with?',
-        answer: 'We specialize in Global SMEs generating $1M-$50M in annual revenue. Our Trust Engines work best for businesses with repetitive workflows, data processing needs, or scaling challenges.',
+        answer: 'We specialize in businesses and individuals ready to scale. From content creators like Curio to financial institutions like Yuanta Securities Investment Consulting.',
     },
     {
         question: 'How is SolaVis different from traditional consultants?',
@@ -188,11 +194,11 @@ export const faqContent: FAQItem[] = [
     },
     {
         question: 'Where is SolaVis located?',
-        answer: 'Global HQ is in Singapore (APAC), with remote operation nodes in New York (AMER) and London (EMEA). We serve clients across all time zones.',
+        answer: 'Our operation node is based in Mackay, Australia (AUS), serving clients globally across all time zones.',
     },
     {
         question: 'Are you a branding agency or an AI company?',
-        answer: "We are an Infrastructure Firm. We believe you cannot automate a mess. That's why we build the entire stack: the Strategy (Logic), the Interface (Web/Brand), and the Engine (AI). We don't just design; we engineer your digital headquarters.",
+        answer: "We are an Infrastructure Firm. We believe you cannot automate a mess. That's why we build the entire stack: the Strategy (Logic), the Interface (Web/Brand), and the Engine (AI).",
     },
 ];
 

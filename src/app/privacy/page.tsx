@@ -1,8 +1,9 @@
+// src/app/privacy/page.tsx
 import Link from 'next/link';
 import { ShieldCheck, ArrowLeft } from 'lucide-react';
 
 export const metadata = {
-    title: 'Privacy Protocols | SolvoVis',
+    title: 'Privacy Protocols | SolaVis',
     description: 'Data handling and protection standards.',
 };
 
@@ -28,9 +29,14 @@ export default function PrivacyPage() {
             </div>
 
             <div className="prose prose-gray prose-headings:font-semibold prose-a:text-ios-blue max-w-none">
+                <div className="mb-8 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-blue-800">
+                    <strong>Legal Notice:</strong> SolaVis is operated by <strong>Varick Chen</strong>.
+                    Governed by the laws of <strong>Mackay, Queensland, Australia</strong>.
+                </div>
+
                 <h3>1. Data Collection</h3>
                 <p>
-                    SolvoVis operates on a principle of minimal data retention. We collect only what
+                    SolaVis operates on a principle of minimal data retention. We collect only what
                     is strictly necessary to initialize audits and maintain system communications.
                 </p>
 
@@ -47,10 +53,10 @@ export default function PrivacyPage() {
                     only deployed upon explicit user consent via our Compliance Banner.
                 </p>
 
-                <h3>4. Contact</h3>
+                <h3>4. Contact & Rights</h3>
                 <p>
-                    For data deletion requests (Right to be Forgotten), execute a command to:{' '}
-                    <a href="mailto:legal@solvovis.com">legal@solvovis.com</a>
+                    You retain full rights to your data. For data deletion requests (Right to be Forgotten) or inquiries regarding your personal information, please execute a command to our Data Protection Officer at:{' '}
+                    <a href="mailto:varick.chen@icloud.com">varick.chen@icloud.com</a>
                 </p>
             </div>
         </div>

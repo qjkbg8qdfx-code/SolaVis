@@ -1,3 +1,4 @@
+// src/components/FounderBio.tsx
 'use client';
 
 import Image from 'next/image';
@@ -34,17 +35,22 @@ export default function FounderBio() {
                     <h3 className="mb-1 text-xl font-bold text-gray-900">{founder.name}</h3>
                     <p className="mb-4 text-sm text-gray-500">{founder.role}</p>
 
-                    {/* LinkedIn Link */}
-                    <a
-                        href={founder.linkedIn}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#0A66C2] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#004182] active:scale-[0.98]"
-                        aria-label={`View ${founder.name} on LinkedIn`}
-                    >
-                        <Linkedin className="h-4 w-4" />
-                        <span>Connect on LinkedIn</span>
-                    </a>
+                    {/* LinkedIn Link - CONDITIONAL RENDERING */}
+                    {founder.linkedIn ? (
+                        <a
+                            href={founder.linkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-xl bg-[#0A66C2] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#004182] active:scale-[0.98]"
+                            aria-label={`View ${founder.name} on LinkedIn`}
+                        >
+                            <Linkedin className="h-4 w-4" />
+                            <span>Connect on LinkedIn</span>
+                        </a>
+                    ) : (
+                        // Fallback or Empty if no LinkedIn provided (Maintains layout but hides button)
+                        <div className="h-2"></div>
+                    )}
                 </div>
             </div>
 
@@ -56,4 +62,3 @@ export default function FounderBio() {
         </div>
     );
 }
-

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
                 url: siteConfig.ogImage,
                 width: 1200,
                 height: 630,
-                alt: 'SolvoVis System Interface',
+                alt: 'SolaVis System Interface',
             },
         ],
         locale: 'en_US',
@@ -76,7 +76,7 @@ const organizationSchema = {
         addressCountry: siteConfig.address.country,
         addressLocality: siteConfig.address.locality,
     },
-    sameAs: [siteConfig.twitter, siteConfig.linkedin],
+    sameAs: [siteConfig.twitter, siteConfig.linkedin].filter((link) => link !== ''),
 };
 
 // Schema.org Person (Founder) Data
@@ -87,7 +87,7 @@ const founderSchema = {
     jobTitle: siteConfig.founder.role,
     image: `${siteConfig.url}${siteConfig.founder.image}`,
     url: `${siteConfig.url}/about`,
-    sameAs: [siteConfig.founder.linkedIn],
+    sameAs: [siteConfig.founder.linkedIn].filter((link) => link !== ''),
     worksFor: { '@id': `${siteConfig.url}/#organization` },
 };
 
