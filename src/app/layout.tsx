@@ -8,7 +8,7 @@ import MobileNav from '@/components/layout/MobileNav';
 import StickyCTA from '@/components/StickyCTA';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { siteConfig } from '@/config/site';
-import { bentoModules } from '@/config/content';
+import { bentoModules, faqContent } from '@/config/content';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
@@ -53,6 +53,13 @@ export const metadata: Metadata = {
             'en-SG': siteConfig.url,
         },
     },
+    keywords: [
+        ...siteConfig.keywords,
+        'How to automate SME workflow',
+        'AI automation for small business',
+        'What is a Trust Engine',
+        'Best AI system for operations',
+    ],
 };
 
 // Schema.org Organization Data
@@ -101,6 +108,20 @@ const serviceSchemas = bentoModules.map((module) => ({
     serviceType: module.category,
 }));
 
+// Schema.org FAQPage Data (GEO Optimized)
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqContent.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+        },
+    })),
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className="scroll-smooth antialiased" suppressHydrationWarning>
@@ -123,13 +144,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {/* System Status Footer */}
                     <footer className="hidden border-t border-gray-100 bg-white/50 py-6 backdrop-blur-sm md:block">
                         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 font-mono text-xs text-gray-400">
-                            <div suppressHydrationWarning>
-                                &copy; {new Date().getFullYear()} {siteConfig.companyName}
+                            <div className="flex items-center gap-4">
+                                <span suppressHydrationWarning>
+                                    &copy; {new Date().getFullYear()} {siteConfig.companyName}
+                                </span>
+                                <span className="text-gray-200">|</span>
+                                <Link href="/privacy" className="transition-colors hover:text-ios-blue">
+                                    Privacy Policy
+                                </Link>
+                                <Link href="/terms" className="transition-colors hover:text-ios-blue">
+                                    Terms of Service
+                                </Link>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <span className="relative flex h-2 w-2">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
                                     <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                                 </span>
                                 <span>All Systems Operational</span>
@@ -149,6 +179,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <script
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
+                    />
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
                     />
 
                     {/* Cookie Consent Banner */}

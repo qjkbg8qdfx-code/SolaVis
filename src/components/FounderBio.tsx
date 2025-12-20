@@ -2,11 +2,13 @@
 'use client';
 
 import Image from 'next/image';
-import { Linkedin, BadgeCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Linkedin, BadgeCheck, User } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 export default function FounderBio() {
     const { founder } = siteConfig;
+    const hasVerifiableLink = Boolean(founder.linkedIn);
 
     return (
         <div className="mx-auto max-w-md">
@@ -25,18 +27,25 @@ export default function FounderBio() {
 
                 {/* Info Section */}
                 <div className="p-6">
-                    {/* Verified Badge */}
-                    <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
-                        <BadgeCheck className="h-3.5 w-3.5" />
-                        <span>Verified Human Operator</span>
-                    </div>
+                    {/* Badge - Conditional based on verifiable link */}
+                    {hasVerifiableLink ? (
+                        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                            <BadgeCheck className="h-3.5 w-3.5" />
+                            <span>Verified Human Operator</span>
+                        </div>
+                    ) : (
+                        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">
+                            <User className="h-3.5 w-3.5" />
+                            <span>System Architect</span>
+                        </div>
+                    )}
 
                     {/* Name & Role */}
                     <h3 className="mb-1 text-xl font-bold text-gray-900">{founder.name}</h3>
                     <p className="mb-4 text-sm text-gray-500">{founder.role}</p>
 
-                    {/* LinkedIn Link - CONDITIONAL RENDERING */}
-                    {founder.linkedIn ? (
+                    {/* Action Button - No dead ends */}
+                    {hasVerifiableLink ? (
                         <a
                             href={founder.linkedIn}
                             target="_blank"
@@ -48,8 +57,12 @@ export default function FounderBio() {
                             <span>Connect on LinkedIn</span>
                         </a>
                     ) : (
-                        // Fallback or Empty if no LinkedIn provided (Maintains layout but hides button)
-                        <div className="h-2"></div>
+                        <Link
+                            href="/about"
+                            className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-gray-800 active:scale-[0.98]"
+                        >
+                            <span>View System Architecture</span>
+                        </Link>
                     )}
                 </div>
             </div>

@@ -9,6 +9,8 @@ import {
     caseStudies,
     caseStudiesSection,
     manifestoTeaser,
+    faqContent,
+    faqSection,
 } from '@/config/content';
 
 export default function Home() {
@@ -19,7 +21,7 @@ export default function Home() {
                 <div className="animate-fade-in-up space-y-8">
                     <div className="inline-flex items-center gap-2 rounded-full border border-green-200/50 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-green-700 shadow-sm backdrop-blur-sm">
                         <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
                             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                         </span>
                         {heroContent.badge}
@@ -73,11 +75,11 @@ export default function Home() {
                 <div className="relative flex aspect-square items-center justify-center">
                     <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-100/50 to-indigo-50/50 opacity-60 blur-3xl"></div>
 
-                    {/* Glass Panel Code Card */}
+                    {/* Glass Panel Transaction Log */}
                     <div
-                        className="glass-panel relative w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/40 p-6 shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+                        className="glass-panel relative w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/40 p-6 shadow-2xl transition-transform duration-500 hover:scale-[1.02] motion-reduce:transition-none"
                         role="img"
-                        aria-label="Code visualization showing optimization logic: a function that analyzes workflow and returns 'Efficiency_Maximized'"
+                        aria-label="Transaction log showing automated invoice scanning, compliance check, and payout processing"
                     >
                         {/* Header */}
                         <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-4">
@@ -87,46 +89,35 @@ export default function Home() {
                                 <div className="h-3 w-3 rounded-full bg-green-400/80"></div>
                             </div>
                             <div className="font-mono text-[10px] text-gray-400">
-                                system_core.tsx
+                                transaction_log.sys
                             </div>
                         </div>
 
-                        {/* Code Content */}
-                        <div className="space-y-3 font-mono text-xs md:text-sm">
-                            <div className="flex gap-2">
-                                <span className="text-purple-500">const</span>
-                                <span className="text-blue-600">optimize</span>
-                                <span className="text-gray-400">=</span>
-                                <span className="text-yellow-600">async</span>
-                                <span className="text-gray-500">()</span>
-                                <span className="text-gray-400">=&gt;</span>
-                                <span className="text-gray-500">{`{`}</span>
+                        {/* Transaction Log Content */}
+                        <div className="space-y-4 font-mono text-xs md:text-sm">
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                                <span className="text-gray-700">Invoice_Scanning</span>
+                                <span className="font-semibold text-green-600">[DONE 0.2s]</span>
                             </div>
-                            <div className="pl-4 text-gray-600">
-                                <span className="text-purple-500">await</span> SolvoVis.
-                                <span className="text-blue-600">execute</span>(workflow);
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                                <span className="text-gray-700">Compliance_Check</span>
+                                <span className="font-semibold text-green-600">[PASSED]</span>
                             </div>
-                            <div className="pl-4 text-gray-600">
-                                <span className="text-purple-500">return</span>{' '}
-                                <span className="text-green-600">
-                                    &quot;Efficiency_Maximized&quot;
-                                </span>
-                                ;
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                                <span className="text-gray-700">Payout_Triggered</span>
+                                <span className="font-semibold text-ios-blue">[AUTO]</span>
                             </div>
-                            <div className="text-gray-500">{`}`}</div>
                         </div>
 
-                        {/* Interactive Element */}
+                        {/* Status Footer */}
                         <div className="mt-6 flex items-center justify-between border-t border-gray-100/50 pt-4">
                             <div className="flex items-center gap-2">
-                                <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
+                                <div className="h-2 w-2 animate-pulse rounded-full bg-green-500 motion-reduce:animate-none"></div>
                                 <span className="text-[10px] uppercase tracking-wider text-gray-500">
-                                    Processing
+                                    System Active
                                 </span>
                             </div>
-                            <div className="h-1 w-16 overflow-hidden rounded-full bg-gray-100">
-                                <div className="h-full w-2/3 bg-blue-500"></div>
-                            </div>
+                            <span className="text-[10px] text-gray-400">3/3 Complete</span>
                         </div>
                     </div>
                 </div>
@@ -154,7 +145,7 @@ export default function Home() {
             </section>
 
             {/* Verified Case Studies (Social Proof) */}
-            <section className="border-t border-gray-100 py-20">
+            <section id="case-studies" className="border-t border-gray-100 py-20">
                 <div className="mb-12">
                     <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
                         {caseStudiesSection.badge}
@@ -231,6 +222,43 @@ export default function Home() {
                 <p className="mt-8 text-center font-mono text-xs text-gray-400">
                     {caseStudiesSection.disclaimer}
                 </p>
+            </section>
+
+            {/* FAQ Section (GEO Optimized) */}
+            <section className="border-t border-gray-100 py-20">
+                <div className="mb-12">
+                    <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
+                        {faqSection.badge}
+                    </span>
+                    <h2 className="text-3xl font-bold tracking-tight">{faqSection.title}</h2>
+                </div>
+
+                <div className="max-w-3xl space-y-4">
+                    {faqContent.map((faq, index) => (
+                        <details
+                            key={index}
+                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 transition-all hover:border-ios-blue/30"
+                        >
+                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900">
+                                <span>{faq.question}</span>
+                                <span className="ml-4 text-gray-400 transition-transform group-open:rotate-180">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path
+                                            d="M5 7.5L10 12.5L15 7.5"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div className="px-6 pb-6 leading-relaxed text-gray-600">
+                                {faq.answer}
+                            </div>
+                        </details>
+                    ))}
+                </div>
             </section>
 
             {/* Manifesto Teaser */}

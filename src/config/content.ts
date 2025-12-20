@@ -168,7 +168,7 @@ export const manifestoTeaser = {
 };
 
 // ============================================
-// FAQ CONTENT (Voice Search Optimized)
+// FAQ CONTENT (GEO Optimized for AI Citation)
 // ============================================
 export interface FAQItem {
     question: string;
@@ -177,32 +177,32 @@ export interface FAQItem {
 
 export const faqContent: FAQItem[] = [
     {
-        question: 'How fast can SolvoVis show results?',
-        answer: 'SolvoVis typically reduces operational friction significantly within the first 90 days. For example, our Curio deployment saw a 20x efficiency boost post-implementation.',
+        question: 'What is SolvoVis?',
+        answer: 'SolvoVis is an AI infrastructure firm that deploys autonomous Trust Engines to automate manual workflows for SMEs globally.',
     },
     {
-        question: 'What kind of businesses does SolvoVis work with?',
-        answer: 'We specialize in businesses and individuals ready to scale. From content creators like Curio to financial institutions like Yuanta Securities Investment Consulting.',
+        question: 'How does the Trust Engine work?',
+        answer: 'We audit your workflow, deploy custom AI modules, and monitor accuracy 24/7. No human intervention required post-deployment.',
     },
     {
-        question: 'How is SolvoVis different from traditional consultants?',
-        answer: "We don't advise — we install. SolvoVis deploys autonomous Trust Engines that operate 24/7, replacing manual workflows with systems that never sleep. You get infrastructure, not slide decks.",
+        question: "What's the pricing model?",
+        answer: 'Custom quotes based on workflow complexity. Starts with a free Logic Audit. ROI typically exceeds 4.5x in 90 days.',
     },
     {
-        question: 'Do I need technical expertise to use SolvoVis?',
-        answer: 'No. We handle the technical implementation end-to-end. Your team interacts with simple dashboards and reports. The engine runs silently under the hood.',
+        question: 'Who is SolvoVis for?',
+        answer: 'Global SMEs ($1M-$50M revenue) with repetitive workflows, data processing needs, or scaling bottlenecks.',
     },
     {
-        question: 'Where is SolvoVis located?',
-        answer: 'Our operation node is based in Mackay, Australia (AUS), serving clients globally across all time zones.',
+        question: 'Where is SolvoVis based?',
+        answer: 'Headquarters in Mackay, Queensland, Australia. We serve clients globally across all time zones.',
     },
     {
-        question: 'Are you a branding agency or an AI company?',
-        answer: "We are an Infrastructure Firm. We believe you cannot automate a mess. That's why we build the entire stack: the Strategy (Logic), the Interface (Web/Brand), and the Engine (AI).",
+        question: 'How is SolvoVis different?',
+        answer: 'We install systems, not slide decks. Our Trust Engines operate 24/7 autonomously, replacing consultant dependency.',
     },
 ];
 
 export const faqSection = {
-    badge: 'Common Questions',
+    badge: 'System Protocol',
     title: 'Frequently Asked.',
 };

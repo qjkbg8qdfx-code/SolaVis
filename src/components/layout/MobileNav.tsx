@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Briefcase, GitBranch, Mail } from 'lucide-react';
+import { Home, Briefcase, FileText, Mail } from 'lucide-react';
 
 const mobileBottomNavLinks = [
     { href: '/', label: 'Home', icon: Home },
     { href: '/services', label: 'Services', icon: Briefcase },
-    { href: '/methodology', label: 'Method', icon: GitBranch },
+    { href: '/#case-studies', label: 'Cases', icon: FileText },
     { href: '/contact', label: 'Contact', icon: Mail },
 ];
 
@@ -27,9 +27,8 @@ export default function MobileNav() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-1 transition-colors ${
-                                isActive ? 'text-ios-blue' : 'text-gray-400'
-                            }`}
+                            className={`flex min-h-[44px] min-w-[44px] flex-col items-center justify-center gap-1 transition-colors ${isActive ? 'text-ios-blue' : 'text-gray-400'
+                                }`}
                             aria-current={isActive ? 'page' : undefined}
                         >
                             <Icon className="h-6 w-6" strokeWidth={isActive ? 2 : 1.5} />
