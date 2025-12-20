@@ -1,5 +1,3 @@
-// src/config/site.ts
-
 export const siteConfig = {
     name: 'SolvoVis',
     tagline: 'AI Trust Engine',
@@ -20,12 +18,12 @@ export const siteConfig = {
     ],
 
     // Contact
-    email: 'varick.chen@icloud.com', // Updated to your real email
-    legalEmail: 'varick.chen@icloud.com', // Consistent contact point
+    email: 'varick.chen@icloud.com',
+    legalEmail: 'varick.chen@icloud.com',
 
-    // Social - Set to empty string if not available yet
+    // Social - Empty strings will be hidden by UI logic
     twitter: '',
-    linkedin: '', // Intentionally empty as requested
+    linkedin: '',
 
     // Location
     address: {
@@ -50,8 +48,8 @@ export const siteConfig = {
     founder: {
         name: 'Varick Chen',
         role: 'Founder',
-        linkedIn: '', // Empty string triggers hidden mode in UI
-        image: '/founder.jpg', // Ensure this file exists in public/ folder!
+        linkedIn: '', // UI will hide the button if this is empty
+        image: '/founder.jpg', // Ensure public/founder.jpg exists
     },
 } as const;
 
