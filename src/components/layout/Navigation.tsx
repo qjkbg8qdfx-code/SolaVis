@@ -50,12 +50,12 @@ export default function Navigation() {
                     >
                         <Image
                             src="/logo.svg"
-                            alt="SolaVis Logo"
+                            alt="SolvoVis Logo"
                             width={24}
                             height={24}
                             className="h-6 w-6"
                         />
-                        SolaVis<span className="font-mono text-xl text-ios-blue">.</span>
+                        SolvoVis<span className="font-mono text-xl text-ios-blue">.</span>
                     </Link>
 
                     {/* Desktop Menu */}

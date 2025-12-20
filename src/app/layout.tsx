@@ -35,7 +35,7 @@ export const metadata: Metadata = {
                 url: siteConfig.ogImage,
                 width: 1200,
                 height: 630,
-                alt: 'SolaVis System Interface',
+                alt: 'SolvoVis System Interface',
             },
         ],
         locale: 'en_US',

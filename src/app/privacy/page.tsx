@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ShieldCheck, ArrowLeft } from 'lucide-react';
 
 export const metadata = {
-    title: 'Privacy Protocols | SolaVis',
+    title: 'Privacy Protocols | SolvoVis',
     description: 'Data handling and protection standards.',
 };
 
@@ -30,13 +30,13 @@ export default function PrivacyPage() {
 
             <div className="prose prose-gray prose-headings:font-semibold prose-a:text-ios-blue max-w-none">
                 <div className="mb-8 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm text-blue-800">
-                    <strong>Legal Notice:</strong> SolaVis is operated by <strong>Varick Chen</strong>.
+                    <strong>Legal Notice:</strong> SolvoVis is operated by <strong>Varick Chen</strong>.
                     Governed by the laws of <strong>Mackay, Queensland, Australia</strong>.
                 </div>
 
                 <h3>1. Data Collection</h3>
                 <p>
-                    SolaVis operates on a principle of minimal data retention. We collect only what
+                    SolvoVis operates on a principle of minimal data retention. We collect only what
                     is strictly necessary to initialize audits and maintain system communications.
                 </p>
 

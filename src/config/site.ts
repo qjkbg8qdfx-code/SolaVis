@@ -1,12 +1,12 @@
 // src/config/site.ts
 
 export const siteConfig = {
-    name: 'SolaVis',
+    name: 'SolvoVis',
     tagline: 'AI Trust Engine',
     description:
         'Building scalable AI systems for global efficiency. We transform manual workflows into automated trust engines.',
-    url: 'https://solavis.ai',
-    ogImage: 'https://solavis.ai/og-preview.png',
+    url: 'https://solvovis.com',
+    ogImage: 'https://solvovis.com/og-preview.png',
 
     // SEO Keywords
     keywords: [
@@ -35,7 +35,7 @@ export const siteConfig = {
     },
 
     // Company
-    companyName: 'SolaVis Systems',
+    companyName: 'SolvoVis Systems',
 
     // Expertise
     knowsAbout: [

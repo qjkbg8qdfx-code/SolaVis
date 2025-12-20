@@ -177,23 +177,23 @@ export interface FAQItem {
 
 export const faqContent: FAQItem[] = [
     {
-        question: 'How fast can SolaVis show results?',
-        answer: 'SolaVis typically reduces operational friction significantly within the first 90 days. For example, our Curio deployment saw a 20x efficiency boost post-implementation.',
+        question: 'How fast can SolvoVis show results?',
+        answer: 'SolvoVis typically reduces operational friction significantly within the first 90 days. For example, our Curio deployment saw a 20x efficiency boost post-implementation.',
     },
     {
-        question: 'What kind of businesses does SolaVis work with?',
+        question: 'What kind of businesses does SolvoVis work with?',
         answer: 'We specialize in businesses and individuals ready to scale. From content creators like Curio to financial institutions like Yuanta Securities Investment Consulting.',
     },
     {
-        question: 'How is SolaVis different from traditional consultants?',
-        answer: "We don't advise — we install. SolaVis deploys autonomous Trust Engines that operate 24/7, replacing manual workflows with systems that never sleep. You get infrastructure, not slide decks.",
+        question: 'How is SolvoVis different from traditional consultants?',
+        answer: "We don't advise — we install. SolvoVis deploys autonomous Trust Engines that operate 24/7, replacing manual workflows with systems that never sleep. You get infrastructure, not slide decks.",
     },
     {
-        question: 'Do I need technical expertise to use SolaVis?',
+        question: 'Do I need technical expertise to use SolvoVis?',
         answer: 'No. We handle the technical implementation end-to-end. Your team interacts with simple dashboards and reports. The engine runs silently under the hood.',
     },
     {
-        question: 'Where is SolaVis located?',
+        question: 'Where is SolvoVis located?',
         answer: 'Our operation node is based in Mackay, Australia (AUS), serving clients globally across all time zones.',
     },
     {
