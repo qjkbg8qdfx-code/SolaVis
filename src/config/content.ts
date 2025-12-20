@@ -83,10 +83,10 @@ export const bentoModules: BentoModule[] = [
         number: '04',
         category: 'Verification',
         title: 'Trust Monitor',
-        description: 'Real-time dashboard ensuring AI accuracy and system health.',
-        variant: 'large',
+        description: 'Real-time accuracy verification.',
+        variant: 'cta',
         icon: ShieldCheck,
-        ctaText: 'See Demo',
+        ctaText: 'Verify Systems',
         ctaHref: '/contact',
     },
 ];

@@ -68,7 +68,7 @@ export default function BentoCard({ module }: BentoCardProps) {
         );
     }
 
-    // Small card (1x1) - white
+    // Small card (1x1) - white with icon
     if (variant === 'small') {
         return (
             <div className="card-ios flex flex-col justify-between border border-gray-100 bg-white p-6 md:col-span-1 md:row-span-1">
@@ -77,7 +77,13 @@ export default function BentoCard({ module }: BentoCardProps) {
                         <span className="font-mono text-sm text-gray-400">
                             {number}. {category}
                         </span>
-                        <div className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+                        {Icon ? (
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-50 text-orange-500">
+                                <Icon className="h-4 w-4" />
+                            </div>
+                        ) : (
+                            <div className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+                        )}
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
                 </div>
@@ -86,7 +92,7 @@ export default function BentoCard({ module }: BentoCardProps) {
         );
     }
 
-    // CTA card (1x1) - blue
+    // CTA card (1x1) - blue with icon
     if (variant === 'cta') {
         const Wrapper = ctaHref ? Link : 'div';
         return (
@@ -94,11 +100,18 @@ export default function BentoCard({ module }: BentoCardProps) {
                 href={ctaHref || '#'}
                 className="card-ios group flex cursor-pointer flex-col justify-between bg-ios-blue p-6 text-white transition-colors hover:bg-blue-700 md:col-span-1 md:row-span-1"
             >
-                <div>
-                    <span className="mb-1 block font-mono text-sm text-blue-100/70">
-                        {number}. {category}
-                    </span>
-                    <h3 className="text-lg font-semibold">{title}</h3>
+                <div className="flex items-start justify-between">
+                    <div>
+                        <span className="mb-1 block font-mono text-sm text-blue-100/70">
+                            {number}. {category}
+                        </span>
+                        <h3 className="text-lg font-semibold">{title}</h3>
+                    </div>
+                    {Icon && (
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white">
+                            <Icon className="h-5 w-5" />
+                        </div>
+                    )}
                 </div>
                 <div className="flex items-center justify-between">
                     <span className="text-xs font-medium text-blue-100">{description}</span>

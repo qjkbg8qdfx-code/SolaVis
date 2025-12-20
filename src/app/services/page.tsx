@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { faqContent, faqSection, bentoModules } from '@/config/content';
 
 export const metadata = {
-    title: 'Modules | SolvoVis',
+    title: 'Modules | SolaVis',
     description: 'Autonomous software modules for revenue scaling.',
 };
 
@@ -207,7 +207,7 @@ export default function ServicesPage() {
                         serviceType: 'AI Infrastructure Audit',
                         provider: {
                             '@type': 'Organization',
-                            name: 'SolvoVis',
+                            name: 'SolaVis',
                         },
                         areaServed: 'Global',
                         hasOfferCatalog: {
@@ -268,10 +268,10 @@ export default function ServicesPage() {
                         mainEntity: [
                             {
                                 '@type': 'Question',
-                                name: 'What is SolvoVis?',
+                                name: 'What is SolaVis?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: "SolvoVis is an autonomous AI infrastructure company that deploys AI systems to help Global SMEs scale revenue without complexity. We don't just consult; we install the machine.",
+                                    text: "SolaVis is an autonomous AI infrastructure company that deploys AI systems to help Global SMEs scale revenue without complexity. We don't just consult; we install the machine.",
                                 },
                             },
                             {
@@ -284,10 +284,10 @@ export default function ServicesPage() {
                             },
                             {
                                 '@type': 'Question',
-                                name: 'Is SolvoVis a consultancy or software?',
+                                name: 'Is SolaVis a consultancy or software?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'SolvoVis is infrastructure, not consultancy. We pivoted from advising to installing. We deploy autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps.',
+                                    text: 'SolaVis is infrastructure, not consultancy. We pivoted from advising to installing. We deploy autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps.',
                                 },
                             },
                         ],
