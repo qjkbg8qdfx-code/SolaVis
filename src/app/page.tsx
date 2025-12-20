@@ -27,7 +27,9 @@ export default function Home() {
 
                     <h1 className="text-hero leading-tight">
                         {heroContent.title.line1} <br />
-                        <span className="text-gray-400">{heroContent.title.line2}</span>
+                        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text font-bold text-transparent">
+                            {heroContent.title.line2}
+                        </span>
                     </h1>
 
                     <p className="text-sub max-w-lg">{heroContent.subtitle}</p>

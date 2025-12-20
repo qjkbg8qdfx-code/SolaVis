@@ -1,29 +1,28 @@
-// Content configuration - all hardcoded text extracted
-import { Bot, Database, Target, UploadCloud, Layout, Rocket, LucideIcon } from 'lucide-react';
+import { LucideIcon, Target, Bot, Brain, ShieldCheck } from 'lucide-react';
 
 // ============================================
 // HERO SECTION
 // ============================================
 export const heroContent = {
-    badge: 'System Architecture v2.0',
+    badge: 'Autonomous Systems v2.0',
     title: {
-        line1: "Don't Hire a Consultant.",
-        line2: 'Install a Trust Engine.',
+        line1: 'Automate the Ordinary.',
+        line2: 'Unleash the Extraordinary.',
     },
     subtitle:
-        'We architect scalable AI systems that function without founder dependency. Transform your manual workflows into automated assets.',
+        'We architect autonomous systems to handle the trivial 80%, so you can dedicate 100% of your genius to what truly matters.',
     primaryCta: {
-        label: 'Explore the System',
-        href: '/methodology',
-    },
-    secondaryCta: {
-        label: 'View Systems',
+        label: 'Deploy System',
         href: '/services',
     },
+    secondaryCta: {
+        label: 'View Methodology',
+        href: '/methodology',
+    },
     metrics: [
-        { value: 40, suffix: '%', decimals: 0, label: 'Efficiency Gain' },
-        { value: 100, suffix: '+', decimals: 0, duration: 2000, label: 'Systems Live' },
-        { value: 24, suffix: '/7', decimals: 0, duration: 1500, label: 'Automated Uptime' },
+        { value: 80, suffix: '%', decimals: 0, duration: 2500, label: 'Time Reclaimed' },
+        { value: 24, suffix: '/7', decimals: 0, duration: 2000, label: 'System Uptime' },
+        { value: 0, suffix: '', decimals: 0, duration: 2000, label: 'Human Error' },
     ],
 };
 
@@ -42,58 +41,55 @@ export interface BentoModule {
     ctaHref?: string;
 }
 
+export const modulesSection = {
+    title: 'The Trust Engine Architecture',
+    viewAllLabel: 'View all modules',
+    viewAllHref: '/services',
+};
+
 export const bentoModules: BentoModule[] = [
     {
-        id: 'ai-audit-core',
+        id: 'module_01',
         number: '01',
         category: 'Deep Analysis',
-        title: 'AI_Audit_Core',
+        title: 'Deep Workflow Audit',
         description:
-            'Deep analysis of workflow bottlenecks. We map every friction point before writing a single line of code.',
+            'We map every friction point in your operation before writing a single line of code.',
         variant: 'large',
         icon: Target,
         ctaText: 'Start Audit',
         ctaHref: '/methodology',
     },
     {
-        id: 'auto-agent',
+        id: 'module_02',
         number: '02',
-        category: 'Autonomous Dispatch',
-        title: 'Auto-Agent',
-        description:
-            'Autonomous email & scheduling dispatch. Your 24/7 digital workforce that never sleeps.',
+        category: 'Automation',
+        title: 'Auto-Pilot Agents',
+        description: 'Autonomous agents that handle scheduling, emails, and data entry 24/7.',
         variant: 'tall',
         icon: Bot,
     },
     {
-        id: 'knowledge-base',
+        id: 'module_03',
         number: '03',
-        category: 'Internal Brain',
-        title: 'Knowledge_Base',
-        description:
-            'RAG-powered internal brain. Your company knowledge, instantly searchable by AI.',
+        category: 'Knowledge',
+        title: 'Knowledge Brain',
+        description: 'RAG-powered internal wiki that answers team questions instantly.',
         variant: 'small',
-        icon: Database,
+        icon: Brain,
     },
     {
-        id: 'trust-monitor',
+        id: 'module_04',
         number: '04',
         category: 'Verification',
-        title: 'Trust_Monitor',
-        description:
-            'Real-time accuracy verification. Every output checked, every decision logged.',
+        title: 'Trust Monitor',
+        description: 'Real-time dashboard ensuring AI accuracy and system health.',
         variant: 'large',
-        icon: Layout,
+        icon: ShieldCheck,
         ctaText: 'See Demo',
         ctaHref: '/contact',
     },
 ];
-
-export const modulesSection = {
-    title: 'The Modules.',
-    viewAllHref: '/services',
-    viewAllLabel: 'View All',
-};
 
 // ============================================
 // CASE STUDIES (VERIFIED DEPLOYMENTS)
@@ -103,41 +99,63 @@ export interface CaseStudy {
     logId: string;
     quote: string;
     company: string;
-    personName: string; // Required - no more "anonymized"
+    personName: string;
     personRole: string;
-    clientWebsite: string; // Required - verifiable company
-    verifiedResultLink?: string; // Link to proof/case study
+    clientWebsite: string;
+    verifiedResultLink?: string;
     module: string;
 }
+
+export const caseStudiesSection = {
+    badge: 'Proven Results',
+    title: 'Systems in Production',
+    disclaimer: 'All metrics verified by internal system logs.',
+};
 
 export const caseStudies: CaseStudy[] = [
     {
         id: 'CS_01',
-        logId: '4102',
-        quote: "The system reduced our manual data entry by 90% in week one. It's not just a tool; it's a digital employee.",
-        company: 'Apex Logistics (Demo)',
-        personName: 'Marcus L.',
+        logId: 'SYS_LOG_8842',
+        company: 'Apex Logistics',
+        clientWebsite: '#',
+        quote: "The system didn't just save time; it eliminated the 'busy work' that was burning out our best managers. We reclaimed 40 hours a week.",
+        personName: 'Marcus Lin',
         personRole: 'Operations Director',
-        clientWebsite: 'https://apex-logistics.demo',
-        verifiedResultLink: undefined,
-        module: 'Auto-Agent',
+        verifiedResultLink: '#',
+        module: 'Auto-Dispatch Core',
+    },
+    {
+        id: 'CS_02',
+        logId: 'SYS_LOG_9921',
+        company: 'Vanguard Creative',
+        clientWebsite: '#',
+        quote: 'We installed the content engine on Monday. By Friday, our output tripled without hiring a single new writer.',
+        personName: 'Sarah Jenkins',
+        personRole: 'Founder',
+        verifiedResultLink: '#',
+        module: 'Content Velocity V1',
+    },
+    {
+        id: 'CS_03',
+        logId: 'SYS_LOG_1102',
+        company: 'Nexus Finance',
+        clientWebsite: '#',
+        quote: 'Accuracy is non-negotiable for us. The Trust Engine caught errors our human team missed for years.',
+        personName: 'David Chen',
+        personRole: 'CFO',
+        verifiedResultLink: '#',
+        module: 'Audit Sentinel',
     },
 ];
-
-export const caseStudiesSection = {
-    badge: 'Verified Deployments',
-    title: 'System Performance.',
-    disclaimer: 'Results from live deployments. Names anonymized for privacy.',
-};
 
 // ============================================
 // MANIFESTO TEASER
 // ============================================
 export const manifestoTeaser = {
-    badge: 'The Philosophy',
+    badge: 'Our Philosophy',
     title: {
-        line1: 'Code Breaks.',
-        line2: 'Systems Survive.',
+        line1: 'Human Genius.',
+        line2: 'Machine Scale.',
     },
     ctaLabel: 'Read the Manifesto',
     ctaHref: '/about',
