@@ -43,9 +43,10 @@
     }
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling & System UI Theme */
 html {
     scroll-behavior: smooth;
+    color-scheme: light dark;
 }
 
 /* Animation Keyframes - Respects reduced motion preference */

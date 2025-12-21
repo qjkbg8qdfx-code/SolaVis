@@ -13,7 +13,7 @@ export default function MethodologyPage() {
                     System Architecture
                 </span>
                 <h1 className="text-hero mb-6">The Protocol.</h1>
-                <p className="mx-auto max-w-2xl text-xl text-gray-500">
+                <p className="mx-auto max-w-2xl text-xl text-gray-500 dark:text-slate-400">
                     A deterministic pipeline. Input Chaos &rarr; Output Scale.
                 </p>
             </div>
@@ -25,17 +25,17 @@ export default function MethodologyPage() {
                     <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
                         <span className="font-mono text-6xl font-bold">01</span>
                     </div>
-                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white dark:bg-slate-800 dark:text-white">
                         <Search className="h-6 w-6" />
                     </div>
                     <h3 className="mb-3 text-2xl font-bold">Audit</h3>
-                    <p className="leading-relaxed text-gray-500">
+                    <p className="leading-relaxed text-gray-500 dark:text-slate-400">
                         We map your entire P&L. We identify the &quot;Leakage Nodes&quot;—where money is lost
                         to inefficiency.
                     </p>
 
                     {/* Pseudo Code Visual */}
-                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400 dark:border-slate-700">
                         &gt; scan(operations);
                         <br />
                         &gt; detect(redundancy);
@@ -43,23 +43,23 @@ export default function MethodologyPage() {
                 </div>
 
                 {/* Arrow Connector (Desktop Only) */}
-                <div className="absolute left-[30%] right-[66%] top-1/2 z-0 hidden h-px bg-gray-200 md:flex"></div>
+                <div className="absolute left-[30%] right-[66%] top-1/2 z-0 hidden h-px bg-gray-200 dark:bg-slate-700 md:flex"></div>
 
                 {/* Step 2: Deploy */}
-                <div className="card-ios group relative z-10 border-l-4 border-l-ios-blue transition-transform hover:-translate-y-1 md:border-t-4 md:border-l-white md:border-t-ios-blue">
+                <div className="card-ios group relative z-10 border-l-4 border-l-ios-blue transition-transform hover:-translate-y-1 md:border-t-4 md:border-l-white md:border-t-ios-blue dark:md:border-l-slate-900">
                     <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
                         <span className="font-mono text-6xl font-bold">02</span>
                     </div>
-                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white dark:bg-slate-800 dark:text-white">
                         <Settings className="h-6 w-6" />
                     </div>
                     <h3 className="mb-3 text-2xl font-bold">Deploy</h3>
-                    <p className="leading-relaxed text-gray-500">
+                    <p className="leading-relaxed text-gray-500 dark:text-slate-400">
                         The &quot;SolvoVis Patch.&quot; We install custom scripts to bridge your disconnected
                         software stacks.
                     </p>
 
-                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400 dark:border-slate-700">
                         &gt; install(modules);
                         <br />
                         &gt; npm run build;
@@ -71,16 +71,16 @@ export default function MethodologyPage() {
                     <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
                         <span className="font-mono text-6xl font-bold">03</span>
                     </div>
-                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gray-50 text-gray-900 transition-colors group-hover:bg-ios-blue group-hover:text-white dark:bg-slate-800 dark:text-white">
                         <Zap className="h-6 w-6" />
                     </div>
                     <h3 className="mb-3 text-2xl font-bold">Scale</h3>
-                    <p className="leading-relaxed text-gray-500">
+                    <p className="leading-relaxed text-gray-500 dark:text-slate-400">
                         The System runs autonomously. Your team focuses on high-value strategy, not
                         data entry.
                     </p>
 
-                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400">
+                    <div className="mt-6 border-t border-gray-100 pt-4 font-mono text-xs text-gray-400 dark:border-slate-700">
                         &gt; while(true) optimize();
                     </div>
                 </div>

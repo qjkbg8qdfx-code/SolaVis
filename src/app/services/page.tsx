@@ -161,7 +161,7 @@ export default function ServicesPage() {
             </div>
 
             {/* FAQ Section (Voice Search Optimized) */}
-            <section className="mt-20 border-t border-gray-100 pt-16">
+            <section className="mt-20 border-t border-gray-100 pt-16 dark:border-slate-800">
                 <div className="mb-12 max-w-2xl">
                     <span className="mb-4 block font-mono text-sm uppercase tracking-wider text-ios-blue">
                         {faqSection.badge}
@@ -173,9 +173,9 @@ export default function ServicesPage() {
                     {faqContent.map((faq, index) => (
                         <details
                             key={index}
-                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50"
+                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 dark:border-slate-800 dark:bg-slate-900"
                         >
-                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-100">
+                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900 transition-colors hover:bg-gray-100 dark:text-white dark:hover:bg-slate-800">
                                 <span>{faq.question}</span>
                                 <span className="ml-4 text-gray-400 transition-transform group-open:rotate-180">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -189,7 +189,7 @@ export default function ServicesPage() {
                                     </svg>
                                 </span>
                             </summary>
-                            <div className="px-6 pb-6 leading-relaxed text-gray-600">
+                            <div className="px-6 pb-6 leading-relaxed text-gray-600 dark:text-slate-400">
                                 {faq.answer}
                             </div>
                         </details>

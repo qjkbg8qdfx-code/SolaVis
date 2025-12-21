@@ -19,7 +19,7 @@ export default function Home() {
             {/* Hero Section */}
             <section className="grid items-center gap-12 py-24 md:grid-cols-2 md:py-32">
                 <div className="animate-fade-in-up space-y-8">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-green-200/50 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-green-700 shadow-sm backdrop-blur-sm">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-green-200/50 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-green-700 shadow-sm backdrop-blur-sm dark:border-green-800/50 dark:bg-green-950/50 dark:text-green-400">
                         <span className="relative flex h-2 w-2">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
                             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
@@ -52,10 +52,10 @@ export default function Home() {
                     </div>
 
                     {/* Social Proof / System Metrics */}
-                    <div className="flex gap-8 border-t border-gray-100 pt-8 md:gap-12">
+                    <div className="flex gap-8 border-t border-gray-100 pt-8 dark:border-slate-800 md:gap-12">
                         {heroContent.metrics.map((metric) => (
                             <div key={metric.label}>
-                                <div className="text-2xl font-bold text-gray-900">
+                                <div className="text-2xl font-bold text-gray-900 dark:text-white">
                                     <Counter
                                         value={metric.value}
                                         suffix={metric.suffix}
@@ -77,7 +77,7 @@ export default function Home() {
 
                     {/* Glass Panel Transaction Log */}
                     <div
-                        className="glass-panel relative w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/40 p-6 shadow-2xl transition-transform duration-500 hover:scale-[1.02] motion-reduce:transition-none"
+                        className="glass-panel relative w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/40 p-6 shadow-2xl transition-transform duration-500 hover:scale-[1.02] motion-reduce:transition-none dark:border-slate-800 dark:shadow-none"
                         role="img"
                         aria-label="Transaction log showing automated invoice scanning, compliance check, and payout processing"
                     >
@@ -95,22 +95,22 @@ export default function Home() {
 
                         {/* Transaction Log Content */}
                         <div className="space-y-4 font-mono text-xs md:text-sm">
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
-                                <span className="text-gray-700">Invoice_Scanning</span>
-                                <span className="font-semibold text-green-600">[DONE 0.2s]</span>
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
+                                <span className="text-gray-700 dark:text-slate-300">Invoice_Scanning</span>
+                                <span className="font-semibold text-green-600 dark:text-green-400">[DONE 0.2s]</span>
                             </div>
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
-                                <span className="text-gray-700">Compliance_Check</span>
-                                <span className="font-semibold text-green-600">[PASSED]</span>
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
+                                <span className="text-gray-700 dark:text-slate-300">Compliance_Check</span>
+                                <span className="font-semibold text-green-600 dark:text-green-400">[PASSED]</span>
                             </div>
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
-                                <span className="text-gray-700">Payout_Triggered</span>
+                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
+                                <span className="text-gray-700 dark:text-slate-300">Payout_Triggered</span>
                                 <span className="font-semibold text-ios-blue">[AUTO]</span>
                             </div>
                         </div>
 
                         {/* Status Footer */}
-                        <div className="mt-6 flex items-center justify-between border-t border-gray-100/50 pt-4">
+                        <div className="mt-6 flex items-center justify-between border-t border-gray-100/50 pt-4 dark:border-slate-800">
                             <div className="flex items-center gap-2">
                                 <div className="h-2 w-2 animate-pulse rounded-full bg-green-500 motion-reduce:animate-none"></div>
                                 <span className="text-[10px] uppercase tracking-wider text-gray-500">
@@ -145,7 +145,7 @@ export default function Home() {
             </section>
 
             {/* Verified Case Studies (Social Proof) */}
-            <section id="case-studies" className="border-t border-gray-100 py-20">
+            <section id="case-studies" className="border-t border-gray-100 py-20 dark:border-slate-800">
                 <div className="mb-12">
                     <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
                         {caseStudiesSection.badge}
@@ -159,7 +159,7 @@ export default function Home() {
                     {caseStudies.map((study) => (
                         <div
                             key={study.id}
-                            className="rounded-r-2xl border-l-4 border-l-ios-blue bg-gray-50 p-8"
+                            className="rounded-r-2xl border-l-4 border-l-ios-blue bg-gray-50 p-8 dark:bg-slate-900"
                         >
                             <div className="mb-4 flex items-center justify-between font-mono text-xs text-ios-blue">
                                 <span>
@@ -186,22 +186,22 @@ export default function Home() {
                                     </a>
                                 )}
                             </div>
-                            <p className="mb-6 text-lg font-medium text-gray-900">
+                            <p className="mb-6 text-lg font-medium text-gray-900 dark:text-white">
                                 &quot;{study.quote}&quot;
                             </p>
-                            <div className="mt-auto border-t border-gray-200 pt-4">
+                            <div className="mt-auto border-t border-gray-200 pt-4 dark:border-slate-700">
 
                                 {study.status === 'VERIFIED' ? (
                                     <a
                                         href={study.clientWebsite}
-                                        className="text-sm font-bold text-gray-900 transition-colors hover:text-ios-blue"
+                                        className="text-sm font-bold text-gray-900 transition-colors hover:text-ios-blue dark:text-white"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
                                         {study.company}
                                     </a>
                                 ) : (
-                                    <span className="text-sm font-bold text-gray-900">
+                                    <span className="text-sm font-bold text-gray-900 dark:text-white">
                                         {study.company}
                                     </span>
                                 )}
@@ -225,7 +225,7 @@ export default function Home() {
             </section>
 
             {/* FAQ Section (GEO Optimized) */}
-            <section className="border-t border-gray-100 py-20">
+            <section className="border-t border-gray-100 py-20 dark:border-slate-800">
                 <div className="mb-12">
                     <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
                         {faqSection.badge}
@@ -237,9 +237,9 @@ export default function Home() {
                     {faqContent.map((faq, index) => (
                         <details
                             key={index}
-                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 transition-all hover:border-ios-blue/30"
+                            className="group overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 transition-all hover:border-ios-blue/30 dark:border-slate-800 dark:bg-slate-900"
                         >
-                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900">
+                            <summary className="flex cursor-pointer list-none items-center justify-between p-6 text-lg font-medium text-gray-900 dark:text-white">
                                 <span>{faq.question}</span>
                                 <span className="ml-4 text-gray-400 transition-transform group-open:rotate-180">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -253,7 +253,7 @@ export default function Home() {
                                     </svg>
                                 </span>
                             </summary>
-                            <div className="px-6 pb-6 leading-relaxed text-gray-600">
+                            <div className="px-6 pb-6 leading-relaxed text-gray-600 dark:text-slate-400">
                                 {faq.answer}
                             </div>
                         </details>

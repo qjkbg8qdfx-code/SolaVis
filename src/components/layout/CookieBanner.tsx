@@ -45,20 +45,20 @@ export default function CookieBanner() {
             aria-labelledby="cookie-banner-title"
             aria-describedby="cookie-banner-description"
         >
-            <div className="glass-panel rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-ios-hover">
+            <div className="glass-panel rounded-2xl border border-gray-100 bg-white/95 p-5 shadow-ios-hover dark:border-slate-800 dark:bg-slate-900/95">
                 {/* Header */}
                 <div className="mb-3 flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-ios-blue/10">
                             <Cookie className="h-5 w-5 text-ios-blue" />
                         </div>
-                        <h3 id="cookie-banner-title" className="font-semibold text-ios-text">
+                        <h3 id="cookie-banner-title" className="font-semibold text-ios-text dark:text-white">
                             Cookie Preferences
                         </h3>
                     </div>
                     <button
                         onClick={handleReject}
-                        className="rounded-lg p-1.5 text-gray-400 transition-colors hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2"
+                        className="rounded-lg p-1.5 text-gray-400 transition-colors hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 dark:text-slate-500 dark:hover:text-slate-300"
                         aria-label="Close and reject cookies"
                     >
                         <X className="h-4 w-4" />
@@ -68,7 +68,7 @@ export default function CookieBanner() {
                 {/* Description */}
                 <p
                     id="cookie-banner-description"
-                    className="mb-5 text-sm leading-relaxed text-ios-subtext"
+                    className="mb-5 text-sm leading-relaxed text-ios-subtext dark:text-slate-400"
                 >
                     We use cookies to enhance your experience and analyze site traffic. You can
                     accept all cookies or reject non-essential ones.
@@ -79,7 +79,7 @@ export default function CookieBanner() {
                     <div className="flex gap-3">
                         <button
                             onClick={handleReject}
-                            className="flex-1 rounded-xl bg-gray-100 px-4 py-2.5 text-sm font-medium text-ios-text transition-all hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98]"
+                            className="flex-1 rounded-xl bg-gray-100 px-4 py-2.5 text-sm font-medium text-ios-text transition-all hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98] dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
                         >
                             Reject All
                         </button>
@@ -92,7 +92,7 @@ export default function CookieBanner() {
                     </div>
                     <button
                         onClick={handleEssential}
-                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-ios-subtext transition-all hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98]"
+                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-ios-subtext transition-all hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98] dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
                     >
                         Essential Cookies Only
                     </button>
