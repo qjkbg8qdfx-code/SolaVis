@@ -47,7 +47,7 @@ module.exports = {
                 },
                 surface: {
                     light: '#F5F5F7',
-                    glass: 'rgba(255, 255, 255, 0.72)', // Navbar glass
+                    glass: 'rgba(255, 255, 255, 0.85)', // Enhanced opacity for outdoor readability
                 },
                 // Trust Engine Accent
                 engine: {

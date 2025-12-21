@@ -17,7 +17,7 @@ export default function MobileNav() {
     return (
         <nav
             aria-label="Mobile navigation"
-            className="glass-panel fixed bottom-0 z-50 w-full px-4 pb-6 pt-3 md:hidden"
+            className="glass-panel fixed bottom-0 z-50 w-full px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-3 md:hidden"
         >
             <div className="flex items-center justify-around">
                 {mobileBottomNavLinks.map((link) => {

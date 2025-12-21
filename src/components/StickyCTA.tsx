@@ -29,7 +29,7 @@ export default function StickyCTA({
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-20 left-4 right-4 z-40 animate-fade-in md:hidden">
+        <div className="fixed bottom-6 left-1/2 z-40 hidden -translate-x-1/2 animate-fade-in md:block">
             <Link
                 href={href}
                 className="flex w-full items-center justify-center gap-2 rounded-2xl bg-ios-blue px-6 py-4 font-semibold text-white shadow-lg transition-transform active:scale-[0.98]"
