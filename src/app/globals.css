@@ -30,7 +30,8 @@
 
     /* iOS Card Style - Enhanced Dark Mode Depth */
     .card-ios {
-        @apply rounded-3xl border border-white/50 bg-white p-8 shadow-ios transition-all duration-500 ease-out hover:shadow-ios-hover dark:border-white/10 dark:bg-slate-900 dark:shadow-[0_0_0_1px_rgba(255, 255, 255, 0.05), 0_4px_24px_rgba(0, 0, 0, 0.3)];
+        @apply rounded-3xl border border-white/50 bg-white p-8 shadow-ios transition-all duration-500 ease-out hover:shadow-ios-hover 
+               dark:border-white/10 dark:bg-slate-900 dark:ring-1 dark:ring-white/5 dark:shadow-lg;
     }
 
     /* Glassmorphism Utility - Enhanced with Indigo tint & Dark Depth */
