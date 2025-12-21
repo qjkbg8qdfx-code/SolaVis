@@ -33,7 +33,7 @@ temp/
 
 # IDE & Editor files
 .idea/
-.vscode/
+# .vscode/  # Allowing for Tailwind CSS settings
 *.swp
 *.swo
 *.swn
