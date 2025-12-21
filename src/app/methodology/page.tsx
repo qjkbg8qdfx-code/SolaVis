@@ -42,11 +42,10 @@ export default function MethodologyPage() {
                     </div>
                 </div>
 
-                {/* Arrow Connector (Desktop Only) */}
-                <div className="absolute left-[30%] right-[66%] top-1/2 z-0 hidden h-px bg-gray-200 dark:bg-slate-700 md:flex"></div>
+
 
                 {/* Step 2: Deploy */}
-                <div className="card-ios group relative z-10 border-l-4 border-l-ios-blue transition-transform hover:-translate-y-1 md:border-t-4 md:border-l-white md:border-t-ios-blue dark:md:border-l-slate-900">
+                <div className="card-ios group relative z-10 transition-transform hover:-translate-y-1">
                     <div className="absolute right-0 top-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
                         <span className="font-mono text-6xl font-bold">02</span>
                     </div>
