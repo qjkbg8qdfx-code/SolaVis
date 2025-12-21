@@ -41,7 +41,7 @@ export default function Navigation() {
     return (
         <>
             <nav
-                className={`glass-panel fixed top-0 w-full dark:border-gray-800 dark:bg-gray-900/80 ${isOpen ? 'z-[70]' : 'z-50'}`}
+                className={`glass-panel fixed top-0 w-full dark:border-slate-800 dark:bg-slate-950/80 ${isOpen ? 'z-[70]' : 'z-50'}`}
             >
                 <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between bg-transparent px-6">
                     <Link
@@ -53,7 +53,7 @@ export default function Navigation() {
                             alt="SolvoVis Logo"
                             width={24}
                             height={24}
-                            className="h-6 w-6"
+                            className="h-6 w-6 dark:invert"
                         />
                         SolvoVis<span className="font-mono text-xl text-ios-blue">.</span>
                     </Link>
@@ -118,7 +118,7 @@ export default function Navigation() {
 
                 {/* Mobile Full Screen Overlay */}
                 {isOpen && (
-                    <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col items-center justify-center bg-white/95 backdrop-blur-xl dark:bg-gray-950/95 md:hidden">
+                    <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col items-center justify-center bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
                         {/* Close Button */}
                         <button
                             onClick={toggleMenu}
