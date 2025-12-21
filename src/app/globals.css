@@ -49,6 +49,35 @@ html {
     color-scheme: light dark;
 }
 
+/* Fix Browser Autofill Styles - Prevents ugly yellow/blue backgrounds in Dark Mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    /* Light mode: subtle gray background */
+    -webkit-box-shadow: 0 0 0 1000px #f9fafb inset !important;
+    -webkit-text-fill-color: #111827 !important;
+    caret-color: #111827 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        /* Dark mode: slate background matching our theme */
+        -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+        -webkit-text-fill-color: #f1f5f9 !important;
+        caret-color: #f1f5f9 !important;
+    }
+}
+
 /* Animation Keyframes - Respects reduced motion preference */
 @media (prefers-reduced-motion: no-preference) {
     @keyframes fade-in-up {
