@@ -53,7 +53,7 @@ export default function Navigation() {
                             alt="SolvoVis Logo"
                             width={24}
                             height={24}
-                            className="h-6 w-6 dark:invert"
+                            className="h-6 w-6 dark:invert dark:opacity-90"
                         />
                         SolvoVis<span className="font-mono text-xl text-ios-blue">.</span>
                     </Link>
