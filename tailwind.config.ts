@@ -54,6 +54,12 @@ module.exports = {
                     primary: '#0071E3', // Keep blue for CTAs
                     accent: '#10b981', // Emerald for success/active states
                 },
+                // AI "Magic Moments" Colors
+                ai: {
+                    violet: '#8B5CF6',
+                    fuchsia: '#A855F7',
+                    glow: 'rgba(139, 92, 246, 0.15)',
+                },
             },
             fontFamily: {
                 sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
@@ -75,6 +81,8 @@ module.exports = {
             animation: {
                 'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
                 'fade-in': 'fadeIn 0.3s ease-out forwards',
+                'breathe': 'breathe 4s ease-in-out infinite',
+                'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
             },
             keyframes: {
                 fadeInUp: {
@@ -84,6 +92,14 @@ module.exports = {
                 fadeIn: {
                     '0%': { opacity: '0' },
                     '100%': { opacity: '1' },
+                },
+                breathe: {
+                    '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                    '50%': { transform: 'scale(1.02)', opacity: '0.95' },
+                },
+                'pulse-glow': {
+                    '0%, 100%': { opacity: '0.4' },
+                    '50%': { opacity: '0.7' },
                 },
             },
         },

@@ -71,53 +71,91 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Hero Visual (Logic Gate / System Architecture) */}
+                {/* Hero Visual - Success Dashboard (Business Results Focus) */}
                 <div className="relative flex aspect-square items-center justify-center">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-100/50 to-indigo-50/50 opacity-60 blur-3xl"></div>
+                    {/* Gradient Glow Background */}
+                    <div className="absolute inset-0 animate-pulse-glow rounded-full bg-gradient-to-tr from-blue-500/20 via-violet-500/20 to-fuchsia-500/20 blur-3xl"></div>
 
-                    {/* Glass Panel Transaction Log */}
+                    {/* Success Dashboard Card */}
                     <div
-                        className="glass-panel relative w-full max-w-sm transform overflow-hidden rounded-2xl border border-white/40 p-6 shadow-2xl transition-transform duration-500 hover:scale-[1.02] motion-reduce:transition-none dark:border-slate-800 dark:shadow-none"
+                        className="glass-panel animate-breathe relative w-full max-w-sm overflow-hidden rounded-3xl p-6 shadow-2xl motion-reduce:animate-none dark:shadow-violet-500/5"
                         role="img"
-                        aria-label="Transaction log showing automated invoice scanning, compliance check, and payout processing"
+                        aria-label="Dashboard showing efficiency gains and optimization metrics"
                     >
                         {/* Header */}
-                        <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-4">
-                            <div className="flex gap-2">
-                                <div className="h-3 w-3 rounded-full bg-red-400/80"></div>
-                                <div className="h-3 w-3 rounded-full bg-yellow-400/80"></div>
-                                <div className="h-3 w-3 rounded-full bg-green-400/80"></div>
-                            </div>
-                            <div className="font-mono text-[10px] text-gray-400">
-                                transaction_log.sys
+                        <div className="mb-6 flex items-center justify-between">
+                            <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+                                Efficiency Metrics
+                            </h3>
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-2.5 py-1 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                <span className="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                                Live
+                            </span>
+                        </div>
+
+                        {/* SVG Chart - Upward Trend */}
+                        <div className="relative mb-6 h-32 w-full overflow-hidden rounded-xl bg-gradient-to-b from-gray-50 to-white p-4 dark:from-slate-800/50 dark:to-slate-900/50">
+                            <svg
+                                viewBox="0 0 200 80"
+                                className="h-full w-full"
+                                preserveAspectRatio="none"
+                            >
+                                {/* Gradient Fill */}
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
+                                        <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                {/* Area Fill */}
+                                <path
+                                    d="M0 70 Q30 65, 50 55 T100 40 T150 25 T200 10 L200 80 L0 80 Z"
+                                    fill="url(#chartGradient)"
+                                />
+                                {/* Line */}
+                                <path
+                                    d="M0 70 Q30 65, 50 55 T100 40 T150 25 T200 10"
+                                    fill="none"
+                                    stroke="#8B5CF6"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                />
+                                {/* End Point */}
+                                <circle cx="200" cy="10" r="4" fill="#8B5CF6" />
+                            </svg>
+                            <div className="absolute right-4 top-4 text-right">
+                                <div className="text-2xl font-bold text-gray-900 dark:text-white">+147%</div>
+                                <div className="text-xs text-gray-500 dark:text-slate-400">Revenue Efficiency</div>
                             </div>
                         </div>
 
-                        {/* Transaction Log Content */}
-                        <div className="space-y-4 font-mono text-xs md:text-sm">
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
-                                <span className="text-gray-700 dark:text-slate-300">Invoice_Scanning</span>
-                                <span className="font-semibold text-green-600 dark:text-green-400">[DONE 0.2s]</span>
+                        {/* Metric Pills */}
+                        <div className="mb-6 grid grid-cols-3 gap-3">
+                            <div className="rounded-xl bg-blue-50 p-3 text-center dark:bg-blue-900/20">
+                                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">4.5×</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-blue-600/70 dark:text-blue-400/70">ROI</div>
                             </div>
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
-                                <span className="text-gray-700 dark:text-slate-300">Compliance_Check</span>
-                                <span className="font-semibold text-green-600 dark:text-green-400">[PASSED]</span>
+                            <div className="rounded-xl bg-violet-50 p-3 text-center dark:bg-violet-900/20">
+                                <div className="text-lg font-bold text-violet-600 dark:text-violet-400">98%</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-violet-600/70 dark:text-violet-400/70">Automated</div>
                             </div>
-                            <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3 dark:bg-slate-800">
-                                <span className="text-gray-700 dark:text-slate-300">Payout_Triggered</span>
-                                <span className="font-semibold text-ios-blue">[AUTO]</span>
+                            <div className="rounded-xl bg-green-50 p-3 text-center dark:bg-green-900/20">
+                                <div className="text-lg font-bold text-green-600 dark:text-green-400">24/7</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-green-600/70 dark:text-green-400/70">Active</div>
                             </div>
                         </div>
 
                         {/* Status Footer */}
-                        <div className="mt-6 flex items-center justify-between border-t border-gray-100/50 pt-4 dark:border-slate-800">
+                        <div className="flex items-center justify-between rounded-xl bg-gray-50 px-4 py-3 dark:bg-slate-800/50">
                             <div className="flex items-center gap-2">
-                                <div className="h-2 w-2 animate-pulse rounded-full bg-green-500 motion-reduce:animate-none"></div>
-                                <span className="text-[10px] uppercase tracking-wider text-gray-500">
-                                    System Active
+                                <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span className="text-sm font-medium text-gray-700 dark:text-slate-300">
+                                    Optimization Complete
                                 </span>
                             </div>
-                            <span className="text-[10px] text-gray-400">3/3 Complete</span>
+                            <span className="text-xs text-gray-400">Just now</span>
                         </div>
                     </div>
                 </div>
