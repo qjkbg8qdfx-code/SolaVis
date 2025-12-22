@@ -16,7 +16,7 @@ export default function BentoCard({ module }: BentoCardProps) {
                 <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
 
                 <div className="relative z-10">
-                    <span className="mb-2 block font-mono text-sm text-gray-400">
+                    <span className="mb-2 block font-mono text-sm text-gray-400 dark:text-slate-300">
                         {number}. {category}
                     </span>
                     <h3 className="mb-4 text-3xl font-semibold text-white">{title}</h3>

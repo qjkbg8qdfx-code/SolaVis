@@ -220,8 +220,8 @@ export default function Home() {
                                         </div>
                                         <span
                                             className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${stat.status === 'Critical'
-                                                    ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-                                                    : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+                                                ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                                : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
                                                 }`}
                                         >
                                             <span
@@ -371,7 +371,7 @@ export default function Home() {
                     <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
                         {faqSection.badge}
                     </span>
-                    <h2 className="text-3xl font-bold tracking-tight">{faqSection.title}</h2>
+                    <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{faqSection.title}</h2>
                 </div>
 
                 <div className="max-w-3xl space-y-4">
@@ -403,7 +403,7 @@ export default function Home() {
             </section>
 
             {/* Manifesto Teaser */}
-            <section className="mx-auto max-w-3xl py-32 text-center">
+            <section className="mx-auto mb-20 max-w-3xl py-32 text-center">
                 <span className="text-sm font-semibold uppercase tracking-wider text-ios-blue">
                     {manifestoTeaser.badge}
                 </span>
