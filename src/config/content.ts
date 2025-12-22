@@ -11,7 +11,7 @@ export const heroContent = {
         line2: 'Unleash the Extraordinary.',
     },
     subtitle:
-        'We architect autonomous systems to handle the trivial 80%, so you can dedicate 100% of your genius to what truly matters.',
+        'Architecting autonomous systems that eliminate 80% of operational friction. We build the logic; you scale the vision.',
     primaryCta: {
         label: 'Deploy System',
         href: '/services',
@@ -205,4 +205,19 @@ export const faqContent: FAQItem[] = [
 export const faqSection = {
     badge: 'System Protocol',
     title: 'Frequently Asked.',
+};
+
+// ============================================
+// BOTTLENECK SECTION (Agitation Phase)
+// ============================================
+export const bottleneckSection = {
+    badge: 'System Origin Log',
+    title: 'The Human Bottleneck.',
+    description:
+        "Data shows that 60% of enterprise 'work' is simply copy-pasting data between tabs. This is Digital Waste. We realized human error was the #1 cost center.",
+    highlight: 'So we removed it.',
+    stats: [
+        { label: 'Manual Data Entry', value: '60%', status: 'Critical' },
+        { label: 'Error Rate', value: '18%', status: 'High' },
+    ],
 };

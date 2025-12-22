@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import Counter from '@/components/Counter';
 import BentoCard from '@/components/ui/BentoCard';
+import { Building2, AlertTriangle, Copy, Zap } from 'lucide-react';
 import {
     heroContent,
     bentoModules,
@@ -11,6 +12,7 @@ import {
     manifestoTeaser,
     faqContent,
     faqSection,
+    bottleneckSection,
 } from '@/config/content';
 
 export default function Home() {
@@ -49,6 +51,18 @@ export default function Home() {
                         >
                             <PlayCircle className="h-4 w-4" /> {heroContent.secondaryCta.label}
                         </Link>
+                    </div>
+
+                    {/* Trust Anchor */}
+                    <div className="flex items-center gap-4 pt-2">
+                        <span className="text-sm text-gray-400 dark:text-slate-500">
+                            Trusted by forward-thinking SMEs globally
+                        </span>
+                        <div className="flex items-center gap-2">
+                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
+                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
+                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
+                        </div>
                     </div>
 
                     {/* Social Proof / System Metrics */}
@@ -132,16 +146,16 @@ export default function Home() {
                         {/* Metric Pills */}
                         <div className="mb-6 grid grid-cols-3 gap-3">
                             <div className="rounded-xl bg-blue-50 p-3 text-center dark:bg-blue-900/20">
-                                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">4.5×</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-blue-600/70 dark:text-blue-400/70">ROI</div>
+                                <div className="text-lg font-bold text-blue-700 dark:text-blue-300">4.5×</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-blue-700/80 dark:text-blue-300/80">ROI</div>
                             </div>
                             <div className="rounded-xl bg-violet-50 p-3 text-center dark:bg-violet-900/20">
-                                <div className="text-lg font-bold text-violet-600 dark:text-violet-400">98%</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-violet-600/70 dark:text-violet-400/70">Automated</div>
+                                <div className="text-lg font-bold text-violet-700 dark:text-violet-300">98%</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-violet-700/80 dark:text-violet-300/80">Automated</div>
                             </div>
                             <div className="rounded-xl bg-green-50 p-3 text-center dark:bg-green-900/20">
-                                <div className="text-lg font-bold text-green-600 dark:text-green-400">24/7</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-green-600/70 dark:text-green-400/70">Active</div>
+                                <div className="text-lg font-bold text-green-700 dark:text-green-300">24/7</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-green-700/80 dark:text-green-300/80">Active</div>
                             </div>
                         </div>
 
@@ -156,6 +170,82 @@ export default function Home() {
                                 </span>
                             </div>
                             <span className="text-xs text-gray-400">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* The Human Bottleneck Section (Agitation Phase) */}
+            <section className="border-t border-gray-100 py-20 dark:border-slate-800">
+                <div className="grid gap-12 md:grid-cols-2">
+                    {/* Left Column - Narrative */}
+                    <div className="space-y-6">
+                        <span className="inline-block rounded-full border border-red-200/50 bg-red-50 px-3 py-1 font-mono text-xs uppercase tracking-wider text-red-600 dark:border-red-800/50 dark:bg-red-950/50 dark:text-red-400">
+                            {bottleneckSection.badge}
+                        </span>
+                        <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+                            {bottleneckSection.title}
+                        </h2>
+                        <p className="max-w-lg text-lg text-gray-600 dark:text-slate-400">
+                            {bottleneckSection.description}
+                        </p>
+                        <p className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-2xl font-bold text-transparent">
+                            {bottleneckSection.highlight}
+                        </p>
+                    </div>
+
+                    {/* Right Column - Visual Evidence (Bento Box) */}
+                    <div className="grid gap-4">
+                        {/* Digital Waste Card */}
+                        <div className="glass-panel rounded-2xl p-6">
+                            <div className="mb-4 flex items-center gap-3">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 dark:bg-red-900/30">
+                                    <Copy className="h-5 w-5 text-red-600 dark:text-red-400" />
+                                </div>
+                                <div>
+                                    <div className="font-semibold text-gray-900 dark:text-white">Digital Waste Detected</div>
+                                    <div className="text-xs text-gray-500">Copy-Paste Operations</div>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-2 rounded-lg bg-red-50 px-4 py-3 dark:bg-red-900/20">
+                                <AlertTriangle className="h-4 w-4 text-red-500" />
+                                <span className="text-sm font-medium text-red-700 dark:text-red-400">
+                                    Manual data entry consuming 60% of work hours
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Stats Grid */}
+                        <div className="grid grid-cols-2 gap-4">
+                            {bottleneckSection.stats.map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="glass-panel rounded-2xl p-4 text-center"
+                                >
+                                    <div className="mb-1 text-3xl font-bold text-gray-900 dark:text-white">
+                                        {stat.value}
+                                    </div>
+                                    <div className="mb-2 text-xs text-gray-500 dark:text-slate-400">
+                                        {stat.label}
+                                    </div>
+                                    <span
+                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${stat.status === 'Critical'
+                                                ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                                : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+                                            }`}
+                                    >
+                                        {stat.status}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Solution Teaser */}
+                        <div className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-500/10 to-fuchsia-500/10 p-4">
+                            <Zap className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                            <span className="font-medium text-gray-700 dark:text-slate-300">
+                                Autonomous systems eliminate the friction
+                            </span>
                         </div>
                     </div>
                 </div>
