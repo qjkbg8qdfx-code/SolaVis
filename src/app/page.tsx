@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import Counter from '@/components/Counter';
 import BentoCard from '@/components/ui/BentoCard';
-import { Building2, AlertTriangle, Copy, Zap } from 'lucide-react';
 import {
     heroContent,
     bentoModules,
@@ -19,7 +18,7 @@ export default function Home() {
     return (
         <div className="mx-auto max-w-7xl px-6">
             {/* Hero Section */}
-            <section className="grid items-center gap-12 py-24 md:grid-cols-2 md:py-32">
+            <section className="grid items-center gap-12 py-16 md:grid-cols-2 md:py-32">
                 <div className="animate-fade-in-up space-y-8">
                     <div className="inline-flex items-center gap-2 rounded-full border border-green-200/50 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-green-700 shadow-sm backdrop-blur-sm dark:border-green-800/50 dark:bg-green-950/50 dark:text-green-400">
                         <span className="relative flex h-2 w-2">
@@ -54,19 +53,14 @@ export default function Home() {
                     </div>
 
                     {/* Trust Anchor */}
-                    <div className="flex items-center gap-4 pt-2">
-                        <span className="text-sm text-gray-400 dark:text-slate-500">
+                    <div className="pt-6 text-center md:text-left">
+                        <p className="text-sm font-medium text-gray-500 dark:text-slate-400">
                             Trusted by forward-thinking SMEs globally
-                        </span>
-                        <div className="flex items-center gap-2">
-                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
-                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
-                            <Building2 className="h-4 w-4 text-gray-300 dark:text-slate-600" />
-                        </div>
+                        </p>
                     </div>
 
                     {/* Social Proof / System Metrics */}
-                    <div className="flex gap-8 border-t border-gray-100 pt-8 dark:border-slate-800 md:gap-12">
+                    <div className="mt-4 flex gap-8 border-t border-gray-100 pt-8 dark:border-slate-800 md:gap-12">
                         {heroContent.metrics.map((metric) => (
                             <div key={metric.label}>
                                 <div className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -176,76 +170,58 @@ export default function Home() {
             </section>
 
             {/* The Human Bottleneck Section (Agitation Phase) */}
-            <section className="border-t border-gray-100 py-20 dark:border-slate-800">
-                <div className="grid gap-12 md:grid-cols-2">
-                    {/* Left Column - Narrative */}
+            <section className="bg-white py-20 dark:bg-black">
+                <div className="grid gap-12 md:grid-cols-2 md:items-center">
+                    {/* Left Column: Narrative */}
                     <div className="space-y-6">
-                        <span className="inline-block rounded-full border border-red-200/50 bg-red-50 px-3 py-1 font-mono text-xs uppercase tracking-wider text-red-600 dark:border-red-800/50 dark:bg-red-950/50 dark:text-red-400">
+                        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-blue-600">
                             {bottleneckSection.badge}
                         </span>
                         <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
                             {bottleneckSection.title}
                         </h2>
-                        <p className="max-w-lg text-lg text-gray-600 dark:text-slate-400">
+                        <p className="max-w-md text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                             {bottleneckSection.description}
                         </p>
-                        <p className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-2xl font-bold text-transparent">
+                        <p className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-2xl font-bold text-transparent">
                             {bottleneckSection.highlight}
                         </p>
                     </div>
 
-                    {/* Right Column - Visual Evidence (Bento Box) */}
-                    <div className="grid gap-4">
-                        {/* Digital Waste Card */}
-                        <div className="glass-panel rounded-2xl p-6">
-                            <div className="mb-4 flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 dark:bg-red-900/30">
-                                    <Copy className="h-5 w-5 text-red-600 dark:text-red-400" />
-                                </div>
-                                <div>
-                                    <div className="font-semibold text-gray-900 dark:text-white">Digital Waste Detected</div>
-                                    <div className="text-xs text-gray-500">Copy-Paste Operations</div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-2 rounded-lg bg-red-50 px-4 py-3 dark:bg-red-900/20">
-                                <AlertTriangle className="h-4 w-4 text-red-500" />
-                                <span className="text-sm font-medium text-red-700 dark:text-red-400">
-                                    Manual data entry consuming 60% of work hours
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Stats Grid */}
+                    {/* Right Column: Visual Evidence (Bento Style) */}
+                    <div className="relative rounded-3xl border border-gray-100 bg-gray-50 p-8 dark:border-gray-800 dark:bg-gray-900">
+                        {/* Simple Stat Grid */}
                         <div className="grid grid-cols-2 gap-4">
-                            {bottleneckSection.stats.map((stat) => (
+                            {bottleneckSection.stats.map((stat, idx) => (
                                 <div
-                                    key={stat.label}
-                                    className="glass-panel rounded-2xl p-4 text-center"
+                                    key={idx}
+                                    className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-black"
                                 >
                                     <div className="mb-1 text-3xl font-bold text-gray-900 dark:text-white">
                                         {stat.value}
                                     </div>
-                                    <div className="mb-2 text-xs text-gray-500 dark:text-slate-400">
+                                    <div className="mb-2 font-mono text-xs uppercase text-gray-500">
                                         {stat.label}
                                     </div>
-                                    <span
-                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase ${stat.status === 'Critical'
-                                                ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-                                                : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
-                                            }`}
-                                    >
+                                    <span className="inline-flex items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900/30 dark:text-red-400">
                                         {stat.status}
                                     </span>
                                 </div>
                             ))}
                         </div>
-
-                        {/* Solution Teaser */}
-                        <div className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-500/10 to-fuchsia-500/10 p-4">
-                            <Zap className="h-5 w-5 text-violet-600 dark:text-violet-400" />
-                            <span className="font-medium text-gray-700 dark:text-slate-300">
-                                Autonomous systems eliminate the friction
-                            </span>
+                        {/* Decorative 'Waste' Element */}
+                        <div className="mt-6 rounded-xl border border-red-100 bg-red-50 p-4 dark:border-red-900/20 dark:bg-red-900/10">
+                            <div className="flex items-center gap-3 text-red-600 dark:text-red-400">
+                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                    />
+                                </svg>
+                                <span className="text-sm font-semibold">System Alert: High Friction Detected</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -318,7 +294,6 @@ export default function Home() {
                                 &quot;{study.quote}&quot;
                             </p>
                             <div className="mt-auto border-t border-gray-200 pt-4 dark:border-slate-700">
-
                                 {study.status === 'VERIFIED' ? (
                                     <a
                                         href={study.clientWebsite}
