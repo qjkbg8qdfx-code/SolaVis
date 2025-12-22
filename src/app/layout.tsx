@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: `${siteConfig.name} | ${siteConfig.tagline}`,
         description:
-            'Scale Revenue. Freeze Headcount. The Autonomous AI Infrastructure for Global SMEs.',
+            'We map friction. We deploy logic. The autonomous AI infrastructure for high-performance SMEs.',
         url: siteConfig.url,
         siteName: siteConfig.name,
         images: [

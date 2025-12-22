@@ -8,7 +8,9 @@ export const siteConfig = {
 
     // SEO Keywords
     keywords: [
-        'AI Consultancy',
+        'Autonomous Infrastructure',
+        'Business Logic Automation',
+        'Enterprise AI Agents',
         'Process Automation',
         'Trust Engine',
         'SME Efficiency',

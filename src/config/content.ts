@@ -132,12 +132,12 @@ export const caseStudies: CaseStudy[] = [
         logId: 'SYS_LOG_YUANTA',
         company: 'Yuanta Securities Inv. Consulting',
         clientWebsite: '#', // Confidential or direct internal tool
-        quote: "Targeting a 50% reduction in daily manual processing time. Currently deploying automated workflow handlers.",
-        personName: 'Varick Chen',
-        personRole: 'Lead Architect',
+        quote: 'Strategic deployment initiated at executive level. Targeting 50% reduction in manual processing through autonomous workflow handlers.',
+        personName: 'Executive Office',
+        personRole: 'Strategic Partner',
         verifiedResultLink: '',
         module: 'Executive Workflow Core',
-        status: 'DEPLOYING'
+        status: 'DEPLOYING',
     },
     // Added a placeholder for layout balance if needed, or you can remove this
     {
