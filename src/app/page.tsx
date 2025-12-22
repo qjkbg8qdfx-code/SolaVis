@@ -52,8 +52,8 @@ export default function Home() {
                         </Link>
                     </div>
 
-                    {/* Trust Anchor */}
-                    <div className="pt-6 text-center md:text-left">
+                    {/* Trust Anchor - FIXED: Removed text-center to match left-aligned flow */}
+                    <div className="pt-6 text-left">
                         <p className="text-sm font-medium text-gray-500 dark:text-slate-400">
                             Trusted by forward-thinking SMEs globally
                         </p>
@@ -140,16 +140,16 @@ export default function Home() {
                         {/* Metric Pills */}
                         <div className="mb-6 grid grid-cols-3 gap-3">
                             <div className="rounded-xl bg-blue-50 p-3 text-center dark:bg-blue-900/20">
-                                <div className="text-lg font-bold text-blue-700 dark:text-blue-300">4.5×</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-blue-700/80 dark:text-blue-300/80">ROI</div>
+                                <div className="text-lg font-bold text-blue-800 dark:text-blue-300">4.5×</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-blue-800/80 dark:text-blue-300/80">ROI</div>
                             </div>
                             <div className="rounded-xl bg-violet-50 p-3 text-center dark:bg-violet-900/20">
-                                <div className="text-lg font-bold text-violet-700 dark:text-violet-300">98%</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-violet-700/80 dark:text-violet-300/80">Automated</div>
+                                <div className="text-lg font-bold text-violet-800 dark:text-violet-300">98%</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-violet-800/80 dark:text-violet-300/80">Automated</div>
                             </div>
                             <div className="rounded-xl bg-green-50 p-3 text-center dark:bg-green-900/20">
-                                <div className="text-lg font-bold text-green-700 dark:text-green-300">24/7</div>
-                                <div className="text-[10px] font-medium uppercase tracking-wide text-green-700/80 dark:text-green-300/80">Active</div>
+                                <div className="text-lg font-bold text-green-800 dark:text-green-300">24/7</div>
+                                <div className="text-[10px] font-medium uppercase tracking-wide text-green-800/80 dark:text-green-300/80">Active</div>
                             </div>
                         </div>
 
