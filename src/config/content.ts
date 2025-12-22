@@ -221,3 +221,59 @@ export const bottleneckSection = {
         { label: 'Error Rate', value: '18%', status: 'High' },
     ],
 };
+
+// ============================================
+// METHODOLOGY PAGE CONTENT
+// ============================================
+export const methodologyContent = {
+    hero: {
+        badge: 'The Architecture',
+        title: 'From Chaos to Code.',
+        subtitle:
+            'We do not "consult." We execute a proprietary 4-stage engineering protocol to systematically extract inefficiencies and replace them with autonomous logic.',
+    },
+    phases: [
+        {
+            id: '01',
+            title: 'Friction Mapping (The Audit)',
+            description:
+                'We deploy passive observation tools to map your data flow. We identify every manual "copy-paste" event and decision bottleneck.',
+            technicalDetail: 'Output: 360° Workflow Topology Map',
+            icon: 'Target',
+        },
+        {
+            id: '02',
+            title: 'Logic Extraction',
+            description:
+                'We translate human habits into deterministic rules. Subjective decisions are converted into binary logic gates.',
+            technicalDetail: 'Output: Pseudo-Code Logic Schema',
+            icon: 'FileCode',
+        },
+        {
+            id: '03',
+            title: 'Agent Orchestration',
+            description:
+                'We architect the AI agents. Not generic GPT wrappers, but custom-tuned models with strict context boundaries and tool access.',
+            technicalDetail: 'Stack: Python / LangChain / Vector DB',
+            icon: 'Bot',
+        },
+        {
+            id: '04',
+            title: 'Recursive Optimization',
+            description:
+                'The system does not sleep. It monitors its own accuracy logs and flags edge cases for human review, getting smarter every 24 hours.',
+            technicalDetail: 'Metric: < 0.01% Hallucination Rate',
+            icon: 'RefreshCw',
+        },
+    ],
+    security: {
+        title: 'Data Sovereignty & Security',
+        description:
+            'Your data never trains public models. We deploy isolated environments with banking-grade encryption.',
+        features: [
+            'Zero-Retention API Calls',
+            'PII Redaction Layer',
+            'EU/GDPR Compliant Architecture',
+        ],
+    },
+};
