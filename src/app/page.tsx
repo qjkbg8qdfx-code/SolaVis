@@ -170,57 +170,95 @@ export default function Home() {
             </section>
 
             {/* The Human Bottleneck Section (Agitation Phase) */}
-            <section className="bg-white py-20 dark:bg-black">
+            <section className="relative overflow-hidden border-t border-gray-100 py-24 dark:border-slate-800">
+                {/* Background Gradient Glow */}
+                <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-red-500/5 via-orange-500/5 to-amber-500/5 blur-3xl dark:from-red-500/10 dark:via-orange-500/10 dark:to-amber-500/10" />
+
                 <div className="grid gap-12 md:grid-cols-2 md:items-center">
                     {/* Left Column: Narrative */}
                     <div className="space-y-6">
-                        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-blue-600">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-red-200/50 bg-red-50/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-red-600 shadow-sm backdrop-blur-sm dark:border-red-800/50 dark:bg-red-950/50 dark:text-red-400">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75 motion-reduce:animate-none" />
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                            </span>
                             {bottleneckSection.badge}
-                        </span>
+                        </div>
                         <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
                             {bottleneckSection.title}
                         </h2>
-                        <p className="max-w-md text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+                        <p className="max-w-md text-lg leading-relaxed text-gray-600 dark:text-slate-400">
                             {bottleneckSection.description}
                         </p>
-                        <p className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-2xl font-bold text-transparent">
+                        <p className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-2xl font-bold text-transparent">
                             {bottleneckSection.highlight}
                         </p>
                     </div>
 
-                    {/* Right Column: Visual Evidence (Bento Style) */}
-                    <div className="relative rounded-3xl border border-gray-100 bg-gray-50 p-8 dark:border-gray-800 dark:bg-gray-900">
-                        {/* Simple Stat Grid */}
-                        <div className="grid grid-cols-2 gap-4">
-                            {bottleneckSection.stats.map((stat, idx) => (
-                                <div
-                                    key={idx}
-                                    className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-black"
-                                >
-                                    <div className="mb-1 text-3xl font-bold text-gray-900 dark:text-white">
-                                        {stat.value}
+                    {/* Right Column: Visual Evidence (Bento Style with Glassmorphism) */}
+                    <div className="relative">
+                        {/* Decorative Glow */}
+                        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
+                        <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
+
+                        <div className="glass-panel relative rounded-3xl p-6 shadow-xl">
+                            {/* Stat Grid */}
+                            <div className="grid grid-cols-2 gap-4">
+                                {bottleneckSection.stats.map((stat, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/80"
+                                    >
+                                        {/* Hover Glow */}
+                                        <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-red-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+
+                                        <div className="mb-1 text-4xl font-bold text-gray-900 dark:text-white">
+                                            {stat.value}
+                                        </div>
+                                        <div className="mb-3 font-mono text-[10px] uppercase tracking-wider text-gray-500 dark:text-slate-500">
+                                            {stat.label}
+                                        </div>
+                                        <span
+                                            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase ${stat.status === 'Critical'
+                                                    ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                                    : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+                                                }`}
+                                        >
+                                            <span
+                                                className={`h-1.5 w-1.5 rounded-full ${stat.status === 'Critical' ? 'bg-red-500' : 'bg-amber-500'
+                                                    }`}
+                                            />
+                                            {stat.status}
+                                        </span>
                                     </div>
-                                    <div className="mb-2 font-mono text-xs uppercase text-gray-500">
-                                        {stat.label}
-                                    </div>
-                                    <span className="inline-flex items-center rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900/30 dark:text-red-400">
-                                        {stat.status}
-                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Alert Banner */}
+                            <div className="mt-4 flex items-center gap-3 rounded-2xl border border-red-200/50 bg-gradient-to-r from-red-50 to-orange-50 p-4 dark:border-red-800/30 dark:from-red-950/30 dark:to-orange-950/30">
+                                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-red-100 dark:bg-red-900/30">
+                                    <svg
+                                        className="h-5 w-5 text-red-600 dark:text-red-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                        />
+                                    </svg>
                                 </div>
-                            ))}
-                        </div>
-                        {/* Decorative 'Waste' Element */}
-                        <div className="mt-6 rounded-xl border border-red-100 bg-red-50 p-4 dark:border-red-900/20 dark:bg-red-900/10">
-                            <div className="flex items-center gap-3 text-red-600 dark:text-red-400">
-                                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                                    />
-                                </svg>
-                                <span className="text-sm font-semibold">System Alert: High Friction Detected</span>
+                                <div>
+                                    <div className="text-sm font-semibold text-red-700 dark:text-red-400">
+                                        System Alert: High Friction Detected
+                                    </div>
+                                    <div className="text-xs text-red-600/70 dark:text-red-400/70">
+                                        Immediate optimization recommended
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
