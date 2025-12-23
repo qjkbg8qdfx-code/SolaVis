@@ -1,3 +1,6 @@
+/** @type {import('next').NextConfig} */
+export const basePath = '/SolaVis';
+
 export const siteConfig = {
     name: 'SolvoVis',
     tagline: 'AI Trust Engine',
@@ -51,7 +54,7 @@ export const siteConfig = {
         name: 'Varick Chen',
         role: 'Founder',
         linkedIn: '', // UI will hide the button if this is empty
-        image: '/founder.jpg', // Ensure public/founder.jpg exists
+        image: `${basePath}/founder.jpg`, // Ensure public/founder.jpg exists
     },
 } as const;
 

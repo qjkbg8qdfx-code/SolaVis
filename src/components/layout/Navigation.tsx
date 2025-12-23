@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { X, Sun, Moon, Command } from 'lucide-react';
 import { desktopNavLinks, mobileNavLinks, ctaButton } from '@/config/navigation';
+import { basePath } from '@/config/site';
 import CommandMenu from '@/components/CommandMenu';
 
 export default function Navigation() {
@@ -49,7 +50,7 @@ export default function Navigation() {
                         className="relative z-50 flex items-center gap-2 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
                     >
                         <Image
-                            src="/logo.svg"
+                            src={`${basePath}/logo.svg`}
                             alt="SolvoVis Logo"
                             width={24}
                             height={24}
