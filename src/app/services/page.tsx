@@ -1,6 +1,14 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Target, Bot, Brain, ShieldCheck, LucideIcon } from 'lucide-react';
 import { faqContent, faqSection, bentoModules } from '@/config/content';
+
+// Icon map for rendering icons from string names
+const iconMap: Record<string, LucideIcon> = {
+    Target,
+    Bot,
+    Brain,
+    ShieldCheck,
+};
 
 export const metadata = {
     title: 'Modules | SolvoVis',
@@ -25,7 +33,7 @@ export default function ServicesPage() {
             {/* Bento Grid - Dynamic from bentoModules */}
             <div className="grid auto-rows-[300px] grid-cols-1 gap-6 md:grid-cols-3">
                 {bentoModules.map((module) => {
-                    const Icon = module.icon;
+                    const Icon = module.iconName ? iconMap[module.iconName] : null;
 
                     // Large variant (Card 1)
                     if (module.variant === 'large') {
