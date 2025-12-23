@@ -4,7 +4,7 @@ import { Home, Briefcase, FileText, Mail, type LucideIcon } from 'lucide-react';
 export interface NavLink {
     href: string;
     label: string;
-    mobileLabel?: string;
+    isLegal?: boolean; // Flag for smaller legal links
 }
 
 export interface TabBarLink extends NavLink {
@@ -27,17 +27,12 @@ export const mobileTabBarLinks: TabBarLink[] = [
     { href: '/contact', label: 'Connect', icon: Mail },
 ];
 
-// Top Drawer - Corporate Infrastructure (Mobile)
-export const mobileNavLinks: NavLink[] = [
-    { href: '/about', label: 'Manifesto' },
+// Top Drawer - Brand Infrastructure, Utilities, Legal (Mobile)
+export const mobileDrawerLinks: NavLink[] = [
     { href: '/methodology', label: 'Methodology' },
-    { href: '/insights', label: 'Insights' },
-];
-
-// Legal links for drawer footer
-export const legalLinks: NavLink[] = [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
+    { href: '/about', label: 'Manifesto' },
+    { href: '/privacy', label: 'Privacy Policy', isLegal: true },
+    { href: '/terms', label: 'Terms of Service', isLegal: true },
 ];
 
 export const ctaButton = {

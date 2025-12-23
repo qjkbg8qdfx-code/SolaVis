@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { X, Sun, Moon, Command, Search } from 'lucide-react';
-import { desktopNavLinks, mobileNavLinks, legalLinks, ctaButton } from '@/config/navigation';
+import { desktopNavLinks, mobileDrawerLinks, ctaButton } from '@/config/navigation';
 import { basePath } from '@/config/site';
 import CommandMenu from '@/components/CommandMenu';
 
@@ -43,6 +43,10 @@ export default function Navigation() {
         setIsOpen(false);
         setTimeout(() => setCommandOpen(true), 100);
     };
+
+    // Separate main links from legal links
+    const mainLinks = mobileDrawerLinks.filter((link) => !link.isLegal);
+    const legalLinks = mobileDrawerLinks.filter((link) => link.isLegal);
 
     return (
         <>
@@ -122,7 +126,7 @@ export default function Navigation() {
                     </button>
                 </div>
 
-                {/* Mobile Full Screen Overlay - z-[60] to cover bottom nav z-50 */}
+                {/* Mobile Full Screen Overlay - z-[60] covers bottom nav z-50 */}
                 {isOpen && (
                     <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
                         {/* Close Button */}
@@ -136,7 +140,7 @@ export default function Navigation() {
 
                         {/* Scrollable Content */}
                         <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-safe pt-20">
-                            {/* Utility Actions */}
+                            {/* Utility Actions: Search & Theme Toggle */}
                             <div className="mb-8 flex gap-3">
                                 {/* Search Button */}
                                 <button
@@ -163,14 +167,17 @@ export default function Navigation() {
                                 </button>
                             </div>
 
-                            {/* Primary Navigation Links */}
+                            {/* Main Navigation Links (Large) */}
                             <div className="flex flex-col gap-6">
-                                {mobileNavLinks.map((link) => (
+                                {mainLinks.map((link) => (
                                     <Link
                                         key={link.href}
                                         href={link.href}
                                         onClick={toggleMenu}
-                                        className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href ? 'text-ios-blue' : 'text-gray-900 dark:text-white'}`}
+                                        className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href
+                                                ? 'text-ios-blue'
+                                                : 'text-gray-900 dark:text-white'
+                                            }`}
                                     >
                                         {link.label}
                                     </Link>
@@ -180,14 +187,14 @@ export default function Navigation() {
                             {/* Spacer */}
                             <div className="flex-1" />
 
-                            {/* Legal Links - Gray, smaller */}
+                            {/* Legal Links (Small, muted gray, at bottom) */}
                             <div className="mb-6 flex flex-wrap gap-4 border-t border-gray-200 pt-6 dark:border-gray-800">
                                 {legalLinks.map((link) => (
                                     <Link
                                         key={link.href}
                                         href={link.href}
                                         onClick={toggleMenu}
-                                        className="text-sm text-gray-400 transition-colors hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300"
+                                        className="text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300"
                                     >
                                         {link.label}
                                     </Link>
