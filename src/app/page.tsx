@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
 import Counter from '@/components/Counter';
-import BentoCard from '@/components/ui/BentoCard';
+import BentoCard, { HomeBentoCard } from '@/components/ui/BentoCard';
 import {
-    heroContent,
+    homePage,
     bentoModules,
     modulesSection,
     caseStudies,
@@ -15,6 +15,8 @@ import {
 } from '@/config/content';
 
 export default function Home() {
+    const { hero, sectionTitle, bentoItems } = homePage;
+
     return (
         <div className="mx-auto max-w-7xl px-6">
             {/* Hero Section */}
@@ -25,34 +27,34 @@ export default function Home() {
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
                             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                         </span>
-                        {heroContent.badge}
+                        {hero.badge}
                     </div>
 
                     <h1 className="text-hero leading-tight">
-                        {heroContent.title.line1} <br />
+                        {hero.title.line1} <br />
                         <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text font-bold text-transparent">
-                            {heroContent.title.line2}
+                            {hero.title.line2}
                         </span>
                     </h1>
 
-                    <p className="text-sub max-w-lg">{heroContent.subtitle}</p>
+                    <p className="text-sub max-w-lg">{hero.description}</p>
 
                     <div className="flex flex-col gap-4 sm:flex-row">
                         <Link
-                            href={heroContent.primaryCta.href}
+                            href={hero.primaryCta.href}
                             className="btn-primary flex items-center justify-center gap-2"
                         >
-                            {heroContent.primaryCta.label} <ArrowRight className="h-4 w-4" />
+                            {hero.primaryCta.label} <ArrowRight className="h-4 w-4" />
                         </Link>
                         <Link
-                            href={heroContent.secondaryCta.href}
+                            href={hero.secondaryCta.href}
                             className="btn-secondary flex items-center justify-center gap-2"
                         >
-                            <PlayCircle className="h-4 w-4" /> {heroContent.secondaryCta.label}
+                            <PlayCircle className="h-4 w-4" /> {hero.secondaryCta.label}
                         </Link>
                     </div>
 
-                    {/* Trust Anchor - FIXED: Removed text-center to match left-aligned flow */}
+                    {/* Trust Anchor */}
                     <div className="pt-6 text-left">
                         <p className="text-sm font-medium text-gray-500 dark:text-slate-400">
                             Trusted by forward-thinking SMEs globally
@@ -61,7 +63,7 @@ export default function Home() {
 
                     {/* Social Proof / System Metrics */}
                     <div className="mt-4 flex gap-8 border-t border-gray-100 pt-8 dark:border-slate-800 md:gap-12">
-                        {heroContent.metrics.map((metric) => (
+                        {hero.metrics.map((metric) => (
                             <div key={metric.label}>
                                 <div className="text-2xl font-bold text-gray-900 dark:text-white">
                                     <Counter
@@ -79,7 +81,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Hero Visual - Success Dashboard (Business Results Focus) */}
+                {/* Hero Visual - Success Dashboard */}
                 <div className="relative flex aspect-square items-center justify-center">
                     {/* Gradient Glow Background */}
                     <div className="absolute inset-0 animate-pulse-glow rounded-full bg-gradient-to-tr from-blue-500/20 via-violet-500/20 to-fuchsia-500/20 blur-3xl"></div>
@@ -108,19 +110,16 @@ export default function Home() {
                                 className="h-full w-full"
                                 preserveAspectRatio="none"
                             >
-                                {/* Gradient Fill */}
                                 <defs>
                                     <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                         <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
                                         <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
                                     </linearGradient>
                                 </defs>
-                                {/* Area Fill */}
                                 <path
                                     d="M0 70 Q30 65, 50 55 T100 40 T150 25 T200 10 L200 80 L0 80 Z"
                                     fill="url(#chartGradient)"
                                 />
-                                {/* Line */}
                                 <path
                                     d="M0 70 Q30 65, 50 55 T100 40 T150 25 T200 10"
                                     fill="none"
@@ -128,7 +127,6 @@ export default function Home() {
                                     strokeWidth="2.5"
                                     strokeLinecap="round"
                                 />
-                                {/* End Point */}
                                 <circle cx="200" cy="10" r="4" fill="#8B5CF6" />
                             </svg>
                             <div className="absolute right-4 top-4 text-right">
@@ -169,6 +167,24 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ============================================ */}
+            {/* BENTO GRID - System Dashboard */}
+            {/* ============================================ */}
+            <section className="py-20">
+                <div className="mb-12">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                        {sectionTitle}
+                    </h2>
+                </div>
+
+                {/* Bento Grid - Mobile First */}
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                    {bentoItems.map((item, index) => (
+                        <HomeBentoCard key={item.id} item={item} index={index} />
+                    ))}
+                </div>
+            </section>
+
             {/* The Human Bottleneck Section (Agitation Phase) */}
             <section className="relative overflow-hidden border-t border-gray-100 py-24 dark:border-slate-800">
                 {/* Background Gradient Glow */}
@@ -195,23 +211,19 @@ export default function Home() {
                         </p>
                     </div>
 
-                    {/* Right Column: Visual Evidence (Bento Style with Glassmorphism) */}
+                    {/* Right Column: Visual Evidence */}
                     <div className="relative">
-                        {/* Decorative Glow */}
                         <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
                         <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
 
                         <div className="glass-panel relative rounded-3xl p-6 shadow-xl">
-                            {/* Stat Grid */}
                             <div className="grid grid-cols-2 gap-4">
                                 {bottleneckSection.stats.map((stat, idx) => (
                                     <div
                                         key={idx}
                                         className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/80"
                                     >
-                                        {/* Hover Glow */}
                                         <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-red-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-
                                         <div className="mb-1 text-4xl font-bold text-gray-900 dark:text-white">
                                             {stat.value}
                                         </div>
@@ -265,7 +277,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Services Grid (Bento) */}
+            {/* Services Grid (Legacy Bento) */}
             <section id="services" className="py-20">
                 <div className="mb-12 flex items-end justify-between">
                     <h2 className="text-4xl font-semibold tracking-tight">

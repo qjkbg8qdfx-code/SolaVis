@@ -2,7 +2,98 @@
 import { LucideIcon, Target, Bot, Brain, ShieldCheck } from 'lucide-react';
 
 // ============================================
-// HERO SECTION
+// HOME PAGE - SYSTEM DASHBOARD CONFIGURATION
+// ============================================
+export interface BentoItem {
+    id: string;
+    title: string;
+    description: string;
+    href: string;
+    colSpan: 1 | 2;
+    rowSpan?: 1 | 2;
+    type: 'primary' | 'secondary' | 'stat' | 'cta';
+    iconName?: string; // Icon name as string for serialization
+    stat?: string;
+    statLabel?: string;
+}
+
+export const homePage = {
+    hero: {
+        badge: 'Autonomous Systems v2.0',
+        title: {
+            line1: 'Automate the Ordinary.',
+            line2: 'Unleash the Extraordinary.',
+        },
+        description: 'Architecting autonomous systems that eliminate 80% of operational friction. We build the logic; you scale the vision.',
+        primaryCta: {
+            label: 'Deploy System',
+            href: '/services',
+        },
+        secondaryCta: {
+            label: 'View Methodology',
+            href: '/methodology',
+        },
+        metrics: [
+            { value: 20, suffix: 'x', decimals: 0, duration: 2500, label: 'Efficiency Boost' },
+            { value: 24, suffix: '/7', decimals: 0, duration: 2000, label: 'System Uptime' },
+            { value: 50, suffix: '%', decimals: 0, duration: 2000, label: 'Workload Cut Target' },
+        ],
+    },
+    sectionTitle: 'The Trust Engine Architecture',
+    bentoItems: [
+        {
+            id: 'methodology',
+            title: 'Methodology',
+            description: 'The logic behind the magic. Our 4-stage protocol turns chaos into autonomous code.',
+            href: '/methodology',
+            colSpan: 2,
+            rowSpan: 1,
+            type: 'primary',
+            iconName: 'Compass',
+        },
+        {
+            id: 'services',
+            title: 'Services',
+            description: 'Modular solutions for scale.',
+            href: '/services',
+            colSpan: 1,
+            type: 'secondary',
+            iconName: 'Briefcase',
+        },
+        {
+            id: 'stat-efficiency',
+            title: '80%',
+            description: 'Friction Removed',
+            href: '/#case-studies',
+            colSpan: 1,
+            type: 'stat',
+            stat: '80%',
+            statLabel: 'Average operational efficiency gain across deployments.',
+            iconName: 'TrendingUp',
+        },
+        {
+            id: 'case-studies',
+            title: 'Case Studies',
+            description: 'See our systems in production.',
+            href: '/#case-studies',
+            colSpan: 1,
+            type: 'secondary',
+            iconName: 'Users',
+        },
+        {
+            id: 'contact',
+            title: 'Start Logic Audit',
+            description: 'Free consultation to map your workflow.',
+            href: '/contact',
+            colSpan: 1,
+            type: 'cta',
+            iconName: 'Target',
+        },
+    ] as BentoItem[],
+};
+
+// ============================================
+// HERO SECTION (Legacy - kept for backward compatibility)
 // ============================================
 export const heroContent = {
     badge: 'Autonomous Systems v2.0',
@@ -21,9 +112,9 @@ export const heroContent = {
         href: '/methodology',
     },
     metrics: [
-        { value: 20, suffix: 'x', decimals: 0, duration: 2500, label: 'Efficiency Boost' }, // Updated based on Curio case
+        { value: 20, suffix: 'x', decimals: 0, duration: 2500, label: 'Efficiency Boost' },
         { value: 24, suffix: '/7', decimals: 0, duration: 2000, label: 'System Uptime' },
-        { value: 50, suffix: '%', decimals: 0, duration: 2000, label: 'Workload Cut Target' }, // Updated based on Yuanta goal
+        { value: 50, suffix: '%', decimals: 0, duration: 2000, label: 'Workload Cut Target' },
     ],
 };
 
@@ -37,7 +128,7 @@ export interface BentoModule {
     title: string;
     description: string;
     variant: 'large' | 'tall' | 'small' | 'cta';
-    icon?: LucideIcon;
+    iconName?: string; // Icon name as string for serialization
     ctaText?: string;
     ctaHref?: string;
 }
@@ -57,7 +148,7 @@ export const bentoModules: BentoModule[] = [
         description:
             'We map every friction point in your operation before writing a single line of code.',
         variant: 'large',
-        icon: Target,
+        iconName: 'Target',
         ctaText: 'Start Audit',
         ctaHref: '/methodology',
     },
@@ -68,7 +159,7 @@ export const bentoModules: BentoModule[] = [
         title: 'Auto-Pilot Agents',
         description: 'Autonomous agents that handle scheduling, emails, and data entry 24/7.',
         variant: 'tall',
-        icon: Bot,
+        iconName: 'Bot',
     },
     {
         id: 'module_03',
@@ -77,7 +168,7 @@ export const bentoModules: BentoModule[] = [
         title: 'Knowledge Brain',
         description: 'RAG-powered internal wiki that answers team questions instantly.',
         variant: 'small',
-        icon: Brain,
+        iconName: 'Brain',
     },
     {
         id: 'module_04',
@@ -86,7 +177,7 @@ export const bentoModules: BentoModule[] = [
         title: 'Trust Monitor',
         description: 'Real-time accuracy verification.',
         variant: 'cta',
-        icon: ShieldCheck,
+        iconName: 'ShieldCheck',
         ctaText: 'Verify Systems',
         ctaHref: '/contact',
     },
