@@ -24,6 +24,11 @@ ts-debug.log*
 .env
 .env.*
 !.env.example
+.dev.vars
+
+# Cloudflare & Wrangler (New Added)
+.wrangler/
+wrangler.toml
 
 # System files & Temporary files
 .DS_Store
@@ -33,7 +38,7 @@ temp/
 
 # IDE & Editor files
 .idea/
-# .vscode/  # Allowing for Tailwind CSS settings
+# .vscode/  # Allowing for Tailwind CSS settings shared with team
 *.swp
 *.swo
 *.swn
