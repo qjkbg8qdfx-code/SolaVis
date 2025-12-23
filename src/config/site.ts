@@ -1,5 +1,7 @@
-/** @type {import('next').NextConfig} */
-export const basePath = '/SolaVis';
+/** Site configuration for SEO and branding */
+
+// Base path removed for Cloudflare deployment (root URL)
+export const basePath = '';
 
 export const siteConfig = {
     name: 'SolvoVis',
@@ -53,8 +55,8 @@ export const siteConfig = {
     founder: {
         name: 'Varick Chen',
         role: 'Founder',
-        linkedIn: '', // UI will hide the button if this is empty
-        image: `${basePath}/founder.jpg`, // Ensure public/founder.jpg exists
+        linkedIn: '',
+        image: '/founder.jpg', // No basePath prefix needed
     },
 } as const;
 
