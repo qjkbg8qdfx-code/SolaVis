@@ -1,14 +1,14 @@
 // Navigation configuration - centralized nav links
-import { Home, Briefcase, FileText, Mail, type LucideIcon } from 'lucide-react';
+import { Home, Layers, FileText, Mail, type LucideIcon } from 'lucide-react';
 
 export interface NavLink {
     href: string;
     label: string;
-    isLegal?: boolean; // Flag for smaller legal links
+    isLegal?: boolean;
 }
 
 export interface TabBarLink extends NavLink {
-    icon: LucideIcon;
+    iconName: string; // String name for serialization
 }
 
 // Desktop navigation links
@@ -21,16 +21,19 @@ export const desktopNavLinks: NavLink[] = [
 
 // Bottom Tab Bar - High-velocity conversion actions (Mobile)
 export const mobileTabBarLinks: TabBarLink[] = [
-    { href: '/', label: 'System', icon: Home },
-    { href: '/services', label: 'Modules', icon: Briefcase },
-    { href: '/#case-studies', label: 'Cases', icon: FileText },
-    { href: '/contact', label: 'Connect', icon: Mail },
+    { href: '/', label: 'Home', iconName: 'Home' },
+    { href: '/services', label: 'Services', iconName: 'Layers' },
+    { href: '/#case-studies', label: 'Cases', iconName: 'FileText' },
+    { href: '/contact', label: 'Contact', iconName: 'Mail' },
 ];
 
-// Top Drawer - Brand Infrastructure, Utilities, Legal (Mobile)
+// Top Drawer - Complete directory for navigation security
 export const mobileDrawerLinks: NavLink[] = [
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
     { href: '/methodology', label: 'Methodology' },
     { href: '/about', label: 'Manifesto' },
+    { href: '/contact', label: 'Contact' },
     { href: '/privacy', label: 'Privacy Policy', isLegal: true },
     { href: '/terms', label: 'Terms of Service', isLegal: true },
 ];
