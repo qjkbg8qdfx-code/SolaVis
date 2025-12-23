@@ -126,84 +126,85 @@ export default function Navigation() {
                     </button>
                 </div>
 
-                {/* Mobile Full Screen Overlay - z-[60] covers bottom nav z-50 */}
-                {isOpen && (
-                    <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
-                        {/* Close Button */}
-                        <button
-                            onClick={toggleMenu}
-                            className="absolute right-6 top-5 rounded-lg p-2 text-ios-blue focus:outline-none focus:ring-2 focus:ring-ios-blue"
-                            aria-label="Close menu"
-                        >
-                            <X className="h-6 w-6" />
-                        </button>
+            </nav>
 
-                        {/* Scrollable Content */}
-                        <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-safe pt-20">
-                            {/* Utility Actions: Search & Theme Toggle */}
-                            <div className="mb-8 flex gap-3">
-                                {/* Search Button */}
-                                <button
-                                    onClick={handleSearchClick}
-                                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-                                    aria-label="Open search"
+            {/* Mobile Full Screen Overlay - z-[60] covers bottom nav z-50 */}
+            {isOpen && (
+                <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
+                    {/* Close Button */}
+                    <button
+                        onClick={toggleMenu}
+                        className="absolute right-6 top-5 rounded-lg p-2 text-ios-blue focus:outline-none focus:ring-2 focus:ring-ios-blue"
+                        aria-label="Close menu"
+                    >
+                        <X className="h-6 w-6" />
+                    </button>
+
+                    {/* Scrollable Content */}
+                    <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-safe pt-20">
+                        {/* Utility Actions: Search & Theme Toggle */}
+                        <div className="mb-8 flex gap-3">
+                            {/* Search Button */}
+                            <button
+                                onClick={handleSearchClick}
+                                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                                aria-label="Open search"
+                            >
+                                <Search className="h-5 w-5" />
+                                <span className="font-medium">Search</span>
+                            </button>
+
+                            {/* Theme Toggle */}
+                            <button
+                                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                                className="flex items-center justify-center rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                                aria-label="Toggle theme"
+                            >
+                                {mounted &&
+                                    (theme === 'dark' ? (
+                                        <Sun className="h-5 w-5" />
+                                    ) : (
+                                        <Moon className="h-5 w-5" />
+                                    ))}
+                            </button>
+                        </div>
+
+                        {/* Main Navigation Links (Large) */}
+                        <div className="flex flex-col gap-6">
+                            {mainLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={toggleMenu}
+                                    className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href
+                                        ? 'text-ios-blue'
+                                        : 'text-gray-900 dark:text-white'
+                                        }`}
                                 >
-                                    <Search className="h-5 w-5" />
-                                    <span className="font-medium">Search</span>
-                                </button>
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
 
-                                {/* Theme Toggle */}
-                                <button
-                                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                                    className="flex items-center justify-center rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-                                    aria-label="Toggle theme"
+                        {/* Spacer */}
+                        <div className="flex-1" />
+
+                        {/* Legal Links (Small, muted gray, at bottom) */}
+                        <div className="mb-6 flex flex-wrap gap-4 border-t border-gray-200 pt-6 dark:border-gray-800">
+                            {legalLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={toggleMenu}
+                                    className="text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300"
                                 >
-                                    {mounted &&
-                                        (theme === 'dark' ? (
-                                            <Sun className="h-5 w-5" />
-                                        ) : (
-                                            <Moon className="h-5 w-5" />
-                                        ))}
-                                </button>
-                            </div>
-
-                            {/* Main Navigation Links (Large) */}
-                            <div className="flex flex-col gap-6">
-                                {mainLinks.map((link) => (
-                                    <Link
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={toggleMenu}
-                                        className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href
-                                                ? 'text-ios-blue'
-                                                : 'text-gray-900 dark:text-white'
-                                            }`}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-
-                            {/* Spacer */}
-                            <div className="flex-1" />
-
-                            {/* Legal Links (Small, muted gray, at bottom) */}
-                            <div className="mb-6 flex flex-wrap gap-4 border-t border-gray-200 pt-6 dark:border-gray-800">
-                                {legalLinks.map((link) => (
-                                    <Link
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={toggleMenu}
-                                        className="text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-300"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
+                                    {link.label}
+                                </Link>
+                            ))}
                         </div>
                     </div>
-                )}
-            </nav>
+                </div>
+            )}
 
             {/* Command Menu */}
             <CommandMenu open={commandOpen} setOpen={setCommandOpen} />
