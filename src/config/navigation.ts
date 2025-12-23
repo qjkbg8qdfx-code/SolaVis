@@ -1,10 +1,17 @@
 // Navigation configuration - centralized nav links
+import { Home, Briefcase, FileText, Mail, type LucideIcon } from 'lucide-react';
+
 export interface NavLink {
     href: string;
     label: string;
-    mobileLabel?: string; // Different label for mobile nav if needed
+    mobileLabel?: string;
 }
 
+export interface TabBarLink extends NavLink {
+    icon: LucideIcon;
+}
+
+// Desktop navigation links
 export const desktopNavLinks: NavLink[] = [
     { href: '/methodology', label: 'Methodology' },
     { href: '/services', label: 'Services' },
@@ -12,18 +19,25 @@ export const desktopNavLinks: NavLink[] = [
     { href: '/contact', label: 'Contact' },
 ];
 
-export const mobileNavLinks: NavLink[] = [
-    { href: '/', label: 'System' },
-    { href: '/services', label: 'Modules' },
-    { href: '/methodology', label: 'Methodology' },
-    { href: '/about', label: 'Manifesto' },
-    { href: '/contact', label: 'Connect' },
+// Bottom Tab Bar - High-velocity conversion actions (Mobile)
+export const mobileTabBarLinks: TabBarLink[] = [
+    { href: '/', label: 'System', icon: Home },
+    { href: '/services', label: 'Modules', icon: Briefcase },
+    { href: '/#case-studies', label: 'Cases', icon: FileText },
+    { href: '/contact', label: 'Connect', icon: Mail },
 ];
 
-export const mobileTabBarLinks: NavLink[] = [
-    { href: '/', label: 'System' },
-    { href: '/services', label: 'Modules' },
-    { href: '/contact', label: 'Connect' },
+// Top Drawer - Corporate Infrastructure (Mobile)
+export const mobileNavLinks: NavLink[] = [
+    { href: '/about', label: 'Manifesto' },
+    { href: '/methodology', label: 'Methodology' },
+    { href: '/insights', label: 'Insights' },
+];
+
+// Legal links for drawer footer
+export const legalLinks: NavLink[] = [
+    { href: '/privacy', label: 'Privacy Policy' },
+    { href: '/terms', label: 'Terms of Service' },
 ];
 
 export const ctaButton = {

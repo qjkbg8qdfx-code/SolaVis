@@ -2,14 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Briefcase, FileText, Mail } from 'lucide-react';
-
-const mobileBottomNavLinks = [
-    { href: '/', label: 'Home', icon: Home },
-    { href: '/services', label: 'Services', icon: Briefcase },
-    { href: '/#case-studies', label: 'Cases', icon: FileText },
-    { href: '/contact', label: 'Contact', icon: Mail },
-];
+import { mobileTabBarLinks } from '@/config/navigation';
 
 export default function MobileNav() {
     const pathname = usePathname();
@@ -20,7 +13,7 @@ export default function MobileNav() {
             className="glass-panel fixed bottom-0 z-50 w-full px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-3 md:hidden"
         >
             <div className="flex items-center justify-around">
-                {mobileBottomNavLinks.map((link) => {
+                {mobileTabBarLinks.map((link) => {
                     const isActive = pathname === link.href;
                     const Icon = link.icon;
                     return (

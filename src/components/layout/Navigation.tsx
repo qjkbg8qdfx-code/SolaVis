@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { X, Sun, Moon, Command } from 'lucide-react';
-import { desktopNavLinks, mobileNavLinks, ctaButton } from '@/config/navigation';
+import { X, Sun, Moon, Command, Search } from 'lucide-react';
+import { desktopNavLinks, mobileNavLinks, legalLinks, ctaButton } from '@/config/navigation';
 import { basePath } from '@/config/site';
 import CommandMenu from '@/components/CommandMenu';
 
@@ -38,6 +38,11 @@ export default function Navigation() {
 
     const isActive = (path: string) =>
         pathname === path ? 'text-ios-text dark:text-white' : 'text-ios-subtext dark:text-gray-400';
+
+    const handleSearchClick = () => {
+        setIsOpen(false);
+        setTimeout(() => setCommandOpen(true), 100);
+    };
 
     return (
         <>
@@ -117,9 +122,9 @@ export default function Navigation() {
                     </button>
                 </div>
 
-                {/* Mobile Full Screen Overlay */}
+                {/* Mobile Full Screen Overlay - z-[60] to cover bottom nav z-50 */}
                 {isOpen && (
-                    <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col items-center justify-center bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
+                    <div className="fixed inset-0 z-[60] flex animate-fade-in flex-col bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 md:hidden">
                         {/* Close Button */}
                         <button
                             onClick={toggleMenu}
@@ -128,17 +133,66 @@ export default function Navigation() {
                         >
                             <X className="h-6 w-6" />
                         </button>
-                        <div className="flex flex-col gap-8 text-center">
-                            {mobileNavLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={toggleMenu}
-                                    className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href ? 'text-ios-blue' : 'text-gray-900 dark:text-white'}`}
+
+                        {/* Scrollable Content */}
+                        <div className="flex flex-1 flex-col overflow-y-auto px-6 pb-safe pt-20">
+                            {/* Utility Actions */}
+                            <div className="mb-8 flex gap-3">
+                                {/* Search Button */}
+                                <button
+                                    onClick={handleSearchClick}
+                                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                                    aria-label="Open search"
                                 >
-                                    {link.label}
-                                </Link>
-                            ))}
+                                    <Search className="h-5 w-5" />
+                                    <span className="font-medium">Search</span>
+                                </button>
+
+                                {/* Theme Toggle */}
+                                <button
+                                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                                    className="flex items-center justify-center rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                                    aria-label="Toggle theme"
+                                >
+                                    {mounted &&
+                                        (theme === 'dark' ? (
+                                            <Sun className="h-5 w-5" />
+                                        ) : (
+                                            <Moon className="h-5 w-5" />
+                                        ))}
+                                </button>
+                            </div>
+
+                            {/* Primary Navigation Links */}
+                            <div className="flex flex-col gap-6">
+                                {mobileNavLinks.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={toggleMenu}
+                                        className={`rounded-lg text-3xl font-semibold tracking-tight transition-colors hover:text-ios-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ios-blue ${pathname === link.href ? 'text-ios-blue' : 'text-gray-900 dark:text-white'}`}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Spacer */}
+                            <div className="flex-1" />
+
+                            {/* Legal Links - Gray, smaller */}
+                            <div className="mb-6 flex flex-wrap gap-4 border-t border-gray-200 pt-6 dark:border-gray-800">
+                                {legalLinks.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={toggleMenu}
+                                        className="text-sm text-gray-400 transition-colors hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
