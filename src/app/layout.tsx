@@ -83,6 +83,9 @@ const organizationSchema = {
         '@type': 'PostalAddress',
         addressCountry: siteConfig.address.country,
         addressLocality: siteConfig.address.locality,
+        addressRegion: siteConfig.address.region,
+        postalCode: siteConfig.address.postalCode,
+        streetAddress: siteConfig.address.streetAddress,
     },
     // Filter out empty social links for valid sameAs array
     sameAs: [siteConfig.twitter, siteConfig.linkedin].filter(Boolean),
