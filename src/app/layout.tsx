@@ -71,7 +71,7 @@ const organizationSchema = {
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/icon.png`,
+    logo: `${siteConfig.url}/assets/logo.png`,
     description: 'Empowering businesses with AI-driven architectural strategies and scalable solutions.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
@@ -132,6 +132,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en" className="scroll-smooth antialiased" suppressHydrationWarning>
             <head>
+                {/* Enterprise SEO: Canonical Tag */}
+                <link rel="canonical" href="https://solvovis.com/" />
                 {/* hreflang tags for global indexing */}
                 <link rel="alternate" hrefLang="en-US" href={siteConfig.url} />
                 <link rel="alternate" hrefLang="en-GB" href={siteConfig.url} />
@@ -147,18 +149,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {/* Main Content (Pushing down for sticky nav) */}
                     <main className="pb-32 pt-16">{children}</main>
 
-                    {/* System Status Footer */}
-                    <footer className="hidden border-t border-gray-100 bg-white/50 py-6 backdrop-blur-sm md:block">
-                        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 font-mono text-xs text-gray-400">
-                            <div className="flex items-center gap-4">
+                    {/* Professional Footer (Enterprise SEO) */}
+                    <footer className="border-t border-gray-800 bg-gray-950 py-6">
+                        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-gray-300 md:flex-row">
+                            <div className="flex flex-wrap items-center justify-center gap-4">
                                 <span suppressHydrationWarning>
-                                    &copy; {new Date().getFullYear()} {siteConfig.companyName}
+                                    © 2025 {siteConfig.companyName}. All Rights Reserved.
                                 </span>
-                                <span className="text-gray-200">|</span>
-                                <Link href="/privacy" className="transition-colors hover:text-ios-blue">
+                                <span className="hidden text-gray-600 md:inline">|</span>
+                                <Link href="/privacy" className="text-white transition-colors hover:text-ios-blue">
                                     Privacy Policy
                                 </Link>
-                                <Link href="/terms" className="transition-colors hover:text-ios-blue">
+                                <Link href="/terms" className="text-white transition-colors hover:text-ios-blue">
                                     Terms of Service
                                 </Link>
                             </div>
@@ -168,7 +170,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
                                     <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                                 </span>
-                                <span>All Systems Operational</span>
+                                <span className="text-gray-300">All Systems Operational</span>
                             </div>
                         </div>
                     </footer>

@@ -7,7 +7,7 @@ export const siteConfig = {
     name: 'SolvoVis',
     tagline: 'AI Strategic Consultancy & Digital Architecture',
     description:
-        'SolvoVis provides data-driven AI consultancy and strategic digital architecture for global enterprises. Transform your vision into scalable solutions.',
+        'Global AI Consultancy and Strategic Vision Architect. SolvoVis provides data-driven AI consultancy and strategic digital architecture for global enterprises.',
     url: 'https://solvovis.com',
     ogImage: 'https://solvovis.com/og-preview.png',
 
