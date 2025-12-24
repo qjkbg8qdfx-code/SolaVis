@@ -10,7 +10,7 @@
         {
             "binding": "DB",
             "database_name": "solvovis-db",
-            "database_id": "d1-local-dev-id-1234" // Placeholder ID for local dev
+            "database_id": "c23062df-a625-4394-8127-61fa138c4153" // Placeholder ID for local dev
         }
     ]
 }
