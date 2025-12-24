@@ -21,7 +21,10 @@ export default function CookieBanner() {
     const handleAccept = () => {
         localStorage.setItem(CONSENT_KEY, 'accepted');
         setIsVisible(false);
-        // Here you would initialize analytics, etc.
+        // Dispatch custom event to trigger AnalyticsProvider immediately
+        window.dispatchEvent(
+            new CustomEvent('cookie-consent-update', { detail: 'accepted' })
+        );
     };
 
     const handleReject = () => {

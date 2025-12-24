@@ -6,6 +6,7 @@ import Navigation from '@/components/layout/Navigation';
 import CookieBanner from '@/components/layout/CookieBanner';
 import MobileNav from '@/components/layout/MobileNav';
 import StickyCTA from '@/components/StickyCTA';
+import AnalyticsProvider from '@/components/AnalyticsProvider';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { siteConfig } from '@/config/site';
 import { bentoModules, faqContent } from '@/config/content';
@@ -83,7 +84,8 @@ const organizationSchema = {
         addressCountry: siteConfig.address.country,
         addressLocality: siteConfig.address.locality,
     },
-    sameAs: [siteConfig.twitter, siteConfig.linkedin].filter((link) => link !== ''),
+    // Filter out empty social links for valid sameAs array
+    sameAs: [siteConfig.twitter, siteConfig.linkedin].filter(Boolean),
 };
 
 // Schema.org Person (Founder) Data
@@ -184,6 +186,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
                     />
+
+                    {/* GDPR-Compliant Analytics (loads only after consent) */}
+                    <AnalyticsProvider />
 
                     {/* Cookie Consent Banner */}
                     <CookieBanner />

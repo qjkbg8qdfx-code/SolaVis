@@ -32,6 +32,14 @@ export const siteConfig = {
     twitter: '',
     linkedin: '',
 
+    // TODO: [TRUST] Uncomment and add URLs when ready to go public with social presence
+    // social: {
+    //     twitter: 'https://x.com/solvovis',
+    //     github: 'https://github.com/solvovis',
+    //     linkedin: 'https://linkedin.com/company/solvovis',
+    //     youtube: 'https://youtube.com/@solvovis',
+    // },
+
     // Location
     address: {
         country: 'AU',
@@ -57,6 +65,9 @@ export const siteConfig = {
         role: 'Founder',
         linkedIn: '',
         image: '/founder.jpg', // No basePath prefix needed
+        // TODO: [TRUST] Uncomment when founder profiles are ready
+        // twitter: '',
+        // github: '',
     },
 } as const;
 
