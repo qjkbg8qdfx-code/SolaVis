@@ -5,21 +5,21 @@ export const basePath = '';
 
 export const siteConfig = {
     name: 'SolvoVis',
-    tagline: 'AI Trust Engine',
+    tagline: 'AI Strategic Consultancy & Digital Architecture',
     description:
-        'Building scalable AI systems for global efficiency. We transform manual workflows into automated trust engines.',
+        'SolvoVis provides data-driven AI consultancy and strategic digital architecture for global enterprises. Transform your vision into scalable solutions.',
     url: 'https://solvovis.com',
     ogImage: 'https://solvovis.com/og-preview.png',
 
     // SEO Keywords
     keywords: [
-        'Autonomous Infrastructure',
-        'Business Logic Automation',
-        'Enterprise AI Agents',
+        'AI Consultancy',
+        'SolvoVis',
+        'Digital Architecture',
+        'Strategic Coach',
+        'Enterprise AI',
         'Process Automation',
         'Trust Engine',
-        'SME Efficiency',
-        'Next.js',
         'Workflow Automation',
         'AI Systems',
     ],

@@ -48,6 +48,7 @@ export const metadata: Metadata = {
         description: 'Scale Revenue. Freeze Headcount.',
     },
     alternates: {
+        canonical: siteConfig.url,
         languages: {
             'en-US': siteConfig.url,
             'en-GB': siteConfig.url,
