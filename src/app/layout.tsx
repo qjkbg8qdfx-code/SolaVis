@@ -72,11 +72,11 @@ const organizationSchema = {
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/assets/logo.png`,
-    description: 'Global AI Consultancy and Strategic Vision Architect.',
+    description: 'Empowering businesses with AI-driven architectural strategies and scalable solutions.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
         '@type': 'ContactPoint',
-        contactType: 'customer service',
+        contactType: 'customer support',
         email: siteConfig.email,
         availableLanguage: ['English'],
     },
