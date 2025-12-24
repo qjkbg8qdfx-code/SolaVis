@@ -8,7 +8,8 @@
         "start": "next start",
         "lint": "next lint",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "setup:local": "npm run build && npx wrangler d1 execute solvovis-db --local --file=./schema.sql && npx wrangler pages dev out"
     },
     "dependencies": {
         "clsx": "^2.1.0",
@@ -23,6 +24,7 @@
         "tailwind-merge": "^2.2.1"
     },
     "devDependencies": {
+        "@cloudflare/workers-types": "^4.20251223.0",
         "@types/node": "^20.11.16",
         "@types/react": "^18.2.52",
         "@types/react-dom": "^18.2.18",
