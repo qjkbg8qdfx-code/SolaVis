@@ -132,6 +132,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en" className="scroll-smooth antialiased" suppressHydrationWarning>
             <head>
+                {/* SEO: Canonical Tag for crawler visibility */}
+                <link rel="canonical" href="https://solvovis.com/" />
                 {/* hreflang tags for global indexing */}
                 <link rel="alternate" hrefLang="en-US" href={siteConfig.url} />
                 <link rel="alternate" hrefLang="en-GB" href={siteConfig.url} />
