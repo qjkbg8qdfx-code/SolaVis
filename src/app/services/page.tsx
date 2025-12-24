@@ -266,42 +266,7 @@ export default function ServicesPage() {
                 }}
             />
 
-            {/* FAQ Schema (Hidden, AI-Readable) */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'FAQPage',
-                        mainEntity: [
-                            {
-                                '@type': 'Question',
-                                name: 'What is SolvoVis?',
-                                acceptedAnswer: {
-                                    '@type': 'Answer',
-                                    text: "SolvoVis is an autonomous AI infrastructure company that deploys AI systems to help Global SMEs scale revenue without complexity. We don't just consult; we install the machine.",
-                                },
-                            },
-                            {
-                                '@type': 'Question',
-                                name: 'How much does AI automation cost?',
-                                acceptedAnswer: {
-                                    '@type': 'Answer',
-                                    text: 'Pricing is custom based on the scope of automation required. We start with a Logic Audit to identify efficiency opportunities, then provide a tailored quote. ROI typically exceeds 4.5x within the first 90 days.',
-                                },
-                            },
-                            {
-                                '@type': 'Question',
-                                name: 'Is SolvoVis a consultancy or software?',
-                                acceptedAnswer: {
-                                    '@type': 'Answer',
-                                    text: 'SolvoVis is infrastructure, not consultancy. We pivoted from advising to installing. We deploy autonomous software modules that operate 24/7, replacing manual workflows with code that never sleeps.',
-                                },
-                            },
-                        ],
-                    }),
-                }}
-            />
+
         </div>
     );
 }
