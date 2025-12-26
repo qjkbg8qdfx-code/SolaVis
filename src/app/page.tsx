@@ -48,11 +48,11 @@ export default function Home() {
                     </div>
 
                     {/* Right Column: Visual Evidence */}
-                    <div className="relative">
-                        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
-                        <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
+                    <div className="relative z-10">
+                        <div className="absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
+                        <div className="absolute -bottom-10 -left-10 -z-10 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
 
-                        <div className="glass-panel relative rounded-3xl p-6 shadow-xl">
+                        <div className="relative rounded-3xl border border-white/20 bg-white/40 p-6 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-slate-900/40">
                             <div className="grid grid-cols-2 gap-4">
                                 {bottleneckSection.stats.map((stat, idx) => (
                                     <div

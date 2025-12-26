@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Code2, Brain, Cpu } from 'lucide-react';
 
 export default function HeroBento() {
     return (
-        <section className="py-12 md:py-20" aria-labelledby="hero-heading">
+        <section className="relative bg-slate-950 py-12 md:py-20" aria-labelledby="hero-heading">
             {/* Bento Grid Container */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-3">
                 {/* ============================================ */}
@@ -227,7 +227,7 @@ export default function HeroBento() {
             </div>
 
             {/* Hero-to-Body Gradient Fade */}
-            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent dark:from-slate-950" />
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/20 to-transparent dark:from-slate-950 dark:via-slate-950/20" />
         </section>
     );
 }
