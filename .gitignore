@@ -49,3 +49,25 @@ temp/
 
 # TypeScript
 *.tsbuildinfo
+
+# --- ADDED BY CHIEF ARCHITECT ---
+
+# Testing - Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+test-results/
+
+# Testing - Coverage
+coverage/
+junit.xml
+
+# OS - Extended
+.Spotlight-V100
+.Trashes
+Desktop.ini
+ehthumbs.db
+
+# Patch files
+*.patch
