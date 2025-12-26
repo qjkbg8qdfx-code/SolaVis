@@ -22,7 +22,7 @@ export default function Home() {
             {/* ============================================ */}
             {/* 2. HUMAN BOTTLENECK - Agitation Phase */}
             {/* ============================================ */}
-            <section className="relative overflow-hidden border-t border-gray-100 py-24 dark:border-slate-800">
+            <section className="relative overflow-hidden border-t border-gray-100 bg-slate-50 py-24 dark:border-slate-800 dark:bg-slate-950">
                 {/* Background Gradient Glow */}
                 <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-red-500/5 via-orange-500/5 to-amber-500/5 blur-3xl dark:from-red-500/10 dark:via-orange-500/10 dark:to-amber-500/10" />
 
@@ -155,19 +155,26 @@ export default function Home() {
                             key={study.id}
                             className="rounded-r-2xl border-l-4 border-l-ios-blue bg-gray-50 p-8 dark:bg-slate-900"
                         >
-                            <div className="mb-4 flex items-center justify-between font-mono text-xs text-ios-blue">
-                                <span>
-                                    CASE: {study.logId} |{' '}
-                                    <span
-                                        className={
-                                            study.status === 'VERIFIED'
-                                                ? 'text-green-600'
-                                                : 'text-amber-500'
-                                        }
-                                    >
-                                        {study.status}
-                                    </span>
+                            <div className="mb-4 flex items-center justify-between">
+                                <span className="font-mono text-xs text-ios-blue">
+                                    CASE: {study.logId}
                                 </span>
+                                {study.status === 'VERIFIED' ? (
+                                    <span className="flex items-center gap-1.5 font-mono text-xs font-bold text-green-600">
+                                        <span className="relative flex h-2 w-2">
+                                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                                            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                                        </span>
+                                        VERIFIED OUTCOME
+                                    </span>
+                                ) : (
+                                    <span className="flex items-center gap-1.5 font-mono text-xs font-bold text-amber-500">
+                                        <span className="relative flex h-2 w-2">
+                                            <span className="relative inline-flex h-2 w-2 animate-pulse rounded-full bg-amber-500" />
+                                        </span>
+                                        LIVE :: DATA AGGREGATING
+                                    </span>
+                                )}
                                 {study.verifiedResultLink && (
                                     <a
                                         href={study.verifiedResultLink}
