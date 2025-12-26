@@ -16,11 +16,9 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
-    title: {
-        default: `${siteConfig.name} | ${siteConfig.tagline}`,
-        template: `%s | ${siteConfig.name}`,
-    },
-    description: siteConfig.description,
+    title: 'SolvoVis | AI Strategic Consultancy & Digital Architecture',
+    description:
+        'SolvoVis is an AI infrastructure firm deploys autonomous Trust Engines to automate manual workflows for SMEs globally.',
     icons: {
         icon: '/icon.svg',
         apple: '/apple-icon.png',
@@ -71,7 +69,7 @@ const organizationSchema = {
     '@id': `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/assets/logo.png`,
+    logo: 'https://solvovis.com/logo.png',
     description: 'Empowering businesses with AI-driven architectural strategies and scalable solutions.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {

@@ -59,7 +59,7 @@ export default function Navigation() {
                         className="relative z-50 flex items-center gap-2 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
                     >
                         <Image
-                            src={`${basePath}/logo.svg`}
+                            src={`${basePath}/icon.svg`}
                             alt="SolvoVis Logo"
                             width={24}
                             height={24}
@@ -95,7 +95,10 @@ export default function Navigation() {
 
                         {/* Theme Toggle */}
                         <button
-                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setTheme(theme === 'dark' ? 'light' : 'dark');
+                            }}
                             className="rounded-lg bg-gray-100 p-2 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                             aria-label="Toggle theme"
                         >
@@ -156,7 +159,10 @@ export default function Navigation() {
 
                             {/* Theme Toggle */}
                             <button
-                                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setTheme(theme === 'dark' ? 'light' : 'dark');
+                                }}
                                 className="flex items-center justify-center rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                                 aria-label="Toggle theme"
                             >
