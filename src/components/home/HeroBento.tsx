@@ -5,13 +5,13 @@ import { ArrowRight, Zap, Code2, Brain, Cpu } from 'lucide-react';
 
 export default function HeroBento() {
     return (
-        <section className="relative bg-slate-950 py-12 md:py-20" aria-labelledby="hero-heading">
+        <section className="relative py-12 md:py-20" aria-labelledby="hero-heading">
             {/* Bento Grid Container */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:grid-rows-3">
                 {/* ============================================ */}
                 {/* BOX A - The Hook (2x2) - Top Left */}
                 {/* ============================================ */}
-                <div className="order-first flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-gray-900 via-slate-900 to-black p-8 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-10">
+                <div className="order-first flex flex-col justify-between rounded-3xl bg-slate-950 p-8 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-10">
                     {/* Glow Effect */}
                     <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 blur-3xl" />
 
@@ -65,7 +65,7 @@ export default function HeroBento() {
                 {/* ============================================ */}
                 {/* BOX B - Visual Evidence (1x2) - Top Right */}
                 {/* ============================================ */}
-                <div className="relative order-2 flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-800/50 p-6 shadow-xl backdrop-blur-xl md:col-span-2 md:row-span-2 md:p-8">
+                <div className="relative order-2 flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 p-6 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-8">
                     {/* Glassmorphism Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-fuchsia-500/5" />
 
@@ -168,7 +168,7 @@ export default function HeroBento() {
                 {/* ============================================ */}
                 {/* BOX C - Social Proof (1x1) - Bottom Left */}
                 {/* ============================================ */}
-                <div className="order-3 flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl md:col-span-1 md:row-span-1">
+                <div className="order-3 flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900 p-6 text-white shadow-xl md:col-span-1 md:row-span-1">
                     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/20 text-blue-400">
                         <Zap className="h-5 w-5" />
                     </div>
@@ -183,7 +183,7 @@ export default function HeroBento() {
                 {/* ============================================ */}
                 {/* BOX D - Tech Stack (3x1) - Bottom Right */}
                 {/* ============================================ */}
-                <div className="order-4 flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl md:col-span-3 md:row-span-1">
+                <div className="order-4 flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900 p-6 text-white shadow-xl md:col-span-3 md:row-span-1">
                     <div className="flex items-center justify-between">
                         <div>
                             <p className="text-sm font-medium text-gray-200">
@@ -225,9 +225,6 @@ export default function HeroBento() {
                     </div>
                 </div>
             </div>
-
-            {/* Hero-to-Body Gradient Fade */}
-            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/20 to-transparent dark:from-slate-950 dark:via-slate-950/20" />
         </section>
     );
 }
