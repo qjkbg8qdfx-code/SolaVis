@@ -1,14 +1,10 @@
 import Link from 'next/link';
-import { ArrowRight, PlayCircle, ExternalLink } from 'lucide-react';
-import Counter from '@/components/Counter';
-import BentoCard, { HomeBentoCard } from '@/components/ui/BentoCard';
+import { ExternalLink } from 'lucide-react';
+import BentoCard from '@/components/ui/BentoCard';
 import HeroBento from '@/components/home/HeroBento';
 import {
-    homePage,
     bentoModules,
-    modulesSection,
     caseStudies,
-    caseStudiesSection,
     manifestoTeaser,
     faqContent,
     faqSection,
@@ -16,32 +12,16 @@ import {
 } from '@/config/content';
 
 export default function Home() {
-    const { hero, sectionTitle, bentoItems } = homePage;
-
     return (
         <div className="mx-auto max-w-7xl px-6">
-            {/* Hero Bento Grid - Apple/Linear Style */}
+            {/* ============================================ */}
+            {/* 1. HERO - The Hook */}
+            {/* ============================================ */}
             <HeroBento />
 
             {/* ============================================ */}
-            {/* BENTO GRID - System Dashboard */}
+            {/* 2. HUMAN BOTTLENECK - Agitation Phase */}
             {/* ============================================ */}
-            <section className="py-20">
-                <div className="mb-12">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-                        {sectionTitle}
-                    </h2>
-                </div>
-
-                {/* Bento Grid - Mobile First */}
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                    {bentoItems.map((item, index) => (
-                        <HomeBentoCard key={item.id} item={item} index={index} />
-                    ))}
-                </div>
-            </section>
-
-            {/* The Human Bottleneck Section (Agitation Phase) */}
             <section className="relative overflow-hidden border-t border-gray-100 py-24 dark:border-slate-800">
                 {/* Background Gradient Glow */}
                 <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-red-500/5 via-orange-500/5 to-amber-500/5 blur-3xl dark:from-red-500/10 dark:via-orange-500/10 dark:to-amber-500/10" />
@@ -133,18 +113,17 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Services Grid (Legacy Bento) */}
+            {/* ============================================ */}
+            {/* 3. THE TRUST ENGINE ARCHITECTURE - Solution */}
+            {/* ============================================ */}
             <section id="services" className="py-20">
-                <div className="mb-12 flex items-end justify-between">
-                    <h2 className="text-4xl font-semibold tracking-tight">
-                        {modulesSection.title}
+                <div className="mb-12 flex flex-col gap-2">
+                    <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        The Trust Engine Architecture
                     </h2>
-                    <Link
-                        href={modulesSection.viewAllHref}
-                        className="font-medium text-ios-blue hover:underline"
-                    >
-                        {modulesSection.viewAllLabel}
-                    </Link>
+                    <p className="text-lg text-gray-600 dark:text-slate-400">
+                        Modular AI infrastructures deployed for scale.
+                    </p>
                 </div>
 
                 <div className="grid h-auto grid-cols-1 gap-4 md:h-[600px] md:grid-cols-4 md:grid-rows-2">
@@ -154,15 +133,20 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Verified Case Studies (Social Proof) */}
+            {/* ============================================ */}
+            {/* 4. SYSTEMS IN PRODUCTION - Proof */}
+            {/* ============================================ */}
             <section id="case-studies" className="border-t border-gray-100 py-20 dark:border-slate-800">
                 <div className="mb-12">
                     <span className="mb-2 block font-mono text-sm uppercase tracking-wider text-ios-blue">
-                        {caseStudiesSection.badge}
+                        Verified Outcomes
                     </span>
-                    <h2 className="text-3xl font-bold tracking-tight">
-                        {caseStudiesSection.title}
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Systems in Production
                     </h2>
+                    <p className="mt-2 text-lg text-gray-600 dark:text-slate-400">
+                        Verified outcomes from deployed Trust Engines.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -229,7 +213,7 @@ export default function Home() {
 
                 {/* Verification Statement */}
                 <p className="mt-8 text-center font-mono text-xs text-gray-400">
-                    {caseStudiesSection.disclaimer}
+                    All case studies are collected with explicit client consent.
                 </p>
             </section>
 

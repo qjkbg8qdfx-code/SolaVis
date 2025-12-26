@@ -71,63 +71,96 @@ export default function HeroBento() {
 
                     {/* Header */}
                     <div className="relative z-10 flex items-center justify-between">
-                        <span className="text-sm font-medium text-gray-400">Live Dashboard</span>
-                        <div className="flex items-center gap-2 rounded-full border border-green-400/30 bg-green-950/50 px-3 py-1 text-xs font-semibold text-green-400">
+                        <span className="text-sm font-medium text-gray-400">Workforce Composition</span>
+                        <div className="flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-950/50 px-3 py-1 text-xs font-semibold text-violet-400">
                             <span className="relative flex h-1.5 w-1.5">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none" />
-                                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-75 motion-reduce:animate-none" />
+                                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-violet-500" />
                             </span>
-                            System Status: Active
+                            80/20 Rule Active
                         </div>
                     </div>
 
-                    {/* Visual Placeholder - Simulated UI */}
-                    <div className="relative z-10 my-6 flex-1 rounded-2xl bg-gradient-to-b from-white/5 to-transparent p-4">
-                        {/* Mini Chart with Glow Effect */}
-                        <svg className="h-full w-full" viewBox="0 0 200 80" preserveAspectRatio="none">
-                            <defs>
-                                <linearGradient id="bentoChartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.5" />
-                                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
-                                </linearGradient>
-                                <filter id="glow">
-                                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                                    <feMerge>
-                                        <feMergeNode in="coloredBlur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-                            <path
-                                d="M0 60 Q20 55, 40 50 T80 40 T120 30 T160 35 T200 15 L200 80 L0 80 Z"
-                                fill="url(#bentoChartGradient)"
-                            />
-                            <path
-                                d="M0 60 Q20 55, 40 50 T80 40 T120 30 T160 35 T200 15"
-                                fill="none"
-                                stroke="#8B5CF6"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                filter="url(#glow)"
-                                style={{ filter: 'drop-shadow(0 0 8px rgba(139, 92, 246, 0.6))' }}
-                            />
-                            <circle cx="200" cy="15" r="4" fill="#8B5CF6" filter="url(#glow)" />
-                        </svg>
+                    {/* Donut Chart - 80/20 Workforce Composition */}
+                    <div className="relative z-10 my-6 flex flex-1 items-center justify-center rounded-2xl bg-gradient-to-b from-white/5 to-transparent p-4">
+                        <div className="relative">
+                            <svg className="h-40 w-40 -rotate-90" viewBox="0 0 100 100">
+                                <defs>
+                                    <filter id="glowFilter">
+                                        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                {/* Background Circle */}
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="40"
+                                    fill="none"
+                                    stroke="#1e293b"
+                                    strokeWidth="12"
+                                />
+                                {/* 80% AI Agents - Violet Glowing */}
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="40"
+                                    fill="none"
+                                    stroke="#8B5CF6"
+                                    strokeWidth="12"
+                                    strokeDasharray="201.06 251.33"
+                                    strokeLinecap="round"
+                                    filter="url(#glowFilter)"
+                                    style={{ filter: 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.7))' }}
+                                />
+                                {/* 20% Human Strategy - Muted Slate */}
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="40"
+                                    fill="none"
+                                    stroke="#475569"
+                                    strokeWidth="12"
+                                    strokeDasharray="50.26 251.33"
+                                    strokeDashoffset="-201.06"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                            {/* Center Text */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                <span className="text-2xl font-bold text-white">80%</span>
+                                <span className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Automated</span>
+                            </div>
+                        </div>
+                        {/* Legend */}
+                        <div className="ml-6 space-y-3">
+                            <div className="flex items-center gap-2">
+                                <div className="h-3 w-3 rounded-full bg-violet-500 shadow-lg shadow-violet-500/50" />
+                                <span className="text-xs text-gray-300">AI Agents (Execution)</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="h-3 w-3 rounded-full bg-slate-600" />
+                                <span className="text-xs text-gray-400">Human Strategy</span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Metric Pills */}
                     <div className="relative z-10 grid grid-cols-3 gap-3">
                         <div className="rounded-xl bg-white/5 p-3 text-center backdrop-blur-sm">
-                            <div className="text-lg font-bold text-white">4.5×</div>
-                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">ROI</div>
+                            <div className="text-lg font-bold text-green-400">-60%</div>
+                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Cost Velocity</div>
                         </div>
                         <div className="rounded-xl bg-white/5 p-3 text-center backdrop-blur-sm">
-                            <div className="text-lg font-bold text-white">98%</div>
-                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Automated</div>
+                            <div className="text-lg font-bold text-violet-400">+4.5x</div>
+                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Output</div>
                         </div>
                         <div className="rounded-xl bg-white/5 p-3 text-center backdrop-blur-sm">
-                            <div className="text-lg font-bold text-white">24/7</div>
-                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Active</div>
+                            <div className="text-lg font-bold text-emerald-400">0%</div>
+                            <div className="text-[10px] font-medium uppercase tracking-wide text-gray-400">Error Rate</div>
                         </div>
                     </div>
                 </div>
