@@ -22,10 +22,13 @@ export const metadata: Metadata = {
     },
     description:
         'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+    applicationName: 'SolvoVis',
+    authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
     icons: {
         icon: '/icon.svg',
-        apple: '/apple-icon.png',
+        apple: '/apple-touch-icon.png',
     },
+    manifest: '/site.webmanifest',
     robots: {
         index: true,
         follow: true,
@@ -70,11 +73,36 @@ export const metadata: Metadata = {
     ],
 };
 
+// Schema.org WebSite Data
+const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SolvoVis',
+    alternateName: 'SolvoVis AI Consultancy',
+    url: 'https://solvovis.com',
+};
+
 // Schema.org Organization Data
 const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ConsultingService',
+    '@type': 'Organization',
     '@id': `${siteConfig.url}/#organization`,
+    name: 'SolvoVis',
+    url: 'https://solvovis.com',
+    logo: 'https://solvovis.com/logo.png',
+    description:
+        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+    sameAs: [
+        'https://linkedin.com/company/solvovis', // Placeholder
+        'https://twitter.com/solvovis', // Placeholder
+    ],
+};
+
+// Schema.org ConsultingService Data
+const consultingServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ConsultingService',
+    '@id': `${siteConfig.url}/#service`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
     logo: 'https://solvovis.com/logo.png',
@@ -184,9 +212,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                     {/* Schema.org Structured Data */}
                     <script
+                        id="schema-website"
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                    />
+                    <script
                         id="schema-org"
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                    />
+                    <script
+                        id="schema-consulting"
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }}
                     />
                     <script
                         type="application/ld+json"
