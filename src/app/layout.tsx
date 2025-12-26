@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         template: '%s | SolvoVis',
     },
     description:
-        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
     applicationName: 'SolvoVis',
     authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
     icons: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
         description:
-            'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+            'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
         url: siteConfig.url,
         siteName: 'SolvoVis',
         images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
         description:
-            'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+            'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
     },
     alternates: {
         canonical: siteConfig.url,
@@ -91,7 +91,7 @@ const organizationSchema = {
     url: 'https://solvovis.com',
     logo: 'https://solvovis.com/logo.png',
     description:
-        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
     sameAs: [
         'https://linkedin.com/company/solvovis', // Placeholder
         'https://twitter.com/solvovis', // Placeholder
@@ -107,7 +107,7 @@ const consultingServiceSchema = {
     url: 'https://solvovis.com',
     logo: 'https://solvovis.com/logo.png',
     description:
-        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
+        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
         '@type': 'ContactPoint',
