@@ -23,8 +23,7 @@ export default function Home() {
             {/* 2. HUMAN BOTTLENECK - Agitation Phase */}
             {/* ============================================ */}
             <section className="relative overflow-hidden border-t border-gray-100 bg-slate-50 py-24 dark:border-slate-800 dark:bg-slate-950">
-                {/* Background Gradient Glow */}
-                <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-red-500/5 via-orange-500/5 to-amber-500/5 blur-3xl dark:from-red-500/10 dark:via-orange-500/10 dark:to-amber-500/10" />
+                {/* Background Gradient Glow Removed */}
 
                 <div className="grid gap-12 md:grid-cols-2 md:items-center">
                     {/* Left Column: Narrative */}
@@ -48,16 +47,13 @@ export default function Home() {
                     </div>
 
                     {/* Right Column: Visual Evidence */}
-                    <div className="relative">
-                        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
-                        <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
-
-                        <div className="glass-panel relative rounded-3xl p-6 shadow-xl">
+                    <div className="relative z-10">
+                        <div className="relative rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
                             <div className="grid grid-cols-2 gap-4">
                                 {bottleneckSection.stats.map((stat, idx) => (
                                     <div
                                         key={idx}
-                                        className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/80"
+                                        className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 p-5 transition-all hover:bg-white hover:shadow-md dark:border-slate-800 dark:bg-slate-950/50"
                                     >
                                         <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-red-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                                         <div className="mb-1 text-4xl font-bold text-gray-900 dark:text-white">
