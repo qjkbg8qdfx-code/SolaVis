@@ -96,6 +96,15 @@ function checkHtmlForSchema(htmlPath) {
         log('warn', 'Canonical URL missing');
         checks.warnings++;
     }
+
+    // Check for noindex (SEO safety critical)
+    if (html.includes('noindex') || html.includes('NOINDEX')) {
+        log('fail', 'noindex meta tag detected! This will prevent Google indexing.');
+        checks.failed++;
+    } else {
+        log('pass', 'No noindex directives found');
+        checks.passed++;
+    }
 }
 
 // Main execution

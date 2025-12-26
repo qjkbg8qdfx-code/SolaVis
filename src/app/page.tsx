@@ -48,12 +48,12 @@ export default function Home() {
 
                     {/* Right Column: Visual Evidence */}
                     <div className="relative z-10">
-                        <div className="relative rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+                        <div className="relative rounded-3xl border border-indigo-100/30 bg-white/85 p-6 shadow-xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/85">
                             <div className="grid grid-cols-2 gap-4">
                                 {bottleneckSection.stats.map((stat, idx) => (
                                     <div
                                         key={idx}
-                                        className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 p-5 transition-all hover:bg-white hover:shadow-md dark:border-slate-800 dark:bg-slate-950/50"
+                                        className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/80"
                                     >
                                         <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-red-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                                         <div className="mb-1 text-4xl font-bold text-gray-900 dark:text-white">
