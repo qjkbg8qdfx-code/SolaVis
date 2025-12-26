@@ -48,7 +48,7 @@ export default function Home() {
 
                     {/* Right Column: Visual Evidence */}
                     <div className="relative z-10">
-                        <div className="relative rounded-3xl border border-gray-100 bg-white p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                        <div className="relative rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
                             <div className="grid grid-cols-2 gap-4">
                                 {bottleneckSection.stats.map((stat, idx) => (
                                     <div

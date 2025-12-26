@@ -11,7 +11,7 @@ export default function HeroBento() {
                 {/* ============================================ */}
                 {/* BOX A - The Hook (2x2) - Top Left */}
                 {/* ============================================ */}
-                <div className="order-first flex flex-col justify-between rounded-3xl bg-slate-950 p-8 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-10">
+                <div className="order-first flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-950 p-8 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-10">
                     {/* Glow Effect */}
                     <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 blur-3xl" />
 
@@ -65,7 +65,7 @@ export default function HeroBento() {
                 {/* ============================================ */}
                 {/* BOX B - Visual Evidence (1x2) - Top Right */}
                 {/* ============================================ */}
-                <div className="relative order-2 flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 p-6 text-white shadow-2xl md:col-span-2 md:row-span-2 md:p-8">
+                <div className="relative order-2 flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 p-6 text-white shadow-xl md:col-span-2 md:row-span-2 md:p-8">
                     {/* Glassmorphism Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-fuchsia-500/5" />
 
