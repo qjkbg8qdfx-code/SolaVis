@@ -16,19 +16,26 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
-    title: 'SolvoVis | AI Strategic Consultancy & Digital Architecture',
+    title: {
+        default: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
+        template: '%s | SolvoVis',
+    },
     description:
-        'SolvoVis is an AI infrastructure firm deploys autonomous Trust Engines to automate manual workflows for SMEs globally.',
+        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
     icons: {
         icon: '/icon.svg',
         apple: '/apple-icon.png',
     },
+    robots: {
+        index: true,
+        follow: true,
+    },
     openGraph: {
-        title: `${siteConfig.name} | ${siteConfig.tagline}`,
+        title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
         description:
-            'We map friction. We deploy logic. The autonomous AI infrastructure for high-performance SMEs.',
+            'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
         url: siteConfig.url,
-        siteName: siteConfig.name,
+        siteName: 'SolvoVis',
         images: [
             {
                 url: siteConfig.ogImage,
@@ -42,8 +49,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: siteConfig.name,
-        description: 'Scale Revenue. Freeze Headcount.',
+        title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
+        description:
+            'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
     },
     alternates: {
         canonical: siteConfig.url,
@@ -65,12 +73,13 @@ export const metadata: Metadata = {
 // Schema.org Organization Data
 const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'ConsultingService',
     '@id': `${siteConfig.url}/#organization`,
-    name: siteConfig.name,
-    url: siteConfig.url,
+    name: 'SolvoVis',
+    url: 'https://solvovis.com',
     logo: 'https://solvovis.com/logo.png',
-    description: 'Empowering businesses with AI-driven architectural strategies and scalable solutions.',
+    description:
+        'Automate complex workflows and eliminate operational friction. SolvoVis deploys autonomous AI infrastructures that serve as your 24/7 strategic workforce. Scale without chaos.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
         '@type': 'ContactPoint',
@@ -175,6 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                     {/* Schema.org Structured Data */}
                     <script
+                        id="schema-org"
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                     />
