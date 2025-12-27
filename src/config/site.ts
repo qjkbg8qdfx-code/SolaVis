@@ -45,8 +45,8 @@ export const siteConfig = {
         country: 'AU',
         locality: 'Mackay',
         region: 'Queensland',
-        postalCode: '4740', // TODO: 填入正確郵遞區號
-        streetAddress: 'Adrian St', // TODO: 填入街道資訊
+        postalCode: '4740',
+        streetAddress: 'Adrian St',
         label: 'Global Operation Node (AUS)',
     },
 
