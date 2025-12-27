@@ -3,10 +3,7 @@
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
 
-// TODO: [ANALYTICS] Replace with your actual Google Analytics Measurement ID
-// Get your ID from: https://analytics.google.com/ → Admin → Data Streams → Select stream → Measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const CONSENT_KEY = 'solvovis-cookie-consent';
 
 /**
@@ -23,6 +20,12 @@ export default function AnalyticsProvider() {
     const [shouldLoadAnalytics, setShouldLoadAnalytics] = useState(false);
 
     useEffect(() => {
+        // Safety check: warn if GA ID is missing
+        if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+            console.warn('[Analytics] GA ID missing or not configured. Set NEXT_PUBLIC_GA_MEASUREMENT_ID in .env.local');
+            return;
+        }
+
         // Check initial consent state
         const consent = localStorage.getItem(CONSENT_KEY);
         if (consent === 'accepted') {
@@ -51,8 +54,8 @@ export default function AnalyticsProvider() {
         };
     }, []);
 
-    // Don't render anything if consent not given
-    if (!shouldLoadAnalytics) {
+    // Don't render anything if consent not given or GA ID missing
+    if (!shouldLoadAnalytics || !GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
         return null;
     }
 

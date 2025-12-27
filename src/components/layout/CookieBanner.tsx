@@ -18,6 +18,17 @@ export default function CookieBanner() {
         }
     }, []);
 
+    // Listen for reset event from Cookie Settings trigger
+    useEffect(() => {
+        const handleReset = () => {
+            localStorage.removeItem(CONSENT_KEY);
+            setIsVisible(true);
+        };
+
+        window.addEventListener('reset-cookie-consent', handleReset);
+        return () => window.removeEventListener('reset-cookie-consent', handleReset);
+    }, []);
+
     const handleAccept = () => {
         localStorage.setItem(CONSENT_KEY, 'accepted');
         setIsVisible(false);
