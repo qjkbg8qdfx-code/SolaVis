@@ -27,12 +27,13 @@ export const siteConfig = {
     // Contact
     email: 'Varick@solvovis.com',
     legalEmail: 'Varick@solvovis.com',
+    phone: '+61 466 833 608',
 
     // Social - Empty strings will be hidden by UI logic
     twitter: '',
     linkedin: '',
 
-    // TODO: [TRUST] Uncomment and add URLs when ready to go public with social presence
+    // Social profiles (uncomment when ready)
     // social: {
     //     twitter: 'https://x.com/solvovis',
     //     github: 'https://github.com/solvovis',
@@ -68,7 +69,7 @@ export const siteConfig = {
         role: 'Founder',
         linkedIn: 'https://www.linkedin.com/in/varick-chen-93ab16299',
         image: '/founder.jpg', // No basePath prefix needed
-        // TODO: [TRUST] Uncomment when founder profiles are ready
+        // Additional profiles (uncomment when ready)
         // twitter: '',
         // github: '',
     },
