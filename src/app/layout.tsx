@@ -94,10 +94,22 @@ const organizationSchema = {
     logo: 'https://solvovis.com/logo.svg',
     description:
         'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
-    sameAs: [
-        'https://twitter.com/solvovis',
-        'https://linkedin.com/company/solvovis',
-    ],
+    address: {
+        '@type': 'PostalAddress',
+        addressCountry: siteConfig.address.country,
+        addressLocality: siteConfig.address.locality,
+        addressRegion: siteConfig.address.region,
+        postalCode: siteConfig.address.postalCode,
+        streetAddress: siteConfig.address.streetAddress,
+    },
+    contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: siteConfig.email,
+        telephone: siteConfig.phone,
+        availableLanguage: ['English'],
+    },
+    sameAs: [siteConfig.twitter, siteConfig.linkedin].filter(Boolean),
 };
 
 // Schema.org ConsultingService Data
@@ -187,28 +199,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <main className="pb-32 pt-16">{children}</main>
 
                     {/* Professional Footer (Enterprise SEO) */}
-                    <footer className="border-t border-gray-800 bg-gray-950 py-6">
-                        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 font-mono text-xs text-gray-300 md:flex-row">
-                            <div className="flex flex-wrap items-center justify-center gap-4">
-                                <span suppressHydrationWarning>
-                                    © 2025 {siteConfig.companyName}. All Rights Reserved.
-                                </span>
-                                <span className="hidden text-gray-600 md:inline">|</span>
-                                <Link href="/privacy" className="text-white transition-colors hover:text-ios-blue">
-                                    Privacy Policy
-                                </Link>
-                                <Link href="/terms" className="text-white transition-colors hover:text-ios-blue">
-                                    Terms of Service
-                                </Link>
-                                <CookieSettingsTrigger />
+                    <footer className="border-t border-gray-800 bg-gray-950 py-8">
+                        <div className="mx-auto max-w-7xl px-6">
+                            {/* Top Row: Location & Contact */}
+                            <div className="mb-6 flex flex-col items-center justify-between gap-4 border-b border-gray-800 pb-6 md:flex-row">
+                                <div className="flex flex-col items-center gap-1 text-sm text-gray-400 md:items-start">
+                                    <span className="font-medium text-white">{siteConfig.companyName}</span>
+                                    <span>{siteConfig.address.locality}, {siteConfig.address.region}, Australia</span>
+                                </div>
+                                <div className="flex flex-col items-center gap-1 text-sm text-gray-400 md:items-end">
+                                    <a href={`mailto:${siteConfig.email}`} className="text-white transition-colors hover:text-ios-blue">
+                                        {siteConfig.email}
+                                    </a>
+                                    <a href={`tel:${siteConfig.phone}`} className="transition-colors hover:text-ios-blue">
+                                        {siteConfig.phone}
+                                    </a>
+                                </div>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
-                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                                </span>
-                                <span className="text-gray-300">All Systems Operational</span>
+                            {/* Bottom Row: Legal & Status */}
+                            <div className="flex flex-col items-center justify-between gap-4 font-mono text-xs text-gray-300 md:flex-row">
+                                <div className="flex flex-wrap items-center justify-center gap-4">
+                                    <span suppressHydrationWarning>
+                                        © 2025 {siteConfig.companyName}. All Rights Reserved.
+                                    </span>
+                                    <span className="hidden text-gray-600 md:inline">|</span>
+                                    <Link href="/privacy" className="text-white transition-colors hover:text-ios-blue">
+                                        Privacy Policy
+                                    </Link>
+                                    <Link href="/terms" className="text-white transition-colors hover:text-ios-blue">
+                                        Terms of Service
+                                    </Link>
+                                    <CookieSettingsTrigger />
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75 motion-reduce:animate-none"></span>
+                                        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                                    </span>
+                                    <span className="text-gray-300">All Systems Operational</span>
+                                </div>
                             </div>
                         </div>
                     </footer>
