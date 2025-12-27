@@ -4,6 +4,7 @@ import Link from 'next/link';
 import './globals.css';
 import Navigation from '@/components/layout/Navigation';
 import CookieBanner from '@/components/layout/CookieBanner';
+import CookieSettingsTrigger from '@/components/layout/CookieSettingsTrigger';
 import MobileNav from '@/components/layout/MobileNav';
 import StickyCTA from '@/components/StickyCTA';
 import AnalyticsProvider from '@/components/AnalyticsProvider';
@@ -199,6 +200,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                                 <Link href="/terms" className="text-white transition-colors hover:text-ios-blue">
                                     Terms of Service
                                 </Link>
+                                <CookieSettingsTrigger />
                             </div>
 
                             <div className="flex items-center gap-2">
