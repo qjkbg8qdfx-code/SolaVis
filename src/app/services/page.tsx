@@ -11,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export const metadata = {
-    title: 'Modules | SolvoVis',
+    title: 'Services | SolvoVis',
     description: 'Autonomous software modules for revenue scaling.',
 };
 
@@ -21,9 +21,9 @@ export default function ServicesPage() {
             {/* Header */}
             <div className="mb-16 max-w-2xl animate-fade-in-up">
                 <span className="mb-4 block font-mono text-sm uppercase tracking-wider text-ios-blue">
-                    System Capabilities
+                    Autonomous Modules
                 </span>
-                <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">Modules.</h1>
+                <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">Services.</h1>
                 <p className="text-xl leading-relaxed text-gray-500 dark:text-gray-400">
                     Deployable software infrastructure. We replace human bottlenecks with autonomous
                     code.
