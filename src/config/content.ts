@@ -230,19 +230,19 @@ export const caseStudies: CaseStudy[] = [
         module: 'Executive Workflow Core',
         status: 'DEPLOYING',
     },
-    // Added a placeholder for layout balance if needed, or you can remove this
-    {
-        id: 'CS_03',
-        logId: 'SYS_LOG_CONFIDENTIAL',
-        company: 'Confidential Client',
-        clientWebsite: '#',
-        quote: "System deployment initiated. Focusing on high-volume data validation and entry automation.",
-        personName: 'Pending',
-        personRole: 'Operations Lead',
-        verifiedResultLink: '',
-        module: 'Stealth Infrastructure',
-        status: 'DEPLOYING'
-    },
+    // [COMMENTED OUT FOR v1.0.0 RELEASE] - Re-enable when verification is complete
+    // {
+    //     id: 'CS_03',
+    //     logId: 'SYS_LOG_CONFIDENTIAL',
+    //     company: 'Confidential Client',
+    //     clientWebsite: '#',
+    //     quote: "System deployment initiated. Focusing on high-volume data validation and entry automation.",
+    //     personName: 'Pending',
+    //     personRole: 'Operations Lead',
+    //     verifiedResultLink: '',
+    //     module: 'Stealth Infrastructure',
+    //     status: 'DEPLOYING'
+    // },
 ];
 
 // ============================================
