@@ -27,8 +27,8 @@ export default function ContactPage() {
                 </p>
                 <div className="flex items-center justify-center gap-8 opacity-40 grayscale transition-all duration-500 hover:grayscale-0">
                     <span className="text-xl font-bold text-gray-800">OpenAI</span>
-                    <span className="text-xl font-bold text-gray-800">AWS</span>
-                    <span className="text-xl font-bold text-gray-800">HubSpot</span>
+                    <span className="text-xl font-bold text-gray-800">Cloudflare</span>
+                    <span className="text-xl font-bold text-gray-800">Google Labs</span>
                 </div>
             </div>
 
@@ -50,6 +50,7 @@ export default function ContactPage() {
                         </span>
                     </div>
 
+                    {/* TODO: VERIFY - Is this a real office? If not, remove or change to "Remote Hub" */}
                     {/* Card 2: Strategic Node - Taipei */}
                     <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-center">
                         <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
