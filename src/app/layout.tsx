@@ -17,16 +17,17 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
     title: {
-        default: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
+        default: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
         template: '%s | SolvoVis',
     },
     description:
-        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
+        'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     applicationName: 'SolvoVis',
     authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
     icons: {
-        icon: '/icon.svg',
-        apple: '/apple-touch-icon.png',
+        icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+        shortcut: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+        apple: [{ url: '/apple-touch-icon.svg', type: 'image/svg+xml' }],
     },
     manifest: '/site.webmanifest',
     robots: {
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
         follow: true,
     },
     openGraph: {
-        title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
+        title: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
         description:
-            'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
+            'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
         url: siteConfig.url,
         siteName: 'SolvoVis',
         images: [
@@ -52,9 +53,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'SolvoVis | Autonomous Trust Engines for Global SMEs',
+        title: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
         description:
-            'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
+            'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     },
     alternates: {
         canonical: siteConfig.url,
@@ -89,12 +90,12 @@ const organizationSchema = {
     '@id': `${siteConfig.url}/#organization`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.png',
+    logo: 'https://solvovis.com/logo.svg',
     description:
-        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
+        'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     sameAs: [
-        'https://linkedin.com/company/solvovis', // Placeholder
-        'https://twitter.com/solvovis', // Placeholder
+        'https://twitter.com/solvovis',
+        'https://linkedin.com/company/solvovis',
     ],
 };
 
@@ -105,9 +106,9 @@ const consultingServiceSchema = {
     '@id': `${siteConfig.url}/#service`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.png',
+    logo: 'https://solvovis.com/logo.svg',
     description:
-        'SolvoVis builds autonomous trust engines and AI infrastructures for global SMEs. Eliminate operational friction and automate complex workflows with our 24/7 strategic workforce.',
+        'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     knowsAbout: siteConfig.knowsAbout,
     contactPoint: {
         '@type': 'ContactPoint',
