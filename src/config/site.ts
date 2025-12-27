@@ -66,7 +66,7 @@ export const siteConfig = {
     founder: {
         name: 'Varick Chen',
         role: 'Founder',
-        linkedIn: 'https://www.linkedin.com/in/varick-chen-93ab16299/',
+        linkedIn: 'https://www.linkedin.com/in/varick-chen-93ab16299',
         image: '/founder.jpg', // No basePath prefix needed
         // TODO: [TRUST] Uncomment when founder profiles are ready
         // twitter: '',
