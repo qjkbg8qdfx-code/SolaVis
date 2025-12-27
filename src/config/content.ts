@@ -205,6 +205,7 @@ export const caseStudiesSection = {
     disclaimer: 'Metrics verified by internal system logs and client confirmation.',
 };
 
+// VERIFY: Are these real clients? If not, remove before deployment.
 export const caseStudies: CaseStudy[] = [
     {
         id: 'CS_01',

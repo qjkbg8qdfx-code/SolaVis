@@ -56,7 +56,7 @@ export default function PrivacyPage() {
                 <h3>4. Contact & Rights</h3>
                 <p>
                     You retain full rights to your data. For data deletion requests (Right to be Forgotten) or inquiries regarding your personal information, please execute a command to our Data Protection Officer at:{' '}
-                    <a href="mailto:varick.chen@icloud.com">varick.chen@icloud.com</a>
+                    <a href="mailto:Varick@solvovis.com">Varick@solvovis.com</a>
                 </p>
             </div>
         </div>

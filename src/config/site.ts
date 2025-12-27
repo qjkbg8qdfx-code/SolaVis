@@ -47,7 +47,7 @@ export const siteConfig = {
         locality: 'Mackay',
         region: 'Queensland',
         postalCode: '4740',
-        streetAddress: 'Adrian St',
+        streetAddress: '', // PRIVACY: Street address removed for public site
         label: 'Global Operation Node (AUS)',
     },
 
