@@ -25,8 +25,8 @@ export const siteConfig = {
     ],
 
     // Contact
-    email: 'varick.chen@icloud.com',
-    legalEmail: 'varick.chen@icloud.com',
+    email: 'Varick@solvovis.com',
+    legalEmail: 'Varick@solvovis.com',
 
     // Social - Empty strings will be hidden by UI logic
     twitter: '',
@@ -66,7 +66,7 @@ export const siteConfig = {
     founder: {
         name: 'Varick Chen',
         role: 'Founder',
-        linkedIn: '',
+        linkedIn: 'https://www.linkedin.com/in/varick-chen-93ab16299/',
         image: '/founder.jpg', // No basePath prefix needed
         // TODO: [TRUST] Uncomment when founder profiles are ready
         // twitter: '',
