@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { X, Sun, Moon, Command, Search } from 'lucide-react';
+import { X, Command, Search } from 'lucide-react';
 import { desktopNavLinks, mobileDrawerLinks, ctaButton } from '@/config/navigation';
 import { basePath } from '@/config/site';
 import CommandMenu from '@/components/CommandMenu';
@@ -13,16 +12,11 @@ import CommandMenu from '@/components/CommandMenu';
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [commandOpen, setCommandOpen] = useState(false);
-    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
-    const { theme, setTheme } = useTheme();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Hydration fix for theme
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+
 
     // Scroll Lock Logic
     useEffect(() => {
@@ -93,22 +87,7 @@ export default function Navigation() {
                             <kbd className="font-mono text-xs">K</kbd>
                         </button>
 
-                        {/* Theme Toggle */}
-                        <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setTheme(theme === 'dark' ? 'light' : 'dark');
-                            }}
-                            className="rounded-lg bg-gray-100 p-2 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-                            aria-label="Toggle theme"
-                        >
-                            {mounted &&
-                                (theme === 'dark' ? (
-                                    <Sun className="h-4 w-4" />
-                                ) : (
-                                    <Moon className="h-4 w-4" />
-                                ))}
-                        </button>
+
 
                         <Link
                             href={ctaButton.href}
@@ -157,22 +136,7 @@ export default function Navigation() {
                                 <span className="font-medium">Search</span>
                             </button>
 
-                            {/* Theme Toggle */}
-                            <button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setTheme(theme === 'dark' ? 'light' : 'dark');
-                                }}
-                                className="flex items-center justify-center rounded-xl bg-gray-100 px-4 py-3 text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-                                aria-label="Toggle theme"
-                            >
-                                {mounted &&
-                                    (theme === 'dark' ? (
-                                        <Sun className="h-5 w-5" />
-                                    ) : (
-                                        <Moon className="h-5 w-5" />
-                                    ))}
-                            </button>
+
                         </div>
 
                         {/* Main Navigation Links (Large) */}
