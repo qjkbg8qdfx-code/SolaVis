@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+// Priority: Env Var > Hardcoded ID (Fallback)
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-6XLQ79J94Q';
 const CONSENT_KEY = 'solvovis-cookie-consent';
 
 /**
