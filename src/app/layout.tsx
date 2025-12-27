@@ -136,7 +136,7 @@ const founderSchema = {
     jobTitle: siteConfig.founder.role,
     image: `${siteConfig.url}${siteConfig.founder.image}`,
     url: `${siteConfig.url}/about`,
-    sameAs: [siteConfig.founder.linkedIn].filter((link) => link !== ''),
+    sameAs: [siteConfig.founder.linkedIn as string].filter((link) => link !== ''),
     worksFor: { '@id': `${siteConfig.url}/#organization` },
 };
 
