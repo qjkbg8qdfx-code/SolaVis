@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { X, Command, Search } from 'lucide-react';
 import { desktopNavLinks, mobileDrawerLinks, ctaButton } from '@/config/navigation';
-import { basePath } from '@/config/site';
+import { siteConfig } from '@/config/site';
 import CommandMenu from '@/components/CommandMenu';
 
 export default function Navigation() {
@@ -55,8 +55,8 @@ export default function Navigation() {
                     >
                         <div className="relative h-10 w-32">
                             <Image
-                                src="/images/solvovis-logo-main.png"
-                                alt="SolvoVis AI Consultancy Logo"
+                                src={siteConfig.assets.logo}
+                                alt="SolvoVis Logo"
                                 fill
                                 className="object-contain"
                                 priority

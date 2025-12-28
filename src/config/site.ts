@@ -73,6 +73,13 @@ export const siteConfig = {
         // twitter: '',
         // github: '',
     },
+
+    // Brand Assets (Vector-First Policy)
+    assets: {
+        logo: '/images/solvovis-logo-main.svg', // FORCE SVG for resolution independence
+        icon: '/icon.svg', // FORCE SVG
+        favicon: '/favicon.ico', // Keep .ico for legacy browser support
+    },
 } as const;
 
 export type SiteConfig = typeof siteConfig;

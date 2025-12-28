@@ -7,7 +7,7 @@ const OrganizationSchema = () => {
         "@type": "Organization",
         "name": siteConfig.name,
         "url": siteConfig.url,
-        "logo": "https://solvovis.com/images/solvovis-logo-main.png",
+        "logo": `${siteConfig.url}${siteConfig.assets.logo}`,
         "sameAs": [
             siteConfig.linkedin,
         ].filter(Boolean),
