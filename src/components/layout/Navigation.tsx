@@ -51,7 +51,7 @@ export default function Navigation() {
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="relative h-8 w-8 flex-shrink-0">
                             <Image
-                                src="/icon.svg"
+                                src="/logo.svg"
                                 alt="SolvoVis Mark"
                                 fill
                                 className="object-contain"
