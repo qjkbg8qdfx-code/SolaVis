@@ -9,7 +9,7 @@ export const siteConfig = {
     description:
         'Global AI Consultancy and Strategic Vision Architect. SolvoVis provides data-driven AI consultancy and strategic digital architecture for global enterprises.',
     url: 'https://solvovis.com',
-    ogImage: 'https://solvovis.com/og-preview.png',
+    ogImage: 'https://solvovis.com/og-preview.png?v=2',
 
     // SEO Keywords
     keywords: [
