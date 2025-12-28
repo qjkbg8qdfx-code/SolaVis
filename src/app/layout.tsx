@@ -11,6 +11,7 @@ import AnalyticsProvider from '@/components/AnalyticsProvider';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { siteConfig } from '@/config/site';
 import { bentoModules, faqContent } from '@/config/content';
+import OrganizationSchema from '@/components/seo/OrganizationSchema';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
@@ -91,7 +92,7 @@ const organizationSchema = {
     '@id': `${siteConfig.url}/#organization`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.svg',
+    logo: 'https://solvovis.com/images/solvovis-logo-main.png',
     description:
         'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     address: {
@@ -119,7 +120,7 @@ const consultingServiceSchema = {
     '@id': `${siteConfig.url}/#service`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.svg',
+    logo: 'https://solvovis.com/images/solvovis-logo-main.png',
     description:
         'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     knowsAbout: siteConfig.knowsAbout,
@@ -195,6 +196,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 suppressHydrationWarning
             >
                 <ThemeProvider>
+                    <OrganizationSchema />
                     <Navigation />
 
                     {/* Main Content (Pushing down for sticky nav) */}
