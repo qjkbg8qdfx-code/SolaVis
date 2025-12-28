@@ -22,7 +22,7 @@ export default function Home() {
             {/* ============================================ */}
             {/* 2. HUMAN BOTTLENECK - Agitation Phase */}
             {/* ============================================ */}
-            <section className="relative overflow-hidden border-t border-gray-100 bg-slate-50 py-24 dark:border-slate-800 dark:bg-slate-950">
+            <section className="relative overflow-hidden border-t border-gray-100 py-24 dark:border-slate-800 dark:bg-slate-950">
                 {/* Background Gradient Glow Removed */}
 
                 <div className="grid gap-12 md:grid-cols-2 md:items-center">
