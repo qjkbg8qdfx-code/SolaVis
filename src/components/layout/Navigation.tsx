@@ -55,7 +55,7 @@ export default function Navigation() {
                     >
                         <div className="relative h-8 w-8">
                             <Image
-                                src="/images/solvovis-logo-main.png"
+                                src="/images/solvovis-logo-main.svg"
                                 alt="SolvoVis - AI Consultancy"
                                 fill
                                 className="object-contain"
