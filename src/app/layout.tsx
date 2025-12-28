@@ -11,6 +11,7 @@ import AnalyticsProvider from '@/components/AnalyticsProvider';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { siteConfig } from '@/config/site';
 import { bentoModules, faqContent } from '@/config/content';
+import OrganizationSchema from '@/components/seo/OrganizationSchema';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
@@ -84,33 +85,7 @@ const websiteSchema = {
     url: 'https://solvovis.com',
 };
 
-// Schema.org Organization Data
-const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${siteConfig.url}/#organization`,
-    name: 'SolvoVis',
-    url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.svg',
-    description:
-        'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
-    address: {
-        '@type': 'PostalAddress',
-        addressCountry: siteConfig.address.country,
-        addressLocality: siteConfig.address.locality,
-        addressRegion: siteConfig.address.region,
-        postalCode: siteConfig.address.postalCode,
-        streetAddress: siteConfig.address.streetAddress,
-    },
-    contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'customer support',
-        email: siteConfig.email,
-        telephone: siteConfig.phone,
-        availableLanguage: ['English'],
-    },
-    sameAs: [siteConfig.twitter, siteConfig.linkedin].filter(Boolean),
-};
+
 
 // Schema.org ConsultingService Data
 const consultingServiceSchema = {
@@ -119,7 +94,7 @@ const consultingServiceSchema = {
     '@id': `${siteConfig.url}/#service`,
     name: 'SolvoVis',
     url: 'https://solvovis.com',
-    logo: 'https://solvovis.com/logo.svg',
+    logo: 'https://solvovis.com/images/solvovis-logo-main.png',
     description:
         'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     knowsAbout: siteConfig.knowsAbout,
@@ -195,6 +170,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 suppressHydrationWarning
             >
                 <ThemeProvider>
+                    <OrganizationSchema />
                     <Navigation />
 
                     {/* Main Content (Pushing down for sticky nav) */}
@@ -252,11 +228,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         type="application/ld+json"
                         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
                     />
-                    <script
-                        id="schema-org"
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-                    />
+
                     <script
                         id="schema-consulting"
                         type="application/ld+json"
