@@ -84,24 +84,24 @@ export default function CookieBanner() {
                     id="cookie-banner-description"
                     className="mb-5 text-sm leading-relaxed text-ios-subtext dark:text-slate-400"
                 >
-                    We use cookies to enhance your experience and analyze site traffic. You can
-                    accept all cookies or reject non-essential ones.
+                    We use cookies to improve your AI automation experience and help us understand
+                    how you interact with our platform.
                 </p>
 
-                {/* Buttons - No dark patterns, equal visual weight */}
+                {/* Buttons - Visual hierarchy: Accept = Primary, Reject = Ghost */}
                 <div className="flex flex-col gap-2">
                     <div className="flex gap-3">
                         <button
                             onClick={handleReject}
-                            className="flex-1 rounded-xl bg-gray-100 px-4 py-2.5 text-sm font-medium text-ios-text transition-all hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98] dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
+                            className="flex-1 rounded-xl border border-gray-400 bg-transparent px-4 py-2.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98] dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800"
                         >
-                            Reject All
+                            Decline
                         </button>
                         <button
                             onClick={handleAccept}
-                            className="flex-1 rounded-xl bg-ios-blue px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-blue-600 focus-visible:ring-2 focus-visible:ring-ios-blue focus-visible:ring-offset-2 active:scale-[0.98]"
+                            className="flex-1 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 active:scale-[0.98]"
                         >
-                            Accept All
+                            Accept
                         </button>
                     </div>
                     <button
