@@ -50,15 +50,18 @@ export default function Navigation() {
                 <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between bg-transparent px-6">
                     <Link
                         href="/"
-                        className="relative z-50 flex items-center gap-2 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
+                        aria-label="SolvoVis Home"
+                        className="relative z-50 flex items-center gap-3 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
                     >
-                        <Image
-                            src={`${basePath}/icon.svg`}
-                            alt="SolvoVis Logo"
-                            width={24}
-                            height={24}
-                            className="h-6 w-6 dark:invert dark:opacity-90"
-                        />
+                        <div className="relative h-8 w-8">
+                            <Image
+                                src="/images/solvovis-logo-main.png"
+                                alt="SolvoVis - AI Consultancy"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                         SolvoVis<span className="font-mono text-xl text-ios-blue">.</span>
                     </Link>
 
