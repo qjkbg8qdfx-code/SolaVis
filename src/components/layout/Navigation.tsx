@@ -53,7 +53,7 @@ export default function Navigation() {
                         aria-label="SolvoVis Home"
                         className="relative z-50 flex items-center gap-3 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
                     >
-                        <div className="relative h-8 w-8">
+                        <div className="relative h-10 w-32">
                             <Image
                                 src="/logo.svg"
                                 alt="SolvoVis - AI Consultancy"
