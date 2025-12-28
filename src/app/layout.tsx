@@ -26,11 +26,7 @@ export const metadata: Metadata = {
         'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
     applicationName: 'SolvoVis',
     authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
-    icons: {
-        icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-        shortcut: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-        apple: [{ url: '/apple-touch-icon.svg', type: 'image/svg+xml' }],
-    },
+
     manifest: '/site.webmanifest',
     robots: {
         index: true,
