@@ -48,21 +48,19 @@ export default function Navigation() {
                 className={`glass-panel fixed top-0 w-full dark:border-slate-800 dark:bg-slate-950/80 ${isOpen ? 'z-[70]' : 'z-50'}`}
             >
                 <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between bg-transparent px-6">
-                    <Link
-                        href="/"
-                        aria-label="SolvoVis Home"
-                        className="relative z-50 flex items-center gap-3 text-lg font-semibold tracking-tight transition-opacity hover:opacity-70"
-                    >
-                        <div className="relative h-10 w-32">
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <div className="relative h-8 w-8 flex-shrink-0">
                             <Image
-                                src="/logo.svg"
-                                alt="SolvoVis - AI Consultancy"
+                                src="/icon.svg"
+                                alt="SolvoVis Mark"
                                 fill
-                                className="object-contain p-0.5"
+                                className="object-contain"
                                 priority
                             />
                         </div>
-                        SolvoVis<span className="font-mono text-xl text-ios-blue">.</span>
+                        <span className="font-bold text-xl tracking-tight text-foreground group-hover:opacity-80 transition-opacity">
+                            SolvoVis
+                        </span>
                     </Link>
 
                     {/* Desktop Menu */}
