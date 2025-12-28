@@ -50,16 +50,15 @@ export default function ContactPage() {
                         </span>
                     </div>
 
-                    {/* TODO: VERIFY - Is this a real office? If not, remove or change to "Remote Hub" */}
-                    {/* Card 2: Strategic Node - Taipei */}
+                    {/* Card 2: R&D Uplink - Taipei */}
                     <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-center">
                         <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
                             <Cpu className="h-5 w-5" />
                         </div>
-                        <h3 className="mb-1 font-semibold text-gray-900">Strategic Node (Asia)</h3>
-                        <p className="text-sm text-gray-500">Taipei, Taiwan</p>
+                        <h3 className="mb-1 font-semibold text-gray-900">R&D Uplink (Asia)</h3>
+                        <p className="text-sm text-gray-500">Taipei Strategic Network</p>
                         <span className="mt-2 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-700">
-                            R&D Operations
+                            Partner Network
                         </span>
                     </div>
 

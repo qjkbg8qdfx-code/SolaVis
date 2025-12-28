@@ -191,6 +191,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body
                 className={`${inter.variable} ${jetbrainsMono.variable} bg-ios-bg font-sans text-ios-text transition-colors dark:bg-gray-950 dark:text-gray-100`}
+                suppressHydrationWarning
             >
                 <ThemeProvider>
                     <Navigation />
@@ -279,8 +280,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {/* Cookie Consent Banner */}
                     <CookieBanner />
 
-                    {/* Mobile Sticky CTA */}
-                    <StickyCTA />
+                    {/* Sticky CTA (hidden on mobile where MobileNav is visible) */}
+                    <div className="hidden md:block">
+                        <StickyCTA />
+                    </div>
 
                     {/* Mobile Bottom Tab Bar (iOS Style) */}
                     <MobileNav />
