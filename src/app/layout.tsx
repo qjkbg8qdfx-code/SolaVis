@@ -19,11 +19,11 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
     title: {
-        default: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
+        default: 'SolvoVis | Visionary AI Consultancy',
         template: '%s | SolvoVis',
     },
     description:
-        'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
+        'SolvoVis transforms businesses with scalable, idea-centric AI strategies. We prioritize efficiency, automation, and global standards for the modern enterprise.',
     applicationName: 'SolvoVis',
     authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
 
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
         follow: true,
     },
     openGraph: {
-        title: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
+        title: 'SolvoVis | Visionary AI Consultancy',
         description:
-            'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
+            'SolvoVis transforms businesses with scalable, idea-centric AI strategies. We prioritize efficiency, automation, and global standards.',
         url: siteConfig.url,
         siteName: 'SolvoVis',
         images: [
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'SolvoVis | Enterprise Autonomous AI & Trust Architecture',
+        title: 'SolvoVis | Visionary AI Consultancy',
         description:
-            'Eliminate operational friction forever. We architect autonomous AI workforces that function as your invisible, 24/7 strategic partner. Scalable. Secure. Human-Centric.',
+            'SolvoVis transforms businesses with scalable, idea-centric AI strategies.',
     },
     alternates: {
         canonical: siteConfig.url,
