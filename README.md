@@ -115,3 +115,19 @@ See [.github/workflows/main.yml](.github/workflows/main.yml) for details.
 ## License
 
 Private - All rights reserved.
+
+## 🌐 SEO & Brand Identity Architecture
+**Status: Strict Governance**
+
+The brand identity (Favicon, OG Tags) and Search Engine visibility are strictly managed via `src/app/layout.tsx`.
+
+### Critical Files
+* **`src/app/icon.png`**: The master source for the favicon. Must be 512x512px. Next.js automatically generates `<link rel="icon" sizes="512x512">` from this file.
+* **`src/app/apple-icon.png`**: The source for iOS home screen icons.
+* **`src/app/layout.tsx`**: Contains the `metadata` object controlling the SERP Title and Description.
+
+### Deployment Protocol
+Before any production deployment, verify:
+1.  **Safety Check**: The build pipeline runs `scripts/check-seo-safety.js`.
+2.  **Visual Check**: Verify the Browser Tab icon is visible in Incognito mode.
+3.  **Google Check**: Use "Test Live URL" in Search Console to ensure `<meta name="description">` and `<link rel="icon">` are present.
