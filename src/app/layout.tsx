@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         template: '%s | SolvoVis',
     },
     description:
-        'SolvoVis transforms businesses with scalable, idea-centric AI strategies. We prioritize efficiency, automation, and global standards for the modern enterprise.',
+        'SolvoVis is a global AI consultancy brand focused on efficiency, scalability, and idea-centric innovation. We transform businesses with data-driven technical strategies.',
     applicationName: 'SolvoVis',
     authors: [{ name: 'SolvoVis Team', url: 'https://solvovis.com' }],
 
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
+    },
+    icons: {
+        icon: '/icon.png',
+        apple: '/apple-icon.png',
     },
     openGraph: {
         title: 'SolvoVis | Visionary AI Consultancy',
